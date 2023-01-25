@@ -3,17 +3,13 @@ import pandas as pd
 import json
 import pdb
 
-api = API()
-cpu_data = api.retrieve("cpu")
-cpu_data_json = cpu_data.to_json()
-cpu_dict = json.loads(cpu_data_json)
-cpu_dict2 = cpu_dict['cpu']
-cpu_df = pd.DataFrame(cpu_dict2)
-cpu_df = cpu_df[['price', 'brand', 'model']]
-bench = pd.read_csv("CPU_UserBenchmarks.csv")
-bench = bench[['Brand', 'Model', 'Rank']]
-#bench["UpdatedModel"] = bench["Brand"].astype(str) + " " + bench["Model"]
-benchPrice = pd.merge(cpu_df, bench, how="inner", left_on="model", right_on="Model")
-#benchPrice = benchPrice[benchPrice.price[1] != '0.00']
-benchPrice = benchPrice[["price", "brand", "model", "Rank"]]
-pdb.set_trace() 
+partpickerAPI = API()
+raw_data = json.loads(partpickerAPI.retrieve_all().to_json())
+pc_parts = {}
+
+for part, info in raw_data.items():
+    pc_parts[part] = pd.DataFrame(raw_data[part])
+    pc_parts[part]['price'] = pc_parts[part]['price'].apply(lambda x: float(x[1]))
+
+cpu_data = pc_parts["cpu"]
+print(cpu_data[cpu_data["price"].between(0, 200)])

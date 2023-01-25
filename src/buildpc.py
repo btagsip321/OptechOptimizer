@@ -3,7 +3,11 @@ import pandas as pd
 import json
 
 partpickerAPI = API()
-pc_parts = json.loads(partpickerAPI.retrieve_all().to_json())
+pc_parts = {}
+
+for part, info in json.loads(partpickerAPI.retrieve_all().to_json()).items():
+    pc_parts[part] = pd.DataFrame(info)
+    pc_parts[part]['price'] = pc_parts[part]['price'].apply(lambda x: float(x[1]))
 
 def buildBudget(budget, windows):
     subtr = (100 if windows else 10)
@@ -25,8 +29,8 @@ def buildBudget(budget, windows):
     }
 
 def findPartsWithinBudget(part, budget):
-    cpu_data = pd.DataFrame(pc_parts[part])
-    return cpu_data["price"].between(0, budget)
+    part_data = pc_parts[part]
+    return part_data[part_data["price"].between(0, 200)]
 
 def buildPc(budget):
     return {
