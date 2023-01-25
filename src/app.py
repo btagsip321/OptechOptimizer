@@ -1,7 +1,7 @@
 import os
 import json
 from buildpc import *
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
@@ -11,6 +11,11 @@ def hello():
 
 @app.route('/build', methods=['GET'])
 def build():
+    info = json.loads(request.data)
+    jsonify(buildPc(buildBudget(info.budget, info.windows)))
+
+@app.route('/budget', methods=['GET'])
+def budget():
     info = json.loads(request.data)
     jsonify(buildBudget(info.budget, info.windows))
 
