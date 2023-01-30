@@ -30,10 +30,18 @@ def buildBudget(budget, windows):
 
 def findPartsWithinBudget(part, budget):
     part_data = pc_parts[part]
-    return part_data[part_data["price"].between(0, 200)]
+    part_data = part_data.sort_values(by=['price'], ascending=False)
+    part_data = part_data[part_data["price"].between(0, 200)]
+    return part_data.iloc[0]['model']
 
 def buildPc(budget):
     return {
-        #"GPU": findPartsWithinBudget("gpu", budget["gpu"]),
-        "CPU": findPartsWithinBudget("cpu", budget["cpu"]),
+        "GPU": findPartsWithinBudget("video-card", budget["GPU"]),
+        "CPU": findPartsWithinBudget("cpu", budget["CPU"]),
+        "RAM": findPartsWithinBudget("memory", budget["RAM"]),
+        "Case": findPartsWithinBudget("case", budget["Case"]),
+        "PSU": findPartsWithinBudget("power-supply", budget["PSU"]),
+        "SSD": findPartsWithinBudget("external-hard-drive", budget["SSD"]),
+        "Motherboard": findPartsWithinBudget("motherboard", budget["Motherboard"]),
+        "CPU Cooler": findPartsWithinBudget("cpu-cooler", budget["CPU Cooler"]),
     }

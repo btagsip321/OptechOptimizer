@@ -11,8 +11,11 @@ def hello():
 
 @app.route('/build', methods=['GET'])
 def build():
-    info = json.loads(request.data)
-    jsonify(buildPc(buildBudget(info.budget, info.windows)))
+    budget = buildBudget(int(request.args.get('budget')), False)
+    print(budget)
+    pc_build = buildPc(budget)
+    print(pc_build)
+    return jsonify(pc_build)
 
 @app.route('/budget', methods=['GET'])
 def budget():
