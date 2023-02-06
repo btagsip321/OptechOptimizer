@@ -1,17 +1,37 @@
-from pcpartpicker import API
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.common.by import By
+from selenium import webdriver
 import pandas as pd
-import json
 import pdb
+import os
+import re
 
-partpickerAPI = API()
-raw_data = json.loads(partpickerAPI.retrieve_all().to_json())
+scraper = webdriver.Firefox()
 pc_parts = {}
 
-for part, info in raw_data.items():
-    print(part)
-    pc_parts[part] = pd.DataFrame(raw_data[part])
-    pc_parts[part]['price'] = pc_parts[part]['price'].apply(lambda x: float(x[1]))
+def fetch_price(row):
+    scraper.get(row['URL'])
+    price = 0
 
-cpu_data = pc_parts["cpu"].sort_values(by=['price'], ascending=False)
-cpu_data = cpu_data[cpu_data["price"].between(0, 200)]
-print(cpu_data.iloc[0])
+    try:
+        price_button = scraper.find_element(By.CLASS_NAME, "nowrap")
+        price = float(re.sub("[^0-9]", "", price_button.text))
+        if price <= 100000:
+            print(price)
+        else:
+            price = 0
+            print("Price too high, setting to 0")
+
+    except:
+        print("Failed to get price")
+    
+    return price
+
+for file in os.scandir("../data"):
+    if file.is_file():
+        print("Getting " + file.name)
+        pc_parts[file.name] = pd.read_csv(file.path).sort_values(by=['Benchmark'], ascending=False)
+        pc_parts[file.name]['Price'] = pc_parts[file.name].apply(lambda row: fetch_price(row), axis = 1)
+
+pdb.set_trace()

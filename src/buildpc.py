@@ -1,6 +1,7 @@
 from pcpartpicker import API
 import pandas as pd
 import json
+import pdb
 
 partpickerAPI = API()
 pc_parts = {}
@@ -8,6 +9,10 @@ pc_parts = {}
 for part, info in json.loads(partpickerAPI.retrieve_all().to_json()).items():
     pc_parts[part] = pd.DataFrame(info)
     pc_parts[part]['price'] = pc_parts[part]['price'].apply(lambda x: float(x[1]))
+ub_cpu = pd.read_csv('CPU_UserBenchmarks.csv').sort_values(by=['Benchmark'], ascending=False)
+com_cpu = pd.merge(pc_parts['cpu'], ub_cpu, left_on="model", right_on="Model").sort_values(by='Benchmark', ascending=False)
+refine_com_cpu = com_cpu[['model', 'Benchmark', 'price', 'brand']]
+pdb.set_trace()
 
 def buildBudget(budget, windows):
     subtr = (100 if windows else 10)
