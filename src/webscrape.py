@@ -31,7 +31,7 @@ def fetch_price(row):
 for file in os.scandir("../data"):
     if file.is_file():
         print("Getting " + file.name)
-        pc_parts[file.name] = pd.read_csv(file.path).sort_values(by=['Benchmark'], ascending=False).head(50)
+        pc_parts[file.name] = pd.read_csv(file.path).sort_values(by=['Benchmark'], ascending=False).head(200)
         pc_parts[file.name]['Price'] = pc_parts[file.name].apply(lambda row: fetch_price(row), axis = 1)
 
 pdb.set_trace()
