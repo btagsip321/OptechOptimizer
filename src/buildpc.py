@@ -1,6 +1,7 @@
 import pandas as pd
 import json
 import pdb
+import os
 parts = ['CPU','GPU','HDD','RAM','SSD']
 pc_parts = {'CPU':None, 'GPU':None, 'HDD':None, 'RAM':None, 'SSD':None}
 def buildBudget(budget, windows):
@@ -22,7 +23,7 @@ def buildBudget(budget, windows):
         "Peripherals": round((budget * .046), 2)
     }
 def gatherPartData(part):
-    path = 'C:\\Code\\OptechOptimizer\\rendered_data\\CPU_UserBenchmarks.csv'
+    path = os.path.join('C:\\Code\\OptechOptimizer\\rendered_data', part + '_UserBenchmarks.csv')
     df = pd.read_csv(path).dropna()
     df_filtered = df[pd.to_numeric(df['Price'], errors='coerce').notnull()]
     pc_parts[part] = df_filtered
@@ -30,6 +31,7 @@ def gatherPartData(part):
 def findPartsWithinBudget(part, budget):
     topPrice = int(budget)
     part_data = pc_parts[part]
+    #pdb.set_trace()
     part_data["Price"] = pd.to_numeric(part_data['Price'])
     part_data = part_data.sort_values(by=['Rank'], ascending=True)
     updated_part_data = part_data[part_data["Price"] <= budget]
@@ -37,14 +39,18 @@ def findPartsWithinBudget(part, budget):
 
 def buildPc(budget):
     return {
-        "GPU": findPartsWithinBudget("video-card", budget["GPU"]),
-        "CPU": findPartsWithinBudget("cpu", budget["CPU"]),
-        "RAM": findPartsWithinBudget("memory", budget["RAM"]),
-        "Case": findPartsWithinBudget("case", budget["Case"]),
-        "PSU": findPartsWithinBudget("power-supply", budget["PSU"]),
-        "SSD": findPartsWithinBudget("external-hard-drive", budget["SSD"]),
-        "Motherboard": findPartsWithinBudget("motherboard", budget["Motherboard"]),
-        "CPU Cooler": findPartsWithinBudget("cpu-cooler", budget["CPU Cooler"]),
+        "GPU": findPartsWithinBudget("GPU", budget["GPU"]),
+        "CPU": findPartsWithinBudget("CPU", budget["CPU"]),
+        "RAM": findPartsWithinBudget("RAM", budget["RAM"]),
+        #"Case": findPartsWithinBudget("case", budget["Case"]),
+        #"PSU": findPartsWithinBudget("power-supply", budget["PSU"]),
+        "SSD": findPartsWithinBudget("SSD", budget["SSD"]),
+        "HDD": findPartsWithinBudget("HDD", budget["HDD"]),
+        #"Motherboard": findPartsWithinBudget("motherboard", budget["Motherboard"]),
+        #"CPU Cooler": findPartsWithinBudget("cpu-cooler", budget["CPU Cooler"]),
     }
-gatherPartData('CPU')
-print(findPartsWithinBudget('CPU', 500))
+for pcpart in parts:
+    gatherPartData(pcpart)
+printDf = buildPc(buildBudget(1000, False))
+for key in printDf.keys():
+    print(key + " - " + printDf[key])
