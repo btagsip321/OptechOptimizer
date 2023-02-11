@@ -2,7 +2,7 @@ import pandas as pd
 import json
 import pdb
 parts = ['CPU','GPU','HDD','RAM','SSD']
-pc_parts = []
+pc_parts = {'CPU':None, 'GPU':None, 'HDD':None, 'RAM':None, 'SSD':None}
 def buildBudget(budget, windows):
     subtr = (100 if windows else 10)
     budget -= subtr
@@ -23,15 +23,17 @@ def buildBudget(budget, windows):
     }
 def gatherPartData(part):
     path = 'C:\\Code\\OptechOptimizer\\rendered_data\\CPU_UserBenchmarks.csv'
-    df = pd.read_csv(path)
-    #df = pd.read_csv("C:\Code\OptechOptimizer\rendered_data" "\" + part + '_UserBenchmarks.csv')
-    pdb.set_trace()
-def findPartsWithinBudget(part, budget):
+    df = pd.read_csv(path).dropna()
+    df_filtered = df[pd.to_numeric(df['Price'], errors='coerce').notnull()]
+    pc_parts[part] = df_filtered
 
+def findPartsWithinBudget(part, budget):
+    topPrice = int(budget)
     part_data = pc_parts[part]
-    part_data = part_data.sort_values(by=['price'], ascending=False)
-    part_data = part_data[part_data["price"].between(0, 200)]
-    return part_data.iloc[0]['model']
+    part_data["Price"] = pd.to_numeric(part_data['Price'])
+    part_data = part_data.sort_values(by=['Rank'], ascending=True)
+    updated_part_data = part_data[part_data["Price"] <= budget]
+    return updated_part_data.iloc[0]['Brand'] + " " + updated_part_data.iloc[0]['Model'] + " Part Number: " + updated_part_data.iloc[0]['Part Number']
 
 def buildPc(budget):
     return {
@@ -45,3 +47,4 @@ def buildPc(budget):
         "CPU Cooler": findPartsWithinBudget("cpu-cooler", budget["CPU Cooler"]),
     }
 gatherPartData('CPU')
+print(findPartsWithinBudget('CPU', 500))
