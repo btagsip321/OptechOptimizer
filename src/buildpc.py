@@ -1,19 +1,8 @@
-from pcpartpicker import API
 import pandas as pd
 import json
 import pdb
-
-partpickerAPI = API()
-pc_parts = {}
-
-for part, info in json.loads(partpickerAPI.retrieve_all().to_json()).items():
-    pc_parts[part] = pd.DataFrame(info)
-    pc_parts[part]['price'] = pc_parts[part]['price'].apply(lambda x: float(x[1]))
-ub_cpu = pd.read_csv('CPU_UserBenchmarks.csv').sort_values(by=['Benchmark'], ascending=False)
-com_cpu = pd.merge(pc_parts['cpu'], ub_cpu, left_on="model", right_on="Model").sort_values(by='Benchmark', ascending=False)
-refine_com_cpu = com_cpu[['model', 'Benchmark', 'price', 'brand']]
-pdb.set_trace()
-
+parts = ['CPU','GPU','HDD','RAM','SSD']
+pc_parts = []
 def buildBudget(budget, windows):
     subtr = (100 if windows else 10)
     budget -= subtr
@@ -32,8 +21,13 @@ def buildBudget(budget, windows):
         "Wifi Adapter": round((budget * .025), 2),
         "Peripherals": round((budget * .046), 2)
     }
-
+def gatherPartData(part):
+    path = 'C:\\Code\\OptechOptimizer\\rendered_data\\CPU_UserBenchmarks.csv'
+    df = pd.read_csv(path)
+    #df = pd.read_csv("C:\Code\OptechOptimizer\rendered_data" "\" + part + '_UserBenchmarks.csv')
+    pdb.set_trace()
 def findPartsWithinBudget(part, budget):
+
     part_data = pc_parts[part]
     part_data = part_data.sort_values(by=['price'], ascending=False)
     part_data = part_data[part_data["price"].between(0, 200)]
@@ -50,3 +44,4 @@ def buildPc(budget):
         "Motherboard": findPartsWithinBudget("motherboard", budget["Motherboard"]),
         "CPU Cooler": findPartsWithinBudget("cpu-cooler", budget["CPU Cooler"]),
     }
+gatherPartData('CPU')
