@@ -2,8 +2,8 @@ import pandas as pd
 import json
 import pdb
 import os
-parts = ['CPU','GPU','HDD','RAM','SSD']
-pc_parts = {'CPU':None, 'GPU':None, 'HDD':None, 'RAM':None, 'SSD':None}
+parts = ['CPU','GPU','HDD','RAM','SSD', 'CASE']
+pc_parts = {'CPU':None, 'GPU':None, 'HDD':None, 'RAM':None, 'SSD':None, 'CASE':None}
 def buildBudget(budget, windows):
     subtr = (100 if windows else 10)
     budget -= subtr
@@ -42,7 +42,7 @@ def buildPc(budget):
         "GPU": findPartsWithinBudget("GPU", budget["GPU"]),
         "CPU": findPartsWithinBudget("CPU", budget["CPU"]),
         "RAM": findPartsWithinBudget("RAM", budget["RAM"]),
-        #"CASE": findPartsWithinBudget("CASE", budget["CASE"]),
+        "CASE": findPartsWithinBudget("CASE", budget["CASE"]),
         #"PSU": findPartsWithinBudget("power-supply", budget["PSU"]),
         "SSD": findPartsWithinBudget("SSD", budget["SSD"]),
         "HDD": findPartsWithinBudget("HDD", budget["HDD"]),
