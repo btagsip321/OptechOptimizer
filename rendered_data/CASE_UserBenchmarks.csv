@@ -1,7 +1,7 @@
-Price, Brand, Model, Part Number, Rank
-44.99, Zalman, T6 Tower, ATX Mid, 6
-59.99, Phanteks, P300A Mesh, ATX Mid, 5
-94.99, Corsair, 4000D Airflow, ATX Mid, 3
-74.99, Phanteks, P400A, ATX Mid, 4
-109.99, Fractal Design, Meshify C, ATX Full, 2
-139.99, Lian Li, PC-O11 Dynamic, ATX Full, 1
+Price,Brand,Model,Part Number,Rank
+44.99,Zalman,T6 Tower,ATX Mid,6
+59.99,Phanteks,P300A Mesh,ATX Mid 5
+94.99,Corsair,4000D Airflow,ATX Mid,3
+74.99,Phanteks,P400A,ATX Mid,4
+109.99,Fractal Design,Meshify C,ATX Full,2
+139.99,Lian Li,PC-O11 Dynamic,ATX Full,1
