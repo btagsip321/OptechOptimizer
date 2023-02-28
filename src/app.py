@@ -1,13 +1,14 @@
 import os
 import json
 from buildpc import *
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
 
 app = Flask(__name__)
 
 @app.route('/')
-def hello():
-    return 'Sample web app'
+def index():
+    print('rendering')
+    return render_template('index.html')
 
 @app.route('/build', methods=['GET'])
 def build():

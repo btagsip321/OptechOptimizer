@@ -49,8 +49,9 @@ def buildPc(budget):
         #"Motherboard": findPartsWithinBudget("motherboard", budget["Motherboard"]),
         #"CPU Cooler": findPartsWithinBudget("cpu-cooler", budget["CPU Cooler"]),
     }
-for pcpart in parts:
-    gatherPartData(pcpart)
-printDf = buildPc(buildBudget(1000, False))
-for key in printDf.keys():
-    print(key + " - " + printDf[key])
+
+#for pcpart in parts:
+#    gatherPartData(pcpart)
+#printDf = buildPc(buildBudget(1000, False))
+#for key in printDf.keys():
+#    print(key + " - " + printDf[key])
