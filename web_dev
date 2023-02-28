@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>OpTech PCs</title>
+  </head>
+  <body class="main">
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
+    <style>
+      h1 {
+        font-size: 40px;
+        color: #ffffff;
+        font-family: 'Trebuchet MS';
+      }
+
+      input.final {
+        color: #ffffff;
+        background-color: #1b1b1b;
+        border-color: #353839;
+        font-size: 19px;
+      }
+
+      .column {
+        float: left;
+        width: 25%;
+      }
+
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
+      body {
+        //background-image: url("https://scied.ucar.edu/sites/default/files/styles/half_width/public/2021-10/cumulus-clouds.jpg?itok=qsNXhfWh.jpg");
+        //background-size: 1920px;
+        background-color: #1b1b1b;
+        color: #ffffff;
+        font-family: 'Montserrat';
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      .headd {
+        display: flex;
+        align-items: left;
+        justify-content: left;
+        position: sticky;
+        top: 0;
+        background-color: #414a4c;
+        padding-left: 10px;
+        padding-top: 10px;
+      }
+
+      .logo {
+        flex-basis: 20%;
+      }
+
+      img {
+        max-width: 100%;
+      }
+
+      .headertext {
+        font-size: 20px;
+      }
+
+      .capText {
+        color: #ffffff;
+      }
+
+      footer {
+        background-color: #414a4c;
+        color: #ffffff;
+        margin-top: auto;
+      }
+
+      .guide {
+        border-style: double;
+        border-color: #414a4c;
+      }
+
+    </style>
+    <div class="headd">
+      <div class="logo">
+        <img src="OpTechLogo.png" height="90" width="90" />
+      </div>
+      <div class="headertext">
+        <h1 class="pgtitle">OpTech PCs</h1>
+      </div>
+    </div>
+    <br />
+    <br />
+    <div class="row">
+      <div class="column">
+        <form class="opForm" action="/submission.html" method="POST">
+          <label class="capText" for="userPrice">Enter Price Cap Here: </label>
+          <input type="number" name="price" id="userPrice" />
+          <br />
+          <label class="windows" for="winactive">Windows Activation? </label> Yes <input type="radio" name="yes" id="winyes" /> No <input type="radio" name="no" id="winno" />
+          <br />
+          <label class="cpupref" for="pref">CPU Preference: </label>
+          <select id="pref" name="pref">
+            <option value="nopref">No Preference</option>
+            <option value="intel">Intel</option>
+            <option value="amd">AMD</option>
+          </select>
+          <br />
+          <span>Main Use: </span>
+          <select id="mainuse" name="mainuse">
+            <option value="Everyday">Everyday Use</option>
+            <option value="Gaming">Gaming</option>
+            <option value="pro">Video Editing/Professional</option>
+          </select>
+          <br />
+          <input class="final" type="submit" value="Optimize!" />
+        </form>
+      </div>
+      <div class="column">
+        <p></p>
+      </div>
+      <div class="column">
+        <h2><u>Helpful Guides!</u></h2>
+        <a href="https://www.youtube.com/watch?v=vRdZ6NvPG5I"><img class="guide" src="buildapcpic.jpg" height="300" width="300"/></a>
+        <p>YT Guides, Blogs, Forums</p>
+      </div>
+      <div class="column">
+        <h2>text</h2>
+        <a href="https://www.reddit.com/r/buildapc/"><img class="guide" src="redditbapc.png" height="300" width="300"/></a>
+      </div>
+    </div>
+  </body>
+  <footer>
+    <p>Contact Us: help.optechpcs@gmail.com</p>
+  </footer>
+</html>
