@@ -2,44 +2,29 @@
 <html>
 <head>
 	<title>PC Build Results</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}">
 </head>
 <body>
 	<div class="container">
 		<h1>Your PC Build</h1>
 		<div class="parts">
 			<h2>GPU:</h2>
-			<p>NVIDIA GeForce RTX 3080</p>
+			<p>{{ GPU }}</p>
 
 			<h2>CPU:</h2>
-			<p>AMD Ryzen 9 5900X</p>
+			<p>{{ CPU }}</p>
 
 			<h2>RAM:</h2>
-			<p>G.SKILL Ripjaws V Series 32GB DDR4</p>
+			<p>{{ RAM }}</p>
 
 			<h2>Case:</h2>
-			<p>NZXT H510 Elite</p>
-
-			<h2>PSU:</h2>
-			<p>Corsair RM850x 850W</p>
+			<p>{{ CASE }}</p>
 
 			<h2>SSD:</h2>
-			<p>Samsung 970 EVO Plus 1TB</p>
+			<p>{{ SSD }}</p>
 
 			<h2>HDD:</h2>
-			<p>Seagate Barracuda 2TB</p>
-
-			<h2>Motherboard:</h2>
-			<p>ASUS ROG Strix B550-F Gaming (WiFi 6)</p>
-
-			<h2>CPU Cooler:</h2>
-			<p>Noctua NH-D15</p>
-
-			<h2>Peripherals:</h2>
-			<p>Logitech G Pro X Mechanical Gaming Keyboard, Logitech G Pro Wireless Gaming Mouse</p>
-
-			<h2>Wifi Adapter:</h2>
-			<p>TP-Link Archer T9E AC1900</p>
+			<p>{{ HDD }}</p>
 		</div>
 	</div>
 </body>
