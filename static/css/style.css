@@ -13,10 +13,12 @@ body {
     text-align: center;
     border-style: double;
     border-color: #414a4c;
+    font-family: 'Lexend';
 }
 
 h1 {
     margin-bottom: 30px;
+    font-family: 'Lexend';
 }
 
 form {
@@ -35,6 +37,7 @@ input[type="number"], select {
     border-radius: 5px;
     border: none;
     margin-bottom: 20px;
+    font-family: 'Lexend';
 }
 
 input[type="checkbox"] {
@@ -50,6 +53,7 @@ button {
     font-size: 16px;
     cursor: pointer;
     margin-top: 20px;
+    font-family: 'Lexend';
 }
 
 div.parts {
@@ -60,4 +64,16 @@ div.parts {
 
 option {
    font-family: 'Lexend';
+}
+
+form {
+    font-family: 'Lexend';
+}
+
+h2 {
+    font-family: 'Lexend';
+}
+
+p {
+    font-family: 'Lexend';
 }
