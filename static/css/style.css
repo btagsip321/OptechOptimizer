@@ -1,12 +1,12 @@
 body {
-   background-color: #1b1b1b;
-        color: #ffffff;
+   background-color: #FFFFFF;
+        color: #000000;
         font-family: 'Lexend';
         min-height: 100vh;
 }
 
 .container {
-   background-color: #1b1b1b;
+   background-color: #FFFFFF;
     max-width: 500px;
     margin: 0 auto;
     padding: 20px;
