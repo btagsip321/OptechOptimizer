@@ -52,7 +52,7 @@ button {
     margin-top: 20px;
 }
 
-.parts {
+div.parts {
    background-color: #FFFFFF;
    color: #000000;
    font-family: 'Lexend';
