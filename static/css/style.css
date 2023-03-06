@@ -1,7 +1,7 @@
 body {
    background-color: #1b1b1b;
         color: #ffffff;
-        font-family: 'Montserrat';
+        font-family: 'Lexend';
         min-height: 100vh;
 }
 
@@ -39,8 +39,8 @@ input[type="checkbox"] {
 }
 
 button {
-    background-color: #4CAF50;
-    color: white;
+    background-color: #1b1b1b;
+    color: #FFFFFF;
     padding: 10px;
     border: none;
     border-radius: 5px;
