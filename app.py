@@ -11,6 +11,7 @@ def index():
 
 @app.route('/build', methods=['GET'])
 def build():
+    print(int(request.args.get('budget')), request.args.get('windows')=="on")
     budget = buildBudget(int(request.args.get('budget')), request.args.get('windows')=="on")
     pc_build = buildPc(budget)
     print(pc_build)
