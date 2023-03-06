@@ -1,8 +1,8 @@
 body {
    background-color: #FFFFFF;
-        color: #000000;
-        font-family: 'Lexend';
-        min-height: 100vh;
+   color: #000000;
+   font-family: 'Lexend';
+   min-height: 100vh;
 }
 
 .container {
@@ -50,4 +50,10 @@ button {
     font-size: 16px;
     cursor: pointer;
     margin-top: 20px;
+}
+
+.parts {
+   background-color: #FFFFFF;
+   color: #000000;
+   font-family: 'Lexend';
 }
