@@ -6,11 +6,13 @@ body {
 }
 
 .container {
-   background-color: #FFFFFF;
+    background-color: #FFFFFF;
     max-width: 500px;
     margin: 0 auto;
     padding: 20px;
     text-align: center;
+    border-style: double;
+    border-color: #414a4c;
 }
 
 h1 {
