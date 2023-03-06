@@ -3,6 +3,13 @@ import json
 from buildpc import *
 from flask import Flask, jsonify, request, render_template
 
+Brands = {
+    "amd": "AMD",
+    "nvidia": "Nvidia",
+    "intel": "Intel",
+    "nopref": None
+}
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -13,8 +20,7 @@ def index():
 def build():
     print(int(request.args.get('budget')), request.args.get('windows')=="on")
     budget = buildBudget(int(request.args.get('budget')), request.args.get('windows')=="on")
-    pc_build = buildPc(budget)
-    print(pc_build)
+    pc_build = buildPc(budget, Brands[request.args.get('cpu')], Brands[request.args.get('gpu')])
     return render_template('results.html', **pc_build)
 
 @app.route('/budget', methods=['GET'])

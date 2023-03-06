@@ -30,22 +30,25 @@ def gatherPartData(part):
     df = pd.read_csv(path).dropna()
     pc_parts[part] = df[pd.to_numeric(df['Price'], errors='coerce').notnull()]
 
-def findPartsWithinBudget(part, budget):
+def findPartsWithinBudget(part, budget, preferredBrand):
     part_data = pc_parts[part]
+    if preferredBrand:
+        part_data = part_data[part_data["Brand"] == preferredBrand]
+
     part_data["Price"] = pd.to_numeric(part_data['Price'])
     part_data = part_data.sort_values(by=['Rank'], ascending=True)
     updated_part_data = part_data[part_data["Price"] <= budget]
     return updated_part_data.iloc[0]['Brand'] + " " + updated_part_data.iloc[0]['Model'] + " Part Number: " + updated_part_data.iloc[0]['Part Number']
 
-def buildPc(budget):
+def buildPc(budget, cpu, gpu):
     return {
-        "GPU": findPartsWithinBudget("GPU", budget["GPU"]),
-        "CPU": findPartsWithinBudget("CPU", budget["CPU"]),
-        "RAM": findPartsWithinBudget("RAM", budget["RAM"]),
-        "CASE": findPartsWithinBudget("CASE", budget["CASE"]),
+        "GPU": findPartsWithinBudget("GPU", budget["GPU"], gpu),
+        "CPU": findPartsWithinBudget("CPU", budget["CPU"], cpu),
+        "RAM": findPartsWithinBudget("RAM", budget["RAM"], None),
+        "CASE": findPartsWithinBudget("CASE", budget["CASE"], None),
         #"PSU": findPartsWithinBudget("power-supply", budget["PSU"]),
-        "SSD": findPartsWithinBudget("SSD", budget["SSD"]),
-        "HDD": findPartsWithinBudget("HDD", budget["HDD"]),
+        "SSD": findPartsWithinBudget("SSD", budget["SSD"], None),
+        "HDD": findPartsWithinBudget("HDD", budget["HDD"], None),
         #"Motherboard": findPartsWithinBudget("motherboard", budget["Motherboard"]),
         #"CPU Cooler": findPartsWithinBudget("cpu-cooler", budget["CPU Cooler"]),
     }
