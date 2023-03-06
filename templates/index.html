@@ -5,7 +5,7 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}">
 </head>
 <body>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Lexend" rel="stylesheet" />
     <div class="container">
         <h1>Build Your Own PC</h1>
         <form action = "build">
@@ -17,18 +17,24 @@
 
             <label for="cpu">Preferred CPU Brand:</label>
             <select id="cpu" name="cpu">
+                <option value="nopref">No Preference</option>
                 <option value="intel">Intel</option>
                 <option value="amd">AMD</option>
             </select>
 
             <label for="gpu">Preferred GPU Brand:</label>
             <select id="gpu" name="gpu">
+                <option value="nopref">No Preference</option>
                 <option value="nvidia">NVIDIA</option>
                 <option value="amd">AMD</option>
             </select>
 
             <button type="submit">Build My PC</button>
         </form>
+        <h1>Other Helpful Guides</h1>
+        <div class="guides">
+            
+        </div>
     </div>
 </body>
 </html>
