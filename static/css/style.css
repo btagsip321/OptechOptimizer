@@ -65,9 +65,6 @@ div.parts {
 
 option {
    font-family: 'Lexend';
-   border-style: round;
-   border-color: #000000;
-   
 }
 
 form {
@@ -80,4 +77,10 @@ h2 {
 
 p {
     font-family: 'Lexend';
+}
+
+select {
+   border-radius: 10px;
+   border: 2px solid #000000;
+
 }
