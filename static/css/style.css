@@ -34,8 +34,8 @@ label {
 
 input[type="number"], select {
     padding: 10px;
-    border-radius: 5px;
-    border: none;
+    border-radius: 10px;
+    border: 2px solid #000000;
     margin-bottom: 20px;
     font-family: 'Lexend';
 }
@@ -77,10 +77,4 @@ h2 {
 
 p {
     font-family: 'Lexend';
-}
-
-select {
-   border-radius: 10px;
-   border: 2px solid #000000;
-
 }
