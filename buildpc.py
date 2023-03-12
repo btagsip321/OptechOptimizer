@@ -9,15 +9,18 @@ pc_parts = {'CPU':None, 'GPU':None, 'HDD':None, 'RAM':None, 'SSD':None, 'CASE':N
 def buildBudget(budget, windows):
     subtr = (100 if windows else 10)
     budget -= subtr
-    caseMin = 25
-    budget -= caseMin
+    if((budget * .05) < 45):
+        budget -= 45
+        caseMoney = round((45), 2)
+    else:
+        caseMoney = round((budget * .05), 2)
     
     return {
         "GPU": round((budget * 0.306), 2),
         "CPU": round((budget * 0.216), 2),
         "Windows Key": subtr,
         "RAM": round((budget * 0.063), 2),
-        "CASE": (round((budget * .05), 2))+ caseMin,
+        "CASE": (caseMoney),
         "PSU": round((budget * .083), 2),
         "SSD": round((budget * .051), 2),
         "HDD": round((budget * .046), 2),
@@ -26,6 +29,7 @@ def buildBudget(budget, windows):
         "Wifi Adapter": round((budget * .025), 2),
         "Peripherals": round((budget * .046), 2)
     }
+
 
 def gatherPartData(part):
     path = os.path.join('./rendered_data/', part + '_UserBenchmarks.csv')
