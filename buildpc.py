@@ -14,6 +14,11 @@ def buildBudget(budget, windows):
         caseMoney = round((45), 2)
     else:
         caseMoney = round((budget * .05), 2)
+    if((budget * .051 < 51)):
+        budget -= 51
+        ssdMoney = 51
+    else:
+        ssdMoney = round((budget * .051), 2)
     
     return {
         "GPU": round((budget * 0.306), 2),
@@ -22,7 +27,7 @@ def buildBudget(budget, windows):
         "RAM": round((budget * 0.063), 2),
         "CASE": (caseMoney),
         "PSU": round((budget * .083), 2),
-        "SSD": round((budget * .051), 2),
+        "SSD": ssdMoney,
         "HDD": round((budget * .046), 2),
         "Motherboard": round((budget * .085), 2),
         "CPU Cooler": round((budget * .029), 2),
@@ -62,3 +67,5 @@ def buildPc(budget, cpu, gpu):
 for part in parts:
     print("Gathering part data for", part)
     gatherPartData(part)
+
+    
