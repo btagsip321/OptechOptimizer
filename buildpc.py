@@ -9,13 +9,15 @@ pc_parts = {'CPU':None, 'GPU':None, 'HDD':None, 'RAM':None, 'SSD':None, 'CASE':N
 def buildBudget(budget, windows):
     subtr = (100 if windows else 10)
     budget -= subtr
+    caseMin = 25
+    budget -= caseMin
     
     return {
         "GPU": round((budget * 0.306), 2),
         "CPU": round((budget * 0.216), 2),
         "Windows Key": subtr,
         "RAM": round((budget * 0.063), 2),
-        "CASE": round((budget * .05), 2),
+        "CASE": (round((budget * .05), 2))+ caseMin,
         "PSU": round((budget * .083), 2),
         "SSD": round((budget * .051), 2),
         "HDD": round((budget * .046), 2),
