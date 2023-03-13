@@ -71,15 +71,15 @@ def findPartsWithinBudget(part, budget, preferredBrand, ssdStorageSpace, hddStor
     updated_part_data = part_data[part_data["Price"] <= budget]
     return updated_part_data.iloc[0]['Brand'] + " " + updated_part_data.iloc[0]['Model'] + " Part Number: " + updated_part_data.iloc[0]['Part Number']
 
-def buildPc(budget, cpu, gpu, ssdStorageSpace, hddStorageSpace):
+def buildPc(budget, cpu, ssdStorageSpace, hddStorageSpace):
     return {
-        "GPU": findPartsWithinBudget("GPU", budget["GPU"], gpu, None, None),
-        "CPU": findPartsWithinBudget("CPU", budget["CPU"], cpu, None, None),
-        "RAM": findPartsWithinBudget("RAM", budget["RAM"], None, None, None),
-        "CASE": findPartsWithinBudget("CASE", budget["CASE"], None, None, None),
+        "GPU": findPartsWithinBudget("GPU", budget["GPU"], None, None),
+        "CPU": findPartsWithinBudget("CPU", budget["CPU"], None, None),
+        "RAM": findPartsWithinBudget("RAM", budget["RAM"], None, None),
+        "CASE": findPartsWithinBudget("CASE", budget["CASE"], None, None),
         #"PSU": findPartsWithinBudget("power-supply", budget["PSU"]),
-        "SSD": findPartsWithinBudget("SSD", budget["SSD"], None, ssdStorageSpace, None),
-        "HDD": findPartsWithinBudget("HDD", budget["HDD"], None, None, hddStorageSpace),
+        "SSD": findPartsWithinBudget("SSD", budget["SSD"], ssdStorageSpace, None),
+        "HDD": findPartsWithinBudget("HDD", budget["HDD"], None, hddStorageSpace),
         #"Motherboard": findPartsWithinBudget("motherboard", budget["Motherboard"]),
         #"CPU Cooler": findPartsWithinBudget("cpu-cooler", budget["CPU Cooler"]),
     }
