@@ -73,13 +73,13 @@ def findPartsWithinBudget(part, budget, preferredBrand, ssdStorageSpace, hddStor
 
 def buildPc(budget, cpu, ssdStorageSpace, hddStorageSpace):
     return {
-        "GPU": findPartsWithinBudget("GPU", budget["GPU"], None, None),
-        "CPU": findPartsWithinBudget("CPU", budget["CPU"], None, None),
-        "RAM": findPartsWithinBudget("RAM", budget["RAM"], None, None),
-        "CASE": findPartsWithinBudget("CASE", budget["CASE"], None, None),
+        "GPU": findPartsWithinBudget("GPU", budget["GPU"], None, None, None),
+        "CPU": findPartsWithinBudget("CPU", budget["CPU"], cpu, None, None),
+        "RAM": findPartsWithinBudget("RAM", budget["RAM"], None, None, None),
+        "CASE": findPartsWithinBudget("CASE", budget["CASE"], None, None, None),
         #"PSU": findPartsWithinBudget("power-supply", budget["PSU"]),
-        "SSD": findPartsWithinBudget("SSD", budget["SSD"], ssdStorageSpace, None),
-        "HDD": findPartsWithinBudget("HDD", budget["HDD"], None, hddStorageSpace),
+        "SSD": findPartsWithinBudget("SSD", budget["SSD"], None, ssdStorageSpace, None),
+        "HDD": findPartsWithinBudget("HDD", budget["HDD"], None, None, hddStorageSpace),
         #"Motherboard": findPartsWithinBudget("motherboard", budget["Motherboard"]),
         #"CPU Cooler": findPartsWithinBudget("cpu-cooler", budget["CPU Cooler"]),
     }
