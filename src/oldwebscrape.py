@@ -10,14 +10,6 @@ import re
 scraper = webdriver.Firefox()
 pc_parts = {}
 
-parts = {
-    "GPU": "https://gpu.userbenchmark.com/",
-    "CPU": "https://cpu.userbenchmark.com/",
-    "SSD": "https://ssd.userbenchmark.com/",
-    "HDD": "https://hdd.userbenchmark.com/",
-    "RAM": "https://ram.userbenchmark.com/",
-}
-
 def fetch_price(row):
     scraper.get(row['URL'])
     price = 0
@@ -36,15 +28,10 @@ def fetch_price(row):
     
     return price
 
-for part, url in parts:
-    #csv = pd.DataFrame(columns = ['Name', 'Price', 'Market Share'])
+for file in os.scandir("../data"):
+    if file.is_file():
+        print("Getting " + file.name)
+        pc_parts[file.name] = pd.read_csv(file.path).sort_values(by=['Benchmark'], ascending=False).head(200)
+        pc_parts[file.name]['Price'] = pc_parts[file.name].apply(lambda row: fetch_price(row), axis = 1)
 
-    scraper.get(url)
-    mytable = scraper.find_element(By.CSS_SELECTOR, '#tableDataForm\:mhtddyntac > table')
-    for row in mytable.find_element(By.CSS_SELECTOR, 'tr'):
-        for cell in row.find_element(By.TAG_NAME, 'td'):
-            print(cell.text)
-
-    #csv.to_csv()
-
-#pdb.set_trace()
+pdb.set_trace()
