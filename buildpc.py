@@ -43,17 +43,19 @@ def gatherPartData(part):
 
 def findPartsWithinBudget(part, budget, preferredBrand):
     part_data = pc_parts[part]
+
     if preferredBrand:
         part_data = part_data[part_data["Brand"] == preferredBrand]
 
     part_data["Price"] = pd.to_numeric(part_data['Price'])
     part_data = part_data.sort_values(by=['Rank'], ascending=True)
     updated_part_data = part_data[part_data["Price"] <= budget]
+
     return updated_part_data.iloc[0]['Brand'] + " " + updated_part_data.iloc[0]['Model'] + " Part Number: " + updated_part_data.iloc[0]['Part Number']
 
-def buildPc(budget, cpu, gpu):
+def buildPc(budget, cpu):
     return {
-        "GPU": findPartsWithinBudget("GPU", budget["GPU"], gpu),
+        "GPU": findPartsWithinBudget("GPU", budget["GPU"], None),
         "CPU": findPartsWithinBudget("CPU", budget["CPU"], cpu),
         "RAM": findPartsWithinBudget("RAM", budget["RAM"], None),
         "CASE": findPartsWithinBudget("CASE", budget["CASE"], None),
