@@ -19,7 +19,7 @@ def index():
 @app.route('/build', methods=['GET'])
 def build():
     budget = buildBudget(int(request.args.get('budget')), request.args.get('windows')=="on")
-    pc_build = buildPc(budget, Brands[request.args.get('cpu')], Brands[request.args.get('gpu')])
+    pc_build = buildPc(budget, Brands[request.args.get('cpu')])
     return render_template('results.html', **pc_build)
 
 @app.route('/budget', methods=['GET'])

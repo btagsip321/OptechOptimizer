@@ -59,6 +59,7 @@ def gatherPartData(part):
 
 def findPartsWithinBudget(part, budget, preferredBrand, ssdStorageSpace, hddStorageSpace):
     part_data = pc_parts[part]
+
     if preferredBrand:
         part_data = part_data[part_data["Brand"] == preferredBrand]
     if ssdStorageSpace:
@@ -69,6 +70,7 @@ def findPartsWithinBudget(part, budget, preferredBrand, ssdStorageSpace, hddStor
     part_data["Price"] = pd.to_numeric(part_data['Price'])
     part_data = part_data.sort_values(by=['Rank'], ascending=True)
     updated_part_data = part_data[part_data["Price"] <= budget]
+
     return updated_part_data.iloc[0]['Brand'] + " " + updated_part_data.iloc[0]['Model'] + " Part Number: " + updated_part_data.iloc[0]['Part Number']
 
 def buildPc(budget, cpu, ssdStorageSpace, hddStorageSpace):
