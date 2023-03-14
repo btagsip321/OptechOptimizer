@@ -18,33 +18,28 @@ parts = {
     "RAM": "https://ram.userbenchmark.com/",
 }
 
-def fetch_price(row):
-    scraper.get(row['URL'])
-    price = 0
-
+def fetch_price(raw_price):
     try:
-        price_button = scraper.find_element(By.CLASS_NAME, "nowrap")
-        price = float(re.sub("[^0-9]", "", price_button.text))
-        if price <= 10000:
-            print(price)
-        else:
-            price = 0
-            print("Price too high / DNE, setting to 0")
-
+        return int(raw_price.split("\n")[0][1:].replace(",",""))
     except:
-        print("Failed to get price")
-    
-    return price
+        return -1
 
-for part, url in parts:
-    #csv = pd.DataFrame(columns = ['Name', 'Price', 'Market Share'])
 
-    scraper.get(url)
+
+for part in parts:
+    csv = pd.DataFrame(columns = ['Rank', 'Name', 'Price'])
+
+    scraper.get(parts[part])
     mytable = scraper.find_element(By.CSS_SELECTOR, '#tableDataForm\:mhtddyntac > table')
-    for row in mytable.find_element(By.CSS_SELECTOR, 'tr'):
-        for cell in row.find_element(By.TAG_NAME, 'td'):
-            print(cell.text)
-
+    for row in mytable.find_elements(By.CSS_SELECTOR, 'tr'):
+        elements = row.find_elements(By.TAG_NAME, 'td')
+        if len(elements) > 0:
+            csv.loc[len(csv.index)] = [
+                int(elements[0].text),
+                elements[1].text.split("\n")[1],
+                fetch_price(elements[7].text)
+            ]
+    print(csv)
     #csv.to_csv()
 
 #pdb.set_trace()
