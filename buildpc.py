@@ -57,7 +57,7 @@ def gatherPartData(part):
                     df.at[index, "SizeGB"] = int(modelNo[oneBefore:place]) * 1000
     pc_parts[part] = df[pd.to_numeric(df['Price'], errors='coerce').notnull()]
 
-def findPartsWithinBudget(part, budget, preferredBrand, ssdStorageSpace, hddStorageSpace):
+'''def findPartsWithinBudget(part, budget, preferredBrand, ssdStorageSpace, hddStorageSpace):
     part_data = pc_parts[part]
 
     if preferredBrand:
@@ -72,8 +72,19 @@ def findPartsWithinBudget(part, budget, preferredBrand, ssdStorageSpace, hddStor
     updated_part_data = part_data[part_data["Price"] <= budget]
 
     return updated_part_data.iloc[0]['Brand'] + " " + updated_part_data.iloc[0]['Model'] + " Part Number: " + updated_part_data.iloc[0]['Part Number']
+'''
+def findPartsWithinBudget(part, budget, preferredBrand):
+    part_data = pc_parts[part]
 
-def buildPc(budget, cpu, ssdStorageSpace, hddStorageSpace):
+    if preferredBrand:
+        part_data = part_data[part_data["Brand"] == preferredBrand]
+    part_data["Price"] = pd.to_numeric(part_data['Price'])
+    part_data = part_data.sort_values(by=['Rank'], ascending=True)
+    updated_part_data = part_data[part_data["Price"] <= budget]
+
+    return updated_part_data.iloc[0]['Brand'] + " " + updated_part_data.iloc[0]['Model'] + " Part Number: " + updated_part_data.iloc[0]['Part Number']
+
+'''def buildPc(budget, cpu, ssdStorageSpace, hddStorageSpace):
     return {
         "GPU": findPartsWithinBudget("GPU", budget["GPU"], None, None, None),
         "CPU": findPartsWithinBudget("CPU", budget["CPU"], cpu, None, None),
@@ -82,6 +93,19 @@ def buildPc(budget, cpu, ssdStorageSpace, hddStorageSpace):
         #"PSU": findPartsWithinBudget("power-supply", budget["PSU"]),
         "SSD": findPartsWithinBudget("SSD", budget["SSD"], None, ssdStorageSpace, None),
         "HDD": findPartsWithinBudget("HDD", budget["HDD"], None, None, hddStorageSpace),
+        #"Motherboard": findPartsWithinBudget("motherboard", budget["Motherboard"]),
+        #"CPU Cooler": findPartsWithinBudget("cpu-cooler", budget["CPU Cooler"]),
+    }
+    '''
+def buildPc(budget, cpu):
+    return {
+        "GPU": findPartsWithinBudget("GPU", budget["GPU"], None),
+        "CPU": findPartsWithinBudget("CPU", budget["CPU"], cpu),
+        "RAM": findPartsWithinBudget("RAM", budget["RAM"], None),
+        "CASE": findPartsWithinBudget("CASE", budget["CASE"], None),
+        #"PSU": findPartsWithinBudget("power-supply", budget["PSU"]),
+        "SSD": findPartsWithinBudget("SSD", budget["SSD"], None),
+        "HDD": findPartsWithinBudget("HDD", budget["HDD"], None),
         #"Motherboard": findPartsWithinBudget("motherboard", budget["Motherboard"]),
         #"CPU Cooler": findPartsWithinBudget("cpu-cooler", budget["CPU Cooler"]),
     }
