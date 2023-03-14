@@ -37,7 +37,7 @@ def buildBudget(budget, windows):
 
 
 def gatherPartData(part):
-    path = os.path.join('./rendered_data/', part + '_UserBenchmarks.csv')
+    path = os.path.join('./old_data/', part + '_UserBenchmarks.csv')
     df = pd.read_csv(path).dropna()
     
     if(part == "SSD" or part == "HDD"):
