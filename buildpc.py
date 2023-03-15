@@ -6,7 +6,13 @@ import os
 parts = ['CPU','GPU','HDD','RAM','SSD', 'CASE']
 pc_parts = {'CPU':None, 'GPU':None, 'HDD':None, 'RAM':None, 'SSD':None, 'CASE':None}
 
-def buildBudget(budget, windows):
+def cleanBudget(budget, minBudget =0, maxBudget =1000):
+    try:
+        return max(minBudget, min(round(budget, 2), maxBudget))
+    except:
+        return 0
+
+def buildBudget(budget, windows = False):
     subtr = (100 if windows else 10)
     budget -= subtr
     if((budget * .05) < 45):
@@ -20,21 +26,22 @@ def buildBudget(budget, windows):
     else:
         ssdMoney = round((budget * .051), 2)
     
-    return {
-        "GPU": round((budget * 0.306), 2),
-        "CPU": round((budget * 0.216), 2),
-        "Windows Key": subtr,
-        "RAM": round((budget * 0.063), 2),
-        "CASE": (caseMoney),
-        "PSU": round((budget * .083), 2),
-        "SSD": ssdMoney,
-        "HDD": round((budget * .046), 2),
-        "Motherboard": round((budget * .085), 2),
-        "CPU Cooler": round((budget * .029), 2),
-        "Wifi Adapter": round((budget * .025), 2),
-        "Peripherals": round((budget * .046), 2)
-    }
+    budget = cleanBudget(budget, 1000, 15000)
 
+    return {
+        "GPU": cleanBudget((budget * 0.306), 2),
+        "CPU": cleanBudget((budget * 0.216), 2),
+        "Windows Key": subtr,
+        "RAM": cleanBudget((budget * 0.063), 2),
+        "CASE": (caseMoney),
+        "PSU": cleanBudget((budget * .083), 2),
+        "SSD": ssdMoney,
+        "HDD": cleanBudget((budget * .046), 2),
+        "Motherboard": cleanBudget((budget * .085), 2),
+        "CPU Cooler": cleanBudget((budget * .029), 2),
+        "Wifi Adapter": cleanBudget((budget * .025), 2),
+        "Peripherals": cleanBudget((budget * .046), 2)
+    }
 
 def gatherPartData(part):
     path = os.path.join('./old_data/', part + '_UserBenchmarks.csv')
