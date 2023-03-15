@@ -8,7 +8,7 @@ GPU,RTX 4080 16GB GAMING X TRIO,MSI,MSI RTX 4080 16GB Gaming X Trio,2,290,8664,h
 GPU,GV-N4080GAMING OC-16GD,Gigabyte,Gigabyte RTX 4080 16GB Gaming OC,2,290,8664,https://gpu.userbenchmark.com/Nvidia-RTX-4080/Rating/4138,1224
 GPU,ZT-D40810B-10P,Zotac,Zotac RTX 4080 16GB AMP Extreme,2,290,8664,https://gpu.userbenchmark.com/Nvidia-RTX-4080/Rating/4138,1224
 GPU,RTX 4080 16GB Suprim X,MSI,MSI RTX 4080 16GB Suprim X,2,290,8664,https://gpu.userbenchmark.com/Nvidia-RTX-4080/Rating/4138,1224
-GPU,,AMD,RX 7900-XTX,3,254,392,https://gpu.userbenchmark.com/AMD-RX-7900-XTX/Rating/4142,210
+GPU,,AMD,RX 7900-XTX,3,254,392,https://gpu.userbenchmark.com/AMD-RX-7900-XTX/Rating/4142,1000
 GPU,,Nvidia,RTX 4070-Ti,4,239,676,https://gpu.userbenchmark.com/Nvidia-RTX-4070-Ti/Rating/4146,850
 GPU,RTX 4070 Ti GAMING X TRIO 12G,MSI,MSI RTX 4070 Ti 12GB Gaming X Trio,4,239,676,https://gpu.userbenchmark.com/Nvidia-RTX-4070-Ti/Rating/4146,850
 GPU,GeForce RTX 4070 Ti VENTUS 3X 12G OC,MSI,MSI RTX 4070 Ti 12GB Ventus 3X,4,239,676,https://gpu.userbenchmark.com/Nvidia-RTX-4070-Ti/Rating/4146,850
@@ -16,8 +16,8 @@ GPU,ZT-D40710D-10P,Zotac,Zotac RTX 4070 Ti 12GB Trinity,4,239,676,https://gpu.us
 GPU,TUF-RTX4070TI-O12G-GAMING,Asus,Asus RTX 4070 Ti 12GB TUF Gaming OC,4,239,676,https://gpu.userbenchmark.com/Nvidia-RTX-4070-Ti/Rating/4146,850
 GPU,GV-N407TEAGLE OC-12GD,Gigabyte,Gigabyte RTX 4070 Ti 12GB Eagle OC,4,239,676,https://gpu.userbenchmark.com/Nvidia-RTX-4070-Ti/Rating/4146,850
 GPU,TUF-RTX4070TI-12G-GAMING,Asus,Asus RTX 4070 Ti 12GB TUF Gaming,4,239,676,https://gpu.userbenchmark.com/Nvidia-RTX-4070-Ti/Rating/4146,850
-GPU,,Nvidia,RTX 3090-Ti,5,229,15217,https://gpu.userbenchmark.com/SpeedTest/1818101/NVIDIA-GeForce-RTX-3090-Ti,"Price too high / DNE, setting to 0"
-GPU,,AMD,RX 7900-XT,6,220,860,https://gpu.userbenchmark.com/AMD-RX-7900-XT/Rating/4141,210
+GPU,,Nvidia,RTX 3090-Ti,5,229,15217,https://gpu.userbenchmark.com/SpeedTest/1818101/NVIDIA-GeForce-RTX-3090-Ti,1199.99
+GPU,,AMD,RX 7900-XT,6,220,860,https://gpu.userbenchmark.com/AMD-RX-7900-XT/Rating/4141,784.99
 GPU,,Nvidia,RTX 3090,7,210,158856,https://gpu.userbenchmark.com/Nvidia-RTX-3090/Rating/4081,1449
 GPU,‎ROG-STRIX-RTX3090-O24G-GAMING,Asus,Asus RTX 3090 24GB ROG Strix,7,210,158856,https://gpu.userbenchmark.com/Nvidia-RTX-3090/Rating/4081,1449
 GPU,‎TUF-RTX3090-O24G-GAMING,Asus,Asus RTX 3090 24GB Tuf OC,7,210,158856,https://gpu.userbenchmark.com/Nvidia-RTX-3090/Rating/4081,1449
@@ -38,8 +38,8 @@ GPU,GV-N308TVISION OC-12GD,Gigabyte,Gigabyte RTX 3080 Ti 12GB Vision OC,8,206,16
 GPU,GeForce RTX 3080 Ti SUPRIM X 12G,MSI,MSI RTX 3080 Ti 12GB Suprim X,8,206,166050,https://gpu.userbenchmark.com/Nvidia-RTX-3080-Ti/Rating/4115,1100
 GPU,GV-N308TAORUS M-12GD,Gigabyte,Gigabyte RTX 3080 Ti 12GB Aorus Master,8,206,166050,https://gpu.userbenchmark.com/Nvidia-RTX-3080-Ti/Rating/4115,1100
 GPU,GV-N308TEAGLE-12GD,Gigabyte,Gigabyte RTX 3080 Ti 12GB Eagle,8,206,166050,https://gpu.userbenchmark.com/Nvidia-RTX-3080-Ti/Rating/4115,1100
-GPU,,AMD,RX 6950-XT,9,200,1735,https://gpu.userbenchmark.com/SpeedTest/1843533/AMD-Radeon-RX-6950-XT,170
-GPU,,AMD,RX 6900-XT,10,193,16858,https://gpu.userbenchmark.com/AMD-RX-6900-XT/Rating/4091,210
+GPU,,AMD,RX 6950-XT,9,200,1735,https://gpu.userbenchmark.com/SpeedTest/1843533/AMD-Radeon-RX-6950-XT,784.99
+GPU,,AMD,RX 6900-XT,10,193,16858,https://gpu.userbenchmark.com/AMD-RX-6900-XT/Rating/4091,1000
 GPU,,Nvidia,RTX 3080,11,187,424051,https://gpu.userbenchmark.com/Nvidia-RTX-3080/Rating/4080,760
 GPU,RTX 3080 Ventus 3X Plus 10G OC LHR,MSI,MSI RTX 3080 10GB Ventus 3X OC,11,187,424051,https://gpu.userbenchmark.com/Nvidia-RTX-3080/Rating/4080,760
 GPU,GV-N3080GAMING OC-10GD-V2,Gigabyte,Gigabyte RTX 3080 10GB Gaming OC,11,187,424051,https://gpu.userbenchmark.com/Nvidia-RTX-3080/Rating/4080,760
@@ -49,8 +49,8 @@ GPU,‎ZT-A30800J-10PLHR,Zotac,Zotac RTX 3080 10GB Trinity OC,11,187,424051,http
 GPU,‎10G-P5-3897-KR,EVGA,EVGA RTX 3080 10GB FTW3 Ultra Gaming,11,187,424051,https://gpu.userbenchmark.com/Nvidia-RTX-3080/Rating/4080,760
 GPU,GV-N3080AORUS X-10GD REV2.0,Gigabyte,Gigabyte RTX 3080 10GB Aorus Master,11,187,424051,https://gpu.userbenchmark.com/Nvidia-RTX-3080/Rating/4080,760
 GPU,RTX 3080 Gaming Z Trio 10G LHR,MSI,MSI RTX 3080 10GB Gaming Z Trio,11,187,424051,https://gpu.userbenchmark.com/Nvidia-RTX-3080/Rating/4080,760
-GPU,,Nvidia,Quadro RTX A6000,12,177,1,https://gpu.userbenchmark.com/SpeedTest/1300600/NVIDIA-Quadro-RTX-A6000,"Price too high / DNE, setting to 0"
-GPU,,AMD,RX 6800-XT,13,171,28874,https://gpu.userbenchmark.com/AMD-RX-6800-XT/Rating/4089,210
+GPU,,Nvidia,Quadro RTX A6000,12,177,1,https://gpu.userbenchmark.com/SpeedTest/1300600/NVIDIA-Quadro-RTX-A6000,4089
+GPU,,AMD,RX 6800-XT,13,171,28874,https://gpu.userbenchmark.com/AMD-RX-6800-XT/Rating/4089,689.99
 GPU,,Nvidia,Titan RTX,14,168,2418,https://gpu.userbenchmark.com/SpeedTest/664199/NVIDIA-TITAN-RTX,1850
 GPU,900-1G150-2500-000,Nvidia,NVidia Titan RTX 24GB,14,168,2418,https://gpu.userbenchmark.com/SpeedTest/664199/NVIDIA-TITAN-RTX,1850
 GPU,,Nvidia,Quadro RTX 6000,15,162,893,https://gpu.userbenchmark.com/SpeedTest/736712/NVIDIA-Quadro-RTX-6000,"Price too high / DNE, setting to 0"
