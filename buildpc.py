@@ -29,18 +29,18 @@ def buildBudget(budget, windows = False):
     budget = cleanBudget(budget, 1000, 15000)
 
     return {
-        "GPU": cleanBudget((budget * 0.306), 2),
-        "CPU": cleanBudget((budget * 0.216), 2),
+        "GPU": cleanBudget((budget * 0.306), 0, 5000),
+        "CPU": cleanBudget((budget * 0.216), 0, 5000),
         "Windows Key": subtr,
-        "RAM": cleanBudget((budget * 0.063), 2),
+        "RAM": cleanBudget((budget * 0.063)),
         "CASE": (caseMoney),
-        "PSU": cleanBudget((budget * .083), 2),
+        "PSU": cleanBudget((budget * .083)),
         "SSD": ssdMoney,
-        "HDD": cleanBudget((budget * .046), 2),
-        "Motherboard": cleanBudget((budget * .085), 2),
-        "CPU Cooler": cleanBudget((budget * .029), 2),
-        "Wifi Adapter": cleanBudget((budget * .025), 2),
-        "Peripherals": cleanBudget((budget * .046), 2)
+        "HDD": cleanBudget((budget * .046)),
+        "Motherboard": cleanBudget((budget * .085)),
+        "CPU Cooler": cleanBudget((budget * .029)),
+        "Wifi Adapter": cleanBudget((budget * .025)),
+        "Peripherals": cleanBudget((budget * .046))
     }
 
 def gatherPartData(part):
