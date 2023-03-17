@@ -3,14 +3,16 @@
 <head>
     <title>Computer Build</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </head>
 <body>
     <link href="https://fonts.googleapis.com/css?family=Lexend" rel="stylesheet" />
     <div class="container">
         <h1>Build Your Own PC</h1>
-        <form action = "build">
+        <form action="build">
             <label for="budget">Budget:</label>
-            <input type="number" id="budget" name="budget" placeholder="Enter budget in USD ($)">
+            <input type="range" id="budget" name="budget" min="800" max="4000" step="50" value="1000">
+            <output for="budget" id="budgetOutput">$1000</output>
 
             <label for="windows">Include Windows Key:</label>
             <input type="checkbox" id="windows" name="windows">
@@ -23,14 +25,45 @@
             </select>
 
             <label for="ssdStorage">Minimum SSD Storage:</label>
-            <input type="number" id="ssdStorage" name="ssdStorage" placeholder="Enter SSD Storage (GB) (Default: No Preference)">
+            <input type="range" id="ssdStorage" name="ssdStorage" min="0" max="1000" step="50" value="0">
+            <output for="ssdStorage" id="ssdStorageOutput">No Preference</output>
 
             <label for="hddStorage">Minimum HDD Storage:</label>
-            <input type="number" id="hddStorage" name="hddStorage" placeholder="Enter HDD Storage (GB) (Default: No Preference)">
+            <input type="range" id="hddStorage" name="hddStorage" min="0" max="4000" step="250" value="0">
+            <output for="hddStorage" id="hddStorageOutput">No Preference</output>
 
             <button type="submit">Build My PC</button>
         </form>
-
     </div>
+
+    <script>
+        $(document).ready(function() {
+            $('.container').addClass('loaded');
+            $('.loader').addClass('loaded');
+
+            $('#budget').on('input', function() {
+                var budgetVal = $(this).val();
+                $('#budgetOutput').html('$' + budgetVal);
+            });
+
+            $('#ssdStorage').on('input', function() {
+                var ssdStorageVal = $(this).val();
+                if (ssdStorageVal == 0) {
+                    $('#ssdStorageOutput').html('No Preference');
+                } else {
+                    $('#ssdStorageOutput').html(ssdStorageVal + 'GB');
+                }
+            });
+
+            $('#hddStorage').on('input', function() {
+                var hddStorageVal = $(this).val();
+                if (hddStorageVal == 0) {
+                    $('#hddStorageOutput').html('No Preference');
+                } else {
+                    $('#hddStorageOutput').html(hddStorageVal + 'GB');
+                }
+            });
+        });
+    </script>
 </body>
 </html>

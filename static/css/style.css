@@ -1,12 +1,36 @@
+/* Center the loader */
+.loader {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    background-color: #f1f2f3;
+}
+
+p {
+    font-family: 'Lexend';
+}
+
+/* Style the loading image */
+.loader img {
+    width: 150px;
+    height: 150px;
+}
+
+.loadingtxt {
+    text-align: center;
+}
+
 body {
-   background-color: #FFFFFF;
-   color: #000000;
-   font-family: 'Lexend';
-   min-height: 80vh;
+    background-color: #f1f2f3;
+    color: #000000;
+    font-family: 'Lexend';
+    min-height: 80vh;
 }
 
 .container {
-    background-color: #ffffff;
+    background-color: #f1f2f3;
     max-width: 500px;
     margin: 0 auto;
     padding: 20px;
@@ -14,6 +38,13 @@ body {
     border-style: double;
     border-color: #414a4c;
     font-family: 'Lexend';
+    display: none;
+}
+
+/* Show the container when the page is fully loaded */
+.loaded {
+    background-color: #FFFFFF;
+    display: block;
 }
 
 h1 {
@@ -42,7 +73,7 @@ input[type="number"], select {
 
 input[type="checkbox"] {
     margin-right: 10px;
-   margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 button {
@@ -58,13 +89,13 @@ button {
 }
 
 div.parts {
-   background-color: #FFFFFF;
-   color: #000000;
-   font-family: 'Lexend';
+    background-color: #FFFFFF;
+    color: #000000;
+    font-family: 'Lexend';
 }
 
 option {
-   font-family: 'Lexend';
+    font-family: 'Lexend';
 }
 
 form {
@@ -72,9 +103,5 @@ form {
 }
 
 h2 {
-    font-family: 'Lexend';
-}
-
-p {
     font-family: 'Lexend';
 }

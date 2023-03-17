@@ -1,0 +1,151 @@
+Rank,Name,Price
+1,Nvidia RTX 3060 $350,350
+2,Nvidia RTX 3060-Ti $419,419
+3,Nvidia RTX 4070-Ti $800,800
+4,Nvidia GTX 1660S (Super) $240,240
+5,Nvidia RTX 3070 $548,548
+6,Nvidia RTX 3050 $268,268
+7,Nvidia RTX 3080 $735,735
+8,"Nvidia RTX 4090 $1,729",1729
+9,Nvidia GTX 1060-6GB,-1
+10,Nvidia RTX 2060 $290,290
+11,"Nvidia RTX 4080 $1,200",1200
+12,Nvidia GTX 1650S (Super) $339,339
+13,"Nvidia RTX 2070S (Super) $1,810",1810
+14,Nvidia RTX 2060S (Super),-1
+15,Nvidia GTX 1660-Ti $430,430
+16,Nvidia GTX 1070 $488,488
+17,Nvidia GTX 1050-Ti $181,181
+18,Nvidia GTX 1650 $188,188
+19,AMD RX 580 $189,189
+20,AMD RX 590,-1
+21,Nvidia GTX 1080-Ti $500,500
+22,Nvidia RTX 2080S (Super),-1
+23,Nvidia GTX 1660 $250,250
+24,Nvidia GTX 1080 $323,323
+25,Nvidia RTX 2080-Ti $998,998
+26,"Nvidia RTX 3090 $1,350",1350
+27,Nvidia GTX 1070-Ti,-1
+28,Nvidia GTX 970,-1
+29,AMD RX 5700,-1
+30,AMD RX 570 $299,299
+31,Nvidia GTX 980-Ti,-1
+32,AMD RX 6600-XT $300,300
+33,Nvidia RTX 2070 $500,1700
+34,Nvidia GTX 1060-3GB $119,119
+35,Nvidia GTX 980,-1
+36,AMD RX 480,-1
+37,AMD R9 380,-1
+38,Nvidia RTX 3070-Ti $628,628
+39,AMD R9 290X,-1
+40,Nvidia GTX 960,-1
+41,"Nvidia RTX 2080 $1,000",1000
+42,AMD RX 6600 $220,220
+43,AMD R9 Fury-X,-1
+44,AMD R9 390,-1
+45,Nvidia GTX 750-Ti,-1
+46,AMD R9 390X,-1
+47,AMD RX 470,-1
+48,AMD R9 270X,-1
+49,AMD R9 290,-1
+50,AMD R9 Fury,-1
+51,Nvidia RTX 3090-Ti,-1
+52,AMD RX 6700-XT,-1
+53,AMD R9 280X,-1
+54,AMD RX 6900-XT,-1
+55,"Nvidia RTX 3080-Ti $1,429",1429
+56,Nvidia GTX 780-Ti,-1
+57,Nvidia GT 1030,-1
+58,Nvidia GTX 950,-1
+59,AMD HD 7970,-1
+60,AMD HD 7850,-1
+61,AMD RX 6800-XT,-1
+62,AMD R9 380X,-1
+63,AMD Radeon-VII,-1
+64,Nvidia RTX 2060 (Mobile),-1
+65,Nvidia RTX 3060 (Laptop),-1
+66,AMD RX 5500-XT,-1
+67,AMD RX 460,-1
+68,AMD R9 280,-1
+69,AMD RX Vega 8 (Ryzen iGPU),-1
+70,Intel Iris Xe,-1
+71,Nvidia GTX 1050 $150,150
+72,AMD RX 5700-XT $319,319
+73,AMD HD 7950,-1
+74,AMD R9 270,-1
+75,AMD R7 360,-1
+76,AMD RX Vega 11 (Ryzen iGPU),-1
+77,AMD RX 560,-1
+78,Nvidia RTX 3050-Ti (Laptop),-1
+79,AMD HD 7870,-1
+80,AMD RX 550,-1
+81,AMD RX Vega-56,-1
+82,"Nvidia Titan RTX $2,749",2749
+83,AMD RX 6800,-1
+84,Nvidia GTX 770,-1
+85,Nvidia GTX 780,-1
+86,Nvidia GTX 560 Ti,-1
+87,Nvidia GTX 680,-1
+88,AMD R7 260X,-1
+89,AMD R7 370,-1
+90,Nvidia GTX 1060 (Mobile),-1
+91,Nvidia GTX 1070 (Mobile),-1
+92,Nvidia Titan Xp,-1
+93,Nvidia Titan V,-1
+94,Nvidia RTX 2070 (Mobile Max-Q),-1
+95,Nvidia GTX 1660-Ti (Mobile),-1
+96,Nvidia GTX 1650-Ti (Mobile),-1
+97,Nvidia RTX 3070 (Laptop),-1
+98,Nvidia GTX 550-Ti,-1
+99,Intel HD 520 (Mobile Skylake),-1
+100,Intel UHD Graphics 630 (Desktop Coffee Lake i5 i7),-1
+101,Nvidia GTX 650 Ti Boost,-1
+102,Nvidia MX150-0,-1
+103,AMD HD 7770,-1
+104,AMD HD 6950,-1
+105,AMD R7 265,-1
+106,Nvidia GTX 750,-1
+107,Nvidia Quadro K6000,-1
+108,AMD R9 285,-1
+109,Nvidia GTX 960M,-1
+110,Nvidia 940MX,-1
+111,Nvidia Titan X Pascal,-1
+112,Nvidia GTX 1050-Ti (Mobile),-1
+113,AMD Radeon 520,-1
+114,Nvidia GTX 1060 (Mobile Max-Q),-1
+115,AMD RX Vega 10 (Ryzen iGPU),-1
+116,AMD Radeon 530,-1
+117,Nvidia RTX 2070 (Mobile),-1
+118,Nvidia GTX 1660-Ti (Mobile Max-Q),-1
+119,Nvidia GTX 1650 (Mobile),-1
+120,Intel UHD Graphics 620 (Mobile Kaby Lake R),-1
+121,Nvidia GTX Titan X,-1
+122,Nvidia MX130,-1
+123,Nvidia GTX 660-Ti,-1
+124,AMD R7 240,-1
+125,Nvidia Quadro K620,-1
+126,Intel HD 4600 (Desktop 1.25 GHz),-1
+127,AMD Radeon R7 Graphics,-1
+128,Nvidia RTX 3050 (Laptop),-1
+129,Nvidia GTX 970M,-1
+130,AMD RX 6650-XT,-1
+131,Nvidia GTX 760,-1
+132,AMD RX 5600-XT $480,-1
+133,AMD RX 5500,-1
+134,Nvidia GeForce GT 740M,-1
+135,AMD HD 6850,-1
+136,Nvidia GTX 570,-1
+137,Nvidia GeForce 840M,-1
+138,Nvidia GTX 860M,-1
+139,AMD FirePro W7000,-1
+140,Nvidia GTX 980M,-1
+141,AMD Vega Frontier Edition,-1
+142,AMD RX Vega-64LC (Liquid Cooled),-1
+143,AMD RX Vega 3 (Ryzen iGPU),-1
+144,Nvidia GTX 1650 (Mobile Max-Q),-1
+145,Nvidia GeForce MX250,-1
+146,Nvidia GeForce MX230,-1
+147,AMD Radeon Pro 5500M,-1
+148,Nvidia GTX 1050 (Mobile),-1
+149,Nvidia GTX 580,-1
+150,Nvidia GeForce GT 740,-1

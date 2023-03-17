@@ -3,6 +3,7 @@
 <head>
 	<title>PC Build Results</title>
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </head>
 <body>
 	<link href="https://fonts.googleapis.com/css?family=Lexend" rel="stylesheet" />
@@ -30,5 +31,32 @@
 			<p>{{ HDD }}</p>
 		</div>
 	</div>
+
+	<div class="loader">
+		<img src="{{ url_for('static',filename='loading.gif') }}" alt="loading...">
+		<p class = "loadingtxt">Allocating budget...</p>
+	</div>
+
+	<script>
+		$(document).ready(function() {
+		  setTimeout(function() {
+			$('.loadingtxt').text("Finding parts...")
+		  }, 1000)
+
+		  setTimeout(function() {
+			$('.loadingtxt').text("Compiling build...")
+		  }, 2000)
+
+		  // Fade out the loading screen after 3 seconds
+		  setTimeout(function() {
+			$('.loadingtxt').text("Done!")
+
+			$('.loader').fadeOut("slow");
+
+			$('.loader').addClass('loaded');
+			$('.container').addClass('loaded');
+		  }, 3000);
+		});
+	  </script>
 </body>
 </html>
