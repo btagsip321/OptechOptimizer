@@ -5,7 +5,7 @@
     top: 50%;
     transform: translate(-50%, -50%);
     z-index: 9999;
-    background-color: #f1f2f3;
+    background-color: #ffffff;
 }
 
 p {
@@ -30,7 +30,7 @@ body {
 }
 
 .container {
-    background-color: #f1f2f3;
+    background-color: #ffffff;
     max-width: 500px;
     margin: 0 auto;
     padding: 20px;
