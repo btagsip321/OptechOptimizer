@@ -55,14 +55,18 @@ def findPartsWithinBudget(part, budget, preferredBrand, ssdStorageSpace, hddStor
     part_data = pc_parts[part]
 
     if preferredBrand:
-        part_data = part_data[part_data["Name"] in preferredBrand]
+        part_data = part_data[part_data["Name"].str.contains(preferredBrand)]
     if ssdStorageSpace:
         part_data = part_data[part_data["Capacity"].astype(int) >= ssdStorageSpace]
     if hddStorageSpace:
         part_data = part_data[part_data["Capacity"].astype(int) >= hddStorageSpace]
     
     part_data = part_data[part_data["Price"] <= budget]
-    return part_data.iloc[0]['Name']
+    display = part_data.iloc[0]['Name']
+    if not ("$" in display):
+        display = display + " $" + str(part_data.iloc[0]['Price'])
+
+    return display
 
 def buildPc(budget, cpu, ssdStorageSpace, hddStorageSpace):
     return {
