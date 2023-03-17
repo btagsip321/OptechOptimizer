@@ -13,27 +13,27 @@
 		<a href="/">Make Another Build</a>
 		<div class="parts">
 			<h2>GPU:</h2>
-			<p>{{ GPU }}</p>
+			<p href = "{{ GPU_URL }}">{{ GPU }}</p>
 
 			<h2>CPU:</h2>
-			<p>{{ CPU }}</p>
+			<p href = "{{ CPU_URL }}">{{ CPU }}</p>
 
 			<h2>RAM:</h2>
-			<p>{{ RAM }}</p>
+			<p href = "{{ GPU_URL }}">{{ RAM }}</p>
 
 			<h2>Case:</h2>
-			<p>{{ CASE }}</p>
+			<p href = "{{ CASE_URL }}">{{ CASE }}</p>
 
 			<h2>SSD:</h2>
-			<p>{{ SSD }}</p>
+			<p href = "{{ SSD_URL }}">{{ SSD }}</p>
 
 			<h2>HDD:</h2>
-			<p>{{ HDD }}</p>
+			<p href = "{{ HDD_URL }}">{{ HDD }}</p>
 		</div>
 	</div>
 
 	<div class="loader">
-		<img src="{{ url_for('static',filename='loading.gif') }}" alt="loading...">
+		<img src="{{ url_for('static',filename='spinner.svg') }}" alt="loading...">
 		<p class = "loadingtxt">Allocating budget...</p>
 	</div>
 
@@ -41,11 +41,11 @@
 		$(document).ready(function() {
 		  setTimeout(function() {
 			$('.loadingtxt').text("Finding parts...")
-		  }, 1000)
+		  }, 500)
 
 		  setTimeout(function() {
 			$('.loadingtxt').text("Compiling build...")
-		  }, 2000)
+		  }, 1000)
 
 		  // Fade out the loading screen after 3 seconds
 		  setTimeout(function() {
@@ -55,7 +55,7 @@
 
 			$('.loader').addClass('loaded');
 			$('.container').addClass('loaded');
-		  }, 3000);
+		  }, 1500);
 		});
 	  </script>
 </body>
