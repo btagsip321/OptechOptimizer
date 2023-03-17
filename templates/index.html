@@ -25,12 +25,11 @@
             </select>
 
             <label for="ssdStorage">Minimum SSD Storage:</label>
-            <input type="range" id="ssdStorage" name="ssdStorage" min="0" max="1000" step="50" value="0">
-            <output for="ssdStorage" id="ssdStorageOutput">No Preference</output>
+            <input type="number" id="ssdStorage" name="ssdStorage">
 
             <label for="hddStorage">Minimum HDD Storage:</label>
-            <input type="range" id="hddStorage" name="hddStorage" min="0" max="4000" step="250" value="0">
-            <output for="hddStorage" id="hddStorageOutput">No Preference</output>
+            <input type="number" id="hddStorage" name="hddStorage">
+            
 
             <button type="submit">Build My PC</button>
         </form>
