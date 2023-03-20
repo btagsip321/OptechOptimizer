@@ -10,15 +10,15 @@ import re
 import glob
 
 # Selenium web driver scraper. Uses firefox since this is the only browser that works on my laptop
-SCRAPER = webdriver.Firefox()
+SCRAPER = webdriver.Chrome()
 
 # List of parts to loop through, with the part category as the key and the URL as the value
 PARTS = {
-    "GPU": ["https://gpu.userbenchmark.com/", {"Rank":0, "Name":1, "Price":7}],
-    "CPU": ["https://cpu.userbenchmark.com/", {"Rank":0, "Name":1, "Price":9}],
-    "RAM": ["https://ram.userbenchmark.com/", {"Rank":0, "Name":1, "Price":9}],
-    "SSD": ["https://ssd.userbenchmark.com/", {"Rank":0, "Name":1, "Price":9, "Capacity":5}],
-    "HDD": ["https://hdd.userbenchmark.com/", {"Rank":0, "Name":1, "Price":9, "Capacity":5}],
+    "GPU": ["https://gpu.userbenchmark.com/", {"Rank":0, "Name":1, "Benchmark":4, "Price":7}],
+    "CPU": ["https://cpu.userbenchmark.com/", {"Rank":0, "Name":1, "Benchmark":4, "Price":9}],
+    "RAM": ["https://ram.userbenchmark.com/", {"Rank":0, "Name":1, "Benchmark":4, "Price":9}],
+    "SSD": ["https://ssd.userbenchmark.com/", {"Rank":0, "Name":1, "Benchmark":4, "Price":9, "Capacity":5}],
+    "HDD": ["https://hdd.userbenchmark.com/", {"Rank":0, "Name":1, "Benchmark":4, "Price":9, "Capacity":5}],
 }
 
 # Number of iterations, amount of entries = 50 + iterations*50
@@ -59,12 +59,16 @@ for part in PARTS:
             elements = row.find_elements(By.TAG_NAME, 'td')
             if len(elements) > 0:
 
+                print(elements[format["Rank"]].text)
+                print(elements[format["Benchmark"]].text)
                 # Initiate new row variable
                 newRow = [
                     int(elements[format["Rank"]].text), #Rank
                     elements[format["Name"]].text.split("\n")[1], #Name
+                    int(elements[format["Benchmark"]].text), #Benchmark
                     fetch_price(elements[format["Price"]].text), #Price
                 ]
+                print(elements[format["Name"]].get_attribute("href"))
 
                 # Capacity, only for SSD and HDD
                 if (part == "SSD" or part == "HDD"):

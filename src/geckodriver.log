@@ -331,3 +331,4 @@ JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch res
 JavaScript warning: https://pagead2.googlesyndication.com/bg/sArRvrN6I189drjF6Of_TQ6Xi_0Jr1YUSK6Bd2dnyeI.js line 2 > eval line 4322 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
 1678910151339	Marionette	INFO	Stopped listening on port 52256
 Dynamically enable window occlusion 1
+1679317392418	geckodriver	INFO	Listening on 127.0.0.1:53624
