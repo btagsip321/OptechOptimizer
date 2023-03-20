@@ -6,9 +6,9 @@ import os
 parts = ['CPU','GPU','HDD','RAM','SSD','CASE']
 pc_parts = {'CPU':None, 'GPU':None, 'HDD':None, 'RAM':None, 'SSD':None, 'CASE':None}
 
-def cleanBudget(budget, minBudget =0, maxBudget =1000):
+def cleanBudget(budget, minBudget =0, maxBudget =50000):
     try:
-        return max(minBudget, min(round(budget, 2), maxBudget))
+        return round(budget, 2)
     except:
         return 0
 
@@ -28,11 +28,11 @@ def buildBudget(budget, windows = False):
     else:
         ssdMoney = round((budget * .051), 2)
     
-    budget = cleanBudget(budget, 800, 15000)
+    budget = cleanBudget(budget, 800, 50000)
 
     return {
-        "GPU": cleanBudget((budget * 0.306), 0, 5000),
-        "CPU": cleanBudget((budget * 0.216), 0, 5000),
+        "GPU": cleanBudget((budget * 0.306), 0, 50000),
+        "CPU": cleanBudget((budget * 0.216), 0, 50000),
         "Windows Key": subtr,
         "RAM": cleanBudget((budget * 0.063)),
         "CASE": (caseMoney),
@@ -61,7 +61,7 @@ def findPartsWithinBudget(part, budget, preferredBrand, ssdStorageSpace, hddStor
     if hddStorageSpace:
         part_data = part_data[part_data["Capacity"].astype(int) >= hddStorageSpace]
     
-    part_data = part_data[part_data["Price"] <= budget]
+    part_data = part_data[part_data["Price"] <= budget].sort_values(['Price'], ascending = [False])
     display = part_data.iloc[0]['Name']
     if not ("$" in display):
         display = display + " $" + str(part_data.iloc[0]['Price'])
@@ -69,14 +69,18 @@ def findPartsWithinBudget(part, budget, preferredBrand, ssdStorageSpace, hddStor
     return display
 
 def buildPc(budget, cpu, ssdStorageSpace, hddStorageSpace):
+    print(budget)
     return {
         "GPU": findPartsWithinBudget("GPU", budget["GPU"], None, None, None),
         "CPU": findPartsWithinBudget("CPU", budget["CPU"], cpu, None, None),
         "RAM": findPartsWithinBudget("RAM", budget["RAM"], None, None, None),
         "CASE": findPartsWithinBudget("CASE", budget["CASE"], None, None, None),
         #"PSU": findPartsWithinBudget("power-supply", budget["PSU"]),
+        "PSU": "$ " + str(budget["PSU"]),
         "SSD": findPartsWithinBudget("SSD", budget["SSD"], None, ssdStorageSpace, None),
         "HDD": findPartsWithinBudget("HDD", budget["HDD"], None, None, hddStorageSpace),
+        "Motherboard": "$ " + str(budget["Motherboard"]),
+        "CPU_Cooler": "$ " + str(budget["CPU Cooler"]),
         #"Motherboard": findPartsWithinBudget("motherboard", budget["Motherboard"]),
         #"CPU Cooler": findPartsWithinBudget("cpu-cooler", budget["CPU Cooler"]),
     }
