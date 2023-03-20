@@ -71,7 +71,7 @@ input[type="number"], select {
     font-family: 'Lexend';
 }
 
-input[type="checkbox"] {
+input[type="checkbox"], option {
     margin-right: 10px;
     margin-bottom: 20px;
 }
