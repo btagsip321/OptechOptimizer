@@ -14,11 +14,11 @@ SCRAPER = webdriver.Chrome()
 
 # List of parts to loop through, with the part category as the key and the URL as the value
 PARTS = {
-    "GPU": ["https://gpu.userbenchmark.com/", {"Rank":0, "Name":1, "Benchmark":4, "Price":7}],
-    "CPU": ["https://cpu.userbenchmark.com/", {"Rank":0, "Name":1, "Benchmark":4, "Price":9}],
-    "RAM": ["https://ram.userbenchmark.com/", {"Rank":0, "Name":1, "Benchmark":4, "Price":9}],
-    "SSD": ["https://ssd.userbenchmark.com/", {"Rank":0, "Name":1, "Benchmark":4, "Price":9, "Capacity":5}],
-    "HDD": ["https://hdd.userbenchmark.com/", {"Rank":0, "Name":1, "Benchmark":4, "Price":9, "Capacity":5}],
+    "GPU": ["https://gpu.userbenchmark.com/", {"Rank":0, "Name":1, "Benchmark":4, "Price":7, "URL":None}],
+    "CPU": ["https://cpu.userbenchmark.com/", {"Rank":0, "Name":1, "Benchmark":4, "Price":9, "URL":None}],
+    "RAM": ["https://ram.userbenchmark.com/", {"Rank":0, "Name":1, "Benchmark":4, "Price":9, "URL":None}],
+    "SSD": ["https://ssd.userbenchmark.com/", {"Rank":0, "Name":1, "Benchmark":4, "Price":9, "URL":None, "Capacity":5}],
+    "HDD": ["https://hdd.userbenchmark.com/", {"Rank":0, "Name":1, "Benchmark":4, "Price":9, "URL":None, "Capacity":5}],
 }
 
 # Number of iterations, amount of entries = 50 + iterations*50
@@ -59,16 +59,16 @@ for part in PARTS:
             elements = row.find_elements(By.TAG_NAME, 'td')
             if len(elements) > 0:
 
-                print(elements[format["Rank"]].text)
-                print(elements[format["Benchmark"]].text)
+                print(elements[format["Benchmark"]].text.split("\n")[0])
+
                 # Initiate new row variable
                 newRow = [
                     int(elements[format["Rank"]].text), #Rank
                     elements[format["Name"]].text.split("\n")[1], #Name
-                    int(elements[format["Benchmark"]].text), #Benchmark
+                    float(elements[format["Benchmark"]].text.split("\n")[0]), #Benchmark
                     fetch_price(elements[format["Price"]].text), #Price
+                    elements[format["Name"]].find_element(By.CLASS_NAME, "nodec") .get_attribute("href") # URL
                 ]
-                print(elements[format["Name"]].get_attribute("href"))
 
                 # Capacity, only for SSD and HDD
                 if (part == "SSD" or part == "HDD"):

@@ -61,10 +61,12 @@ def findPartsWithinBudget(part, budget, preferredBrand, ssdStorageSpace, hddStor
     if hddStorageSpace:
         part_data = part_data[part_data["Capacity"].astype(int) >= hddStorageSpace]
     
-    part_data = part_data[part_data["Price"] <= budget].sort_values(['Price'], ascending = [False])
+    part_data = part_data[part_data["Price"] <= budget].sort_values(['Benchmark'], ascending = [False])
     display = part_data.iloc[0]['Name']
     if not ("$" in display):
         display = display + " $" + str(part_data.iloc[0]['Price'])
+
+    display = display + " Buy here: " + part_data.iloc[0]['URL']
 
     return display
 
