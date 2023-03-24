@@ -2,6 +2,7 @@ import pandas as pd
 import json
 import pdb
 import os
+import re
 
 parts = ['CPU','GPU','HDD','RAM','SSD','CASE']
 pc_parts = {'CPU':None, 'GPU':None, 'HDD':None, 'RAM':None, 'SSD':None, 'CASE':None}
@@ -70,9 +71,14 @@ def findPartsWithinBudget(part, budget, preferredBrand, ssdStorageSpace, hddStor
 
     return display
 
+def extractPrice(price):
+    print("raw price: ", price)
+    extract = re.search("(?:[\£\$\€]{1}[,\d]+.?\d*)", price)
+    return float(extract.group().replace("$", "").replace(",", ""))
+
 def buildPc(budget, cpu, ssdStorageSpace, hddStorageSpace):
     print(budget)
-    return {
+    pc = {
         "GPU": findPartsWithinBudget("GPU", budget["GPU"], None, None, None),
         "CPU": findPartsWithinBudget("CPU", budget["CPU"], cpu, None, None),
         "RAM": findPartsWithinBudget("RAM", budget["RAM"], None, None, None),
@@ -86,6 +92,9 @@ def buildPc(budget, cpu, ssdStorageSpace, hddStorageSpace):
         #"Motherboard": findPartsWithinBudget("motherboard", budget["Motherboard"]),
         #"CPU Cooler": findPartsWithinBudget("cpu-cooler", budget["CPU Cooler"]),
     }
+    pc["Total_Price"] = "$" + str(sum(map(extractPrice, pc.values())))
+
+    return pc
 
 for part in parts:
     print("Gathering part data for", part)
