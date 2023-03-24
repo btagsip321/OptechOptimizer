@@ -36,10 +36,10 @@ def buildBudget(budget, windows = False):
         "Windows Key": subtr,
         "RAM": cleanBudget((budget * 0.063)),
         "CASE": (caseMoney),
-        "PSU": cleanBudget((budget * .083)),
+        "PSU": cleanBudget((budget * .0625)),
         "SSD": ssdMoney,
         "HDD": cleanBudget((budget * .046)),
-        "Motherboard": cleanBudget((budget * .085)),
+        "Motherboard": cleanBudget((budget * .1055)),
         "CPU Cooler": cleanBudget((budget * .029)),
         "Wifi Adapter": cleanBudget((budget * .025)),
         "Peripherals": cleanBudget((budget * .046))
