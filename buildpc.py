@@ -92,7 +92,7 @@ def buildPc(budget, cpu, ssdStorageSpace, hddStorageSpace):
         #"Motherboard": findPartsWithinBudget("motherboard", budget["Motherboard"]),
         #"CPU Cooler": findPartsWithinBudget("cpu-cooler", budget["CPU Cooler"]),
     }
-    pc["Total_Price"] = "$" + str(sum(map(extractPrice, pc.values())))
+    pc["Total_Price"] = "$" + str(round(sum(map(extractPrice, pc.values())), 2))
 
     return pc
 
