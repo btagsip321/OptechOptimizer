@@ -88,10 +88,6 @@ def findPartsWithinBudget(part, budget, preferredBrand, ssdStorageSpace, hddStor
     else:
         part_data = part_data.sort_values(['Benchmark'], ascending = [False])
     
-<<<<<<< Updated upstream
-=======
-    # Return the highest benchmark within range
->>>>>>> Stashed changes
     display = part_data.iloc[0]['Name']
 
     # Add price if not already in name
