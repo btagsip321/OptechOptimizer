@@ -18,8 +18,33 @@ def index():
 
 @app.route('/build', methods=['GET'])
 def build():
-    budget = buildBudget(int(request.args.get('budget') or 1000), request.args.get('windows')=="on")
-    pc_build = buildPc(budget, Brands[request.args.get('cpu')], int(request.args.get('ssdStorage') or 256), int(request.args.get('hddStorage') or 1000))
+    budget = buildBudget(
+        int(request.args.get('budget') or 1000), 
+        request.args.get('windows')=="on",
+        float(request.args.get('tax') or 0)
+    )
+
+    _, price = buildPc(
+        budget, 
+        Brands[request.args.get('cpu')], 
+        int(request.args.get('ssdStorage') or 256), 
+        int(request.args.get('hddStorage') or 1000),
+    )
+
+    remainder = round((int(request.args.get('budget') or 1000)) - price)
+
+    print("Remainder: ", remainder)
+
+    budget["GPU"] = cleanBudget(budget["GPU"] + remainder*0.7, 0, 50000)
+    budget["CPU"] = cleanBudget(budget["CPU"] + remainder*0.3, 0, 50000)
+
+    pc_build, price = buildPc(
+        budget, 
+        Brands[request.args.get('cpu')], 
+        int(request.args.get('ssdStorage') or 256), 
+        int(request.args.get('hddStorage') or 1000),
+    )
+
     return render_template('results.html', **pc_build)
 
 @app.route('/budget', methods=['GET'])
