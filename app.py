@@ -24,19 +24,24 @@ def build():
         float(request.args.get('tax') or 0)
     )
 
-    _, price = buildPc(
+    pc, price = buildPc(
         budget, 
         Brands[request.args.get('cpu')], 
         int(request.args.get('ssdStorage') or 256), 
         int(request.args.get('hddStorage') or 1000),
     )
 
-    remainder = round((int(request.args.get('budget') or 1000)) - price)
+    print(pc, price)
+    print("Before Allocation:", sum(budget.values()) )
+
+    remainder = round((float(request.args.get('budget') or 1000)) - float(price))
 
     print("Remainder: ", remainder)
+    
+    budget["GPU"] = cleanBudget(extractPrice(pc["GPU"]) + remainder*0.7, 0, 50000)
+    budget["CPU"] = cleanBudget(extractPrice(pc["CPU"]) + remainder*0.3, 0, 50000)
 
-    budget["GPU"] = cleanBudget(budget["GPU"] + remainder*0.7, 0, 50000)
-    budget["CPU"] = cleanBudget(budget["CPU"] + remainder*0.3, 0, 50000)
+    print("After Allocation:", sum(budget.values()) )
 
     pc_build, price = buildPc(
         budget, 

@@ -56,7 +56,7 @@ def buildBudget(budget, windows = False, tax = 0):
         "Motherboard": cleanBudget((budget * .1055), 0, 200),
         "CPU Cooler": cleanBudget((budget * .029), 0, 100),
         "Wifi Adapter": cleanBudget((budget * .025), 0, 100),
-        "Peripherals": cleanBudget((budget * .046), 0, 100)
+        "Peripherals": cleanBudget((budget * .046), 0, 100),
     }
 
     return allocation
