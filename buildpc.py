@@ -21,7 +21,7 @@ def buildBudget(budget, windows = False, tax = 0):
     budget -= subtr
 
     # add tax to budget
-    budget = budget * (1 - tax/100)
+    budget = budget/(1 + tax/100)
 
     print("Calculated Tax: ", (1 - tax/100))
     print("Tax: ", tax)
