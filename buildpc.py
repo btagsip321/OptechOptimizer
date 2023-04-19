@@ -24,7 +24,7 @@ def buildBudget(budget, windows = False, tax = 0):
     subtr = (100 if windows else 10)
     budget -= subtr
 
-    print("Calculated Tax: ", ((1) + (tax/100))
+    print("Calculated Tax: ", ((1) + (tax/100)))
     print("Tax: ", tax)
     print("New Budget:", budget)
 
