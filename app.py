@@ -20,18 +20,18 @@ def index():
 def build():
 
     # Variables
-    budgetVar = int(request.args.get('budget') or 1000)
-    tax = float(request.args.get('tax') or 0)
+    budgetTotal = int(request.args.get('budget') or 1000) # initial budget input
+    tax = float(request.args.get('tax') or 0) # initial tax input
 
     # Initial budget
     budget = buildBudget(
-        budgetVar, 
+        budgetTotal, 
         request.args.get('windows')=="on",
         tax
     )
 
     # Initial PC build
-    pc, price = buildPc(
+    pc, buildPrice = buildPc(
         budget, 
         Brands[request.args.get('cpu')], 
         int(request.args.get('ssdStorage') or 256), 
@@ -39,13 +39,15 @@ def build():
     )
 
     # Debug initial pc build print
-    print(pc, price)
+    for part in pc.keys():
+        budget[part] = extractPrice(pc[part])
+    print(pc, budget, buildPrice)
 
     # Print the initial allocated budget
     print("Before Allocation:", sum(budget.values()) )
 
     # Remainding price, taxed budget - pc build price
-    remainder = (budgetVar / ((1) + (tax/100))) - float(price)
+    remainder = (budgetTotal / ((1) + (tax/100))) - float(buildPrice)
 
     print("Remainder: ", remainder)
     print(budget, sum(budget.values()) )
