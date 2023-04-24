@@ -18,12 +18,19 @@ def index():
 
 @app.route('/build', methods=['GET'])
 def build():
+
+    # Variables
+    budgetVar = int(request.args.get('budget') or 1000)
+    tax = float(request.args.get('tax') or 0)
+
+    # Initial budget
     budget = buildBudget(
-        int(request.args.get('budget') or 1000), 
+        budgetVar, 
         request.args.get('windows')=="on",
-        float(request.args.get('tax') or 0)
+        tax
     )
 
+    # Initial PC build
     pc, price = buildPc(
         budget, 
         Brands[request.args.get('cpu')], 
@@ -31,15 +38,22 @@ def build():
         int(request.args.get('hddStorage') or 1000),
     )
 
+    # Debug initial pc build print
     print(pc, price)
+
+    # Print the initial allocated budget
     print("Before Allocation:", sum(budget.values()) )
 
-    remainder = round((float(request.args.get('budget') or 1000)) - float(price))
+    # Remainding price, taxed budget - pc build price
+    remainder = (budgetVar / ((1) + (tax/100))) - float(price)
 
     print("Remainder: ", remainder)
+    print(budget, sum(budget.values()) )
     
-    budget["GPU"] = cleanBudget(extractPrice(pc["GPU"]) + remainder*0.7, 0, 50000)
-    budget["CPU"] = cleanBudget(extractPrice(pc["CPU"]) + remainder*0.3, 0, 50000)
+    budget["GPU"] = cleanBudget(budget["GPU"] + (remainder*0.7), 0, 50000)
+    budget["CPU"] = cleanBudget(budget["CPU"] + (remainder*0.3), 0, 50000)
+
+    print(budget, sum(budget.values()) )
 
     print("After Allocation:", sum(budget.values()) )
 
