@@ -52,8 +52,8 @@ def build():
     print("Remainder: ", remainder)
     print(budget, sum(budget.values()) )
     
-    budget["GPU"] = cleanBudget(budget["GPU"] + (remainder*0.7), 0, 50000)
-    budget["CPU"] = cleanBudget(budget["CPU"] + (remainder*0.3), 0, 50000)
+    #budget["GPU"] = cleanBudget(budget["GPU"] + (remainder*0.7), 0, 50000)
+    budget["CPU"] = cleanBudget(budget["CPU"] + (remainder), 0, 50000)
 
     print(budget, sum(budget.values()) )
 
