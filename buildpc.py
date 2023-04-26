@@ -55,7 +55,7 @@ def buildBudget(budget, windows = False, tax = 0):
         "SSD": ssdMoney,
         "HDD": cleanBudget((budget * .046)),
         "Motherboard": cleanBudget((budget * .1055), 0, 200),
-        "CPU Cooler": cleanBudget((budget * .029), 0, 100),
+        "CPU Cooler": cleanBudget((budget * .029), 0, 300),
     }
 
     return allocation
