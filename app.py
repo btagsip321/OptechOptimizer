@@ -68,6 +68,14 @@ def build():
         int(request.args.get('hddStorage') or 1000),
     )
 
+    for part in list(pc_build.keys()):
+        if pc_build[part].find("Buy here: "):
+            index = pc_build[part].find("Buy here: ")
+            pc_build[part + "_URL"] = pc_build[part][index + 10:]
+            pc_build[part] = pc_build[part][:index]
+
+    print(pc_build)
+
     return render_template('results.html', **pc_build)
 
 @app.route('/budget', methods=['GET'])
