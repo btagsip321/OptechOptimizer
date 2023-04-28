@@ -47,7 +47,7 @@ def buildBudget(budget, windows = False, tax = 0):
 
     allocation = {
         #"Windows Key": subtr,
-        "GPU": Budget((budget * .331), 0, 50000),
+        "GPU": cleanBudget((budget * .331), 0, 50000),
         "CPU": cleanBudget((budget * .262), 0, 50000),
         "RAM": cleanBudget((budget * 0.063)),
         "CASE": (caseMoney),
