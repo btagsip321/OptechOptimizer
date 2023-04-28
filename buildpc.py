@@ -43,11 +43,13 @@ def buildBudget(budget, windows = False, tax = 0):
         ssdMoney = round((budget * .051), 2)
     
     # clean budget between 800 and 50000
-    budget = cleanBudget(budget, 800, 50000)
+    #budget = cleanBudget(budget, 800, 50000)
 
     allocation = {
         #"Windows Key": subtr,
-        "GPU": cleanBudget((budget * .331), 0, 50000),
+        "GPU": 
+        
+        Budget((budget * .331), 0, 50000),
         "CPU": cleanBudget((budget * .262), 0, 50000),
         "RAM": cleanBudget((budget * 0.063)),
         "CASE": (caseMoney),
