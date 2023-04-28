@@ -20,8 +20,8 @@ def buildBudget(budget, windows = False, tax = 0):
     # add tax to budget
     budget = (budget)/((1) + (tax/100))
    
-    # subtract 100 from budget if windows, else subtract 10
-    subtr = (100 if windows else 10)
+    # subtract 100 from budget if windows, else subtract 0
+    subtr = (100 if windows else 0)
     budget -= subtr
 
     print("Calculated Tax: ", ((1) + (tax/100)))
