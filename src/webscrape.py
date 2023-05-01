@@ -9,8 +9,18 @@ import os
 import re
 import glob
 
-# Selenium web driver scraper. Uses firefox since this is the only browser that works on my laptop
-SCRAPER = webdriver.Chrome()
+# Lets heroku use the selenium webdriver
+if os.environ.get("CHROMEDRIVER_PATH"):
+    chrome_options = webdriver.ChromeOptions()
+    chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
+    chrome_options.add_argument("--headless")
+    chrome_options.add_argument("--disable-dev-shm-usage")
+    chrome_options.add_argument("--no-sandbox")
+    SCRAPER = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
+else:
+    SCRAPER = webdriver.Chrome()
+
+# Now you can start using Selenium
 
 # List of parts to loop through, with the part category as the key and the URL as the value
 PARTS = {
@@ -36,7 +46,13 @@ def fetch_price(raw_price):
 def fetch_capacity(raw_capacity):
     capacity = raw_capacity.split("\n")[0]
     return int(''.join(i for i in capacity if i.isdigit())) * (1000 if "TB" in raw_capacity else 1)
-        
+    
+print('Cleaning data folder...')
+for filename in os.listdir('../data'):
+    if filename != "CASE.csv":
+        print(os.path.join('../data', filename))
+        os.remove(os.path.join('../data', filename))
+
 print("Scraping data...")
 
 # Loop through each part
@@ -79,7 +95,7 @@ for part in PARTS:
                 csv.loc[len(csv.index)] = newRow
 
         # Click the next button to go through next page on the table
-        SCRAPER.find_element(By.CSS_SELECTOR, "#tableDataForm\:j_idt274").click()
+        SCRAPER.find_element(By.CSS_SELECTOR, "#tableDataForm\:j_idt200").click()
         time.sleep(4)
         
     # Create new CSV file
