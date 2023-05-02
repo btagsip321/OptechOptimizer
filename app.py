@@ -74,7 +74,7 @@ def build():
             pc_build[part + "_URL"] = pc_build[part][index + 10:]
             pc_build[part] = pc_build[part][:index]
 
-    pc_build["Windows_Key"] = "$" + str(140 if (request.args.get('windows')=="on") else 10)
+    pc_build["Windows_Key"] = "$" + str(140 if (request.args.get('windows')=="on") else 0)
     pc_build["Windows_URL"] = "https://www.amazon.com/Windows-11-Home-Digital-Download/dp/B09WCHGP12/ref=sr_1_3?keywords=windows%2B11%2Bhome&qid=1683027821&sr=8-3&th=1" if (request.args.get('windows')=="on") else "https://support.microsoft.com/en-us/windows/create-installation-media-for-windows-99a58364-8c02-206f-aa6f-40c3b507420d"
 
     print(pc_build)
