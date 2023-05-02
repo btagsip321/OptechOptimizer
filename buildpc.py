@@ -5,8 +5,11 @@ import os
 import re
 
 parts = ['CPU','GPU','HDD','RAM','SSD','CASE']
-pc_parts = {'CPU':None, 'GPU':None, 'HDD':None, 'RAM':None, 'SSD':None, 'CASE':None}
+cpuMax = 1400
+gpuMax = 1800
 
+pc_parts = {'CPU':None, 'GPU':None, 'HDD':None, 'RAM':None, 'SSD':None, 'CASE':None}
+#Rounds budget to 2 decimal places
 def cleanBudget(budget, minBudget =0, maxBudget =50000):
     try:
         # Make budget in between min budget and max budget, round to 2 decimal plaecs
@@ -21,7 +24,7 @@ def buildBudget(budget, windows = False, tax = 0):
     budget = (budget)/((1) + (tax/100))
    
     # subtract 100 from budget if windows, else subtract 0
-    subtr = (100 if windows else 0)
+    subtr = (140 if windows else 0)
     budget -= subtr
 
     print("Calculated Tax: ", ((1) + (tax/100)))
@@ -41,18 +44,30 @@ def buildBudget(budget, windows = False, tax = 0):
         ssdMoney = 51
     else:
         ssdMoney = round((budget * .051), 2)
+        
+    if((budget * .331 > gpuMax)):
+        budget -= gpuMax
+        gpuMoney = gpuMax
+    else:
+        gpuMoney = budget * .331
+        
+    if((budget * .262 > cpuMax)):
+        budget -= cpuMax
+        cpuMoney = cpuMax
+    else:
+        cpuMoney = budget * .262
     
     # clean budget between 800 and 50000
     #budget = cleanBudget(budget, 800, 50000)
 
     allocation = {
         #"Windows Key": subtr,
-        "GPU": cleanBudget((budget * .331), 0, 50000),
-        "CPU": cleanBudget((budget * .262), 0, 50000),
+        "GPU": cleanBudget((gpuMoney), 0, 50000),
+        "CPU": cleanBudget((cpuMoney), 0, 50000),
         "RAM": cleanBudget((budget * 0.063)),
-        "CASE": (caseMoney),
+        "CASE": cleanBudget((caseMoney), 0, 50000),
         "PSU": cleanBudget((budget * .0625), 0, 140),
-        "SSD": ssdMoney,
+        "SSD": cleanBudget((ssdMoney), 0, 50000),
         "HDD": cleanBudget((budget * .046)),
         "Motherboard": cleanBudget((budget * .1055), 0, 200),
         "CPU Cooler": cleanBudget((budget * .029), 0, 300),
