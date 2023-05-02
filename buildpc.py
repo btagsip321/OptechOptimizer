@@ -48,12 +48,21 @@ def buildBudget(budget, windows = False, tax = 0):
     if((budget * .331 > gpuMax)):
         budget -= gpuMax
         gpuMoney = gpuMax
+    elif((budget * .331 > 1200)):
+        budget -= 1200
+        gpuMoney = 1200
+    elif((budget * .331 > 850)):
+        budget -= 850
+        gpuMoney = 850
     else:
         gpuMoney = budget * .331
         
     if((budget * .262 > cpuMax)):
         budget -= cpuMax
         cpuMoney = cpuMax
+    elif((budget * .262 > 600)):
+        budget -= 600
+        cpuMoney = 600
     else:
         cpuMoney = budget * .262
     
