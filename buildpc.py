@@ -8,6 +8,7 @@ parts = ['CPU','GPU','HDD','RAM','SSD','CASE']
 cpuMax = 1400
 gpuMax = 1800
 ssdPref = True
+windowsPref = False
 pc_parts = {'CPU':None, 'GPU':None, 'HDD':None, 'RAM':None, 'SSD':None, 'CASE':None}
 #Rounds budget to 2 decimal places
 def cleanBudget(budget, minBudget =0, maxBudget =50000):
@@ -25,6 +26,8 @@ def buildBudget(budget, windows = False, tax = 0):
    
     # subtract 100 from budget if windows, else subtract 0
     subtr = (140 if windows else 0)
+    if(windows):
+        windowsPref = True
     budget -= subtr
 
     print("Calculated Tax: ", ((1) + (tax/100)))
@@ -146,7 +149,7 @@ def buildPc(budget, cpu, ssdStorageSpace, hddStorageSpace):
     }
 
     price = sum(map(extractPrice, pc.values())) 
-    if(windows):
+    if(windowsPref):
         price = price + 140
     pc["Total_Price"] = "$" + str(round(price, 2))
 
