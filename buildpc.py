@@ -38,15 +38,19 @@ def buildBudget(budget, windows = False, tax = 0):
     
     if ((budget * .05) < 45):
         caseMoney = 45
+        budget -= caseMoney
     else:
         caseMoney = round((budget * .05), 2)
+        budget -= caseMoney
 
     # if 5.1% of budget is less than 51, spend 51, else spend 5.1% of budget
     if(ssdPref):
         if ((budget * .051 < 51)):
             ssdMoney = 51
+            budget -= ssdMoney
         else:
             ssdMoney = round((budget * .051), 2)
+            budget -= ssdMoney
     else:
         ssdMoney = 0
         
@@ -65,7 +69,7 @@ def buildBudget(budget, windows = False, tax = 0):
         cpuMoney = 600
     else:
         cpuMoney = budget * .262
-    budget = budget - gpuMoney - cpuMoney - caseMoney - ssdMoney
+    budget = budget - gpuMoney - cpuMoney
     
     # clean budget between 800 and 50000
     #budget = cleanBudget(budget, 800, 50000)
