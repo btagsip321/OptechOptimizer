@@ -7,7 +7,7 @@ import re
 parts = ['CPU','GPU','HDD','RAM','SSD','CASE']
 cpuMax = 1400
 gpuMax = 1800
-
+ssdPref = False
 pc_parts = {'CPU':None, 'GPU':None, 'HDD':None, 'RAM':None, 'SSD':None, 'CASE':None}
 #Rounds budget to 2 decimal places
 def cleanBudget(budget, minBudget =0, maxBudget =50000):
@@ -32,18 +32,20 @@ def buildBudget(budget, windows = False, tax = 0):
     print("New Budget:", budget)
 
     # if 5% of budget is less than 45, spend 45, else spend 5% of budget
+    
     if ((budget * .05) < 45):
-        budget -= 45
         caseMoney = 45
     else:
         caseMoney = round((budget * .05), 2)
 
     # if 5.1% of budget is less than 51, spend 51, else spend 5.1% of budget
-    if ((budget * .051 < 51)):
-        budget -= 51
-        ssdMoney = 51
+    if(ssdPref):
+        if ((budget * .051 < 51)):
+            ssdMoney = 51
+        else:
+            ssdMoney = round((budget * .051), 2)
     else:
-        ssdMoney = round((budget * .051), 2)
+        ssdMoney = 0
         
     if((budget * .331 > gpuMax)):
         gpuMoney = gpuMax
@@ -60,7 +62,7 @@ def buildBudget(budget, windows = False, tax = 0):
         cpuMoney = 600
     else:
         cpuMoney = budget * .262
-    budget = budget - gpuMoney - cpuMoney
+    budget = budget - gpuMoney - cpuMoney - caseMoney - ssdMoney
     
     # clean budget between 800 and 50000
     #budget = cleanBudget(budget, 800, 50000)
@@ -86,37 +88,41 @@ def gatherPartData(part):
     pc_parts[part] = df[df.Price != -1]
     
 def findPartsWithinBudget(part, budget, preferredBrand, ssdStorageSpace, hddStorageSpace):
-    part_data = pc_parts[part]
+    if((part != "SSD") or (part == "SSD" and ssdPref)):
+        part_data = pc_parts[part]
 
-    # Filter by brand
-    if preferredBrand:
-        part_data = part_data[part_data["Name"].str.contains(preferredBrand)]
-    
-    # Filter by storage space
-    if ssdStorageSpace:
-        part_data = part_data[part_data["Capacity"].astype(int) >= ssdStorageSpace]
-    if hddStorageSpace:
-        part_data = part_data[part_data["Capacity"].astype(int) >= hddStorageSpace]
-    
-    # Filter by price and highest benchmark
-    part_data = part_data[part_data["Price"] <= budget]
+        # Filter by brand
+        if preferredBrand:
+            part_data = part_data[part_data["Name"].str.contains(preferredBrand)]
 
-    # Sort by benchmark
-    if part == "CASE":
-        part_data = part_data.sort_values(['Rank'], ascending = [True])
+        # Filter by storage space
+        if ssdStorageSpace:
+            part_data = part_data[part_data["Capacity"].astype(int) >= ssdStorageSpace]
+        if hddStorageSpace:
+            part_data = part_data[part_data["Capacity"].astype(int) >= hddStorageSpace]
+
+        # Filter by price and highest benchmark
+        part_data = part_data[part_data["Price"] <= budget]
+
+        # Sort by benchmark
+        if part == "CASE":
+            part_data = part_data.sort_values(['Rank'], ascending = [True])
+        else:
+            part_data = part_data.sort_values(['Benchmark'], ascending = [False])
+
+        display = part_data.iloc[0]['Name']
+
+        # Add price if not already in name
+        if not ("$" in display):
+            display = display + " $" + str(part_data.iloc[0]['Price'])
+
+        # Add URL if not already in name
+        display = display + " Buy here: " + part_data.iloc[0]['URL']
+
+        return display
     else:
-        part_data = part_data.sort_values(['Benchmark'], ascending = [False])
+        return "No SSD"
     
-    display = part_data.iloc[0]['Name']
-
-    # Add price if not already in name
-    if not ("$" in display):
-        display = display + " $" + str(part_data.iloc[0]['Price'])
-
-    # Add URL if not already in name
-    display = display + " Buy here: " + part_data.iloc[0]['URL']
-
-    return display
 
 def extractPrice(price):
     extract = re.search("(?:[\£\$\€]{1}[,\d]+.?\d*)", price)
