@@ -67,6 +67,8 @@ def build():
         int(request.args.get('ssdStorage') or 256), 
         int(request.args.get('hddStorage') or 1000),
     )
+    if(request.args.get('windows')=="on"):
+        price = price + 140
 
     for part in list(pc_build.keys()):
         if pc_build[part].find("Buy here: "):
