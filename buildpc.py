@@ -154,7 +154,7 @@ def buildPc(budget, cpu, ssdStorageSpace, hddStorageSpace):
 
     price = sum(map(extractPrice, pc.values())) 
     if(windowsPref):
-        price = price + 140
+        price = 10000
     pc["Total_Price"] = "$" + str(round(price, 2))
 
     return pc, price
