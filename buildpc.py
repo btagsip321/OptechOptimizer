@@ -8,7 +8,7 @@ parts = ['CPU','GPU','HDD','RAM','SSD','CASE']
 cpuMax = 1400
 gpuMax = 1800
 ssdPref = True
-windowsPref = True
+windowsPref = False
 pc_parts = {'CPU':None, 'GPU':None, 'HDD':None, 'RAM':None, 'SSD':None, 'CASE':None}
 #Rounds budget to 2 decimal places
 def cleanBudget(budget, minBudget =0, maxBudget =50000):
