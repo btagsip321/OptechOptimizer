@@ -36,6 +36,7 @@ def build():
         Brands[request.args.get('cpu')], 
         int(request.args.get('ssdStorage') or 256), 
         int(request.args.get('hddStorage') or 1000),
+        False
     )
 
     # Debug initial pc build print
@@ -66,10 +67,9 @@ def build():
         Brands[request.args.get('cpu')], 
         int(request.args.get('ssdStorage') or 256), 
         int(request.args.get('hddStorage') or 1000),
+        request.args.get('windows')=="on",
     )
-    if(request.args.get('windows')=="on"):
-        price = price + 140
-
+    
     for part in list(pc_build.keys()):
         if pc_build[part].find("Buy here: "):
             index = pc_build[part].find("Buy here: ")
