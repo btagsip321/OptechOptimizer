@@ -61,7 +61,7 @@ def build():
     if request.args.get('allocpref') == "cpu":
         budget["CPU"] = cleanBudget(budget["CPU"] + (remainder), 0, 50000)
     elif request.args.get('allocpref') == "gpu":
-        budget["GPU"] = cleanBudget(budget["GPU"] + (remainder*0.7), 0, 50000)
+        budget["GPU"] = cleanBudget(budget["GPU"] + (remainder), 0, 50000)
 
     print(budget, sum(budget.values()) )
 
