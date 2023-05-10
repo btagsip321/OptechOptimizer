@@ -66,7 +66,7 @@ def buildBudget(budget, windows = False, tax = 0):
         cpuMoney = 600
     else:
         cpuMoney = budget * .262
-    budget = budget - gpuMoney - cpuMoney
+    budget = budget - gpuMoney - cpuMoney - ssdMoney
     
     # clean budget between 800 and 50000
     #budget = cleanBudget(budget, 800, 50000)
