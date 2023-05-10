@@ -1,101 +1,201 @@
-Rank,Name,Benchmark,Price,URL
-1,Nvidia RTX 3060 $325,100.0,325,https://gpu.userbenchmark.com/Nvidia-RTX-3060/Rating/4105
-2,Nvidia RTX 3060-Ti $395,128.0,395,https://gpu.userbenchmark.com/Nvidia-RTX-3060-Ti/Rating/4090
-3,Nvidia RTX 4070-Ti $850,240.0,850,https://gpu.userbenchmark.com/Nvidia-RTX-4070-Ti/Rating/4146
-4,Nvidia GTX 1660S (Super) $270,71.4,270,https://gpu.userbenchmark.com/Nvidia-GTX-1660S-Super/Rating/4056
-5,Nvidia RTX 3070 $530,148.0,530,https://gpu.userbenchmark.com/Nvidia-RTX-3070/Rating/4083
-6,Nvidia RTX 3050 $281,74.8,281,https://gpu.userbenchmark.com/Nvidia-RTX-3050/Rating/4127
-7,"Nvidia RTX 4090 $1,700",370.0,1700,https://gpu.userbenchmark.com/Nvidia-RTX-4090/Rating/4136
-8,Nvidia RTX 3080 $635,187.0,635,https://gpu.userbenchmark.com/Nvidia-RTX-3080/Rating/4080
-9,Nvidia GTX 1060-6GB,56.1,-1,https://gpu.userbenchmark.com/Nvidia-GTX-1060-6GB/Rating/3639
-10,Nvidia RTX 2060 $320,89.8,320,https://gpu.userbenchmark.com/Nvidia-RTX-2060/Rating/4034
-11,"Nvidia RTX 4080 $1,161",290.0,1161,https://gpu.userbenchmark.com/Nvidia-RTX-4080/Rating/4138
-12,Nvidia GTX 1650S (Super) $646,58.7,646,https://gpu.userbenchmark.com/Nvidia-GTX-1650S-Super/Rating/4058
-13,Nvidia RTX 2060S (Super) $520,99.8,520,https://gpu.userbenchmark.com/Nvidia-RTX-2060S-Super/Rating/4049
-14,"Nvidia RTX 2070S (Super) $1,810",115.0,1810,https://gpu.userbenchmark.com/Nvidia-RTX-2070S-Super/Rating/4048
-15,Nvidia GTX 1660-Ti $370,76.0,370,https://gpu.userbenchmark.com/Nvidia-GTX-1660-Ti/Rating/4037
-16,Nvidia GTX 1050-Ti $191,29.3,191,https://gpu.userbenchmark.com/Nvidia-GTX-1050-Ti/Rating/3649
-17,"Nvidia GTX 1070 $2,500",79.7,2500,https://gpu.userbenchmark.com/Nvidia-GTX-1070/Rating/3609
-18,AMD RX 580 $190,51.6,190,https://gpu.userbenchmark.com/AMD-RX-580/Rating/3923
-19,Nvidia GTX 1650 $188,42.8,188,https://gpu.userbenchmark.com/Nvidia-GTX-1650/Rating/4039
-20,AMD RX 590,56.9,-1,https://gpu.userbenchmark.com/AMD-RX-590/Rating/4033
-21,Nvidia GTX 1080-Ti $780,124.0,780,https://gpu.userbenchmark.com/Nvidia-GTX-1080-Ti/Rating/3918
-22,Nvidia GTX 1660 $230,68.3,230,https://gpu.userbenchmark.com/Nvidia-GTX-1660/Rating/4038
-23,Nvidia RTX 2080S (Super),131.0,-1,https://gpu.userbenchmark.com/Nvidia-RTX-2080S-Super/Rating/4050
-24,Nvidia RTX 3090 $890,210.0,890,https://gpu.userbenchmark.com/Nvidia-RTX-3090/Rating/4081
-25,"Nvidia RTX 2080-Ti $2,999",156.0,2999,https://gpu.userbenchmark.com/Nvidia-RTX-2080-Ti/Rating/4027
-26,Nvidia GTX 1070-Ti,93.7,-1,https://gpu.userbenchmark.com/Nvidia-GTX-1070-Ti/Rating/3943
-27,Nvidia GTX 1080,102.0,-1,https://gpu.userbenchmark.com/Nvidia-GTX-1080/Rating/3603
-28,Nvidia GTX 970,49.1,-1,https://gpu.userbenchmark.com/Nvidia-GTX-970/Rating/2577
-29,Nvidia RTX 4070 $600,190.0,600,https://gpu.userbenchmark.com/Nvidia-RTX-4070/Rating/4148
-30,AMD RX 570 $486,44.7,486,https://gpu.userbenchmark.com/AMD-RX-570/Rating/3924
-31,AMD RX 5700,85.0,-1,https://gpu.userbenchmark.com/AMD-RX-5700/Rating/4046
-32,Nvidia GTX 980-Ti,79.0,-1,https://gpu.userbenchmark.com/Nvidia-GTX-980-Ti/Rating/3439
-33,Nvidia GTX 1060-3GB,52.0,-1,https://gpu.userbenchmark.com/Nvidia-GTX-1060-3GB/Rating/3646
-34,Nvidia GTX 980,59.3,-1,https://gpu.userbenchmark.com/Nvidia-GTX-980/Rating/2576
-35,AMD RX 480,45.7,-1,https://gpu.userbenchmark.com/AMD-RX-480/Rating/3634
-36,Nvidia RTX 2070 $469,104.0,1200,https://gpu.userbenchmark.com/Nvidia-RTX-2070/Rating/4029
-37,AMD R9 380,33.4,-1,https://gpu.userbenchmark.com/AMD-R9-380/Rating/3482
-38,Nvidia RTX 3070-Ti $600,158.0,600,https://gpu.userbenchmark.com/Nvidia-RTX-3070-Ti/Rating/4116
-39,AMD R9 290X,51.0,-1,https://gpu.userbenchmark.com/AMD-R9-290X/Rating/2166
-40,Nvidia GTX 960,32.9,-1,https://gpu.userbenchmark.com/Nvidia-GTX-960/Rating/3165
-41,"Nvidia RTX 2080 $1,000",124.0,1000,https://gpu.userbenchmark.com/Nvidia-RTX-2080/Rating/4026
-42,AMD R9 Fury-X,58.9,-1,https://gpu.userbenchmark.com/AMD-R9-Fury-X/Rating/3498
-43,Nvidia GTX 750-Ti,17.2,-1,https://gpu.userbenchmark.com/Nvidia-GTX-750-Ti/Rating/2187
-44,AMD R9 390,49.7,-1,https://gpu.userbenchmark.com/AMD-R9-390/Rating/3481
-45,AMD R9 390X,53.5,-1,https://gpu.userbenchmark.com/AMD-R9-390X/Rating/3497
-46,AMD RX 470,39.5,-1,https://gpu.userbenchmark.com/AMD-RX-470/Rating/3640
-47,AMD R9 270X,26.9,-1,https://gpu.userbenchmark.com/AMD-R9-270X/Rating/2188
-48,AMD R9 290,46.4,-1,https://gpu.userbenchmark.com/AMD-R9-290/Rating/2171
-49,AMD R9 Fury,58.4,-1,https://gpu.userbenchmark.com/AMD-R9-Fury/Rating/3509
-50,Nvidia RTX 3090-Ti,232.0,-1,https://gpu.userbenchmark.com/SpeedTest/1818101/NVIDIA-GeForce-RTX-3090-Ti
-51,AMD R9 280X,35.1,-1,https://gpu.userbenchmark.com/AMD-R9-280X/Rating/2192
-52,AMD RX 6700-XT,122.0,-1,https://gpu.userbenchmark.com/AMD-RX-6700-XT/Rating/4109
-53,AMD RX 6900-XT,195.0,-1,https://gpu.userbenchmark.com/AMD-RX-6900-XT/Rating/4091
-54,Nvidia GT 1030,13.6,-1,https://gpu.userbenchmark.com/SpeedTest/283726/NVIDIA-GeForce-GT-1030
-55,"Nvidia RTX 3080-Ti $1,090",204.0,1090,https://gpu.userbenchmark.com/Nvidia-RTX-3080-Ti/Rating/4115
-56,AMD RX 6600-XT $310,107.0,310,https://gpu.userbenchmark.com/AMD-RX-6600-XT/Rating/4117
-57,Nvidia GTX 780-Ti,52.9,-1,https://gpu.userbenchmark.com/Nvidia-GTX-780-Ti/Rating/2165
-58,AMD RX Vega 8 (Ryzen iGPU),9.92,-1,https://gpu.userbenchmark.com/SpeedTest/441833/AMD-RadeonTM-Vega-8-Graphics
-59,AMD RX 6800-XT,171.0,-1,https://gpu.userbenchmark.com/AMD-RX-6800-XT/Rating/4089
-60,Nvidia GTX 950,25.6,-1,https://gpu.userbenchmark.com/Nvidia-GTX-950/Rating/3510
-61,Nvidia GTX 1050 $210,25.7,210,https://gpu.userbenchmark.com/Nvidia-GTX-1050/Rating/3650
-62,AMD HD 7970,36.4,-1,https://gpu.userbenchmark.com/AMD-HD-7970/Rating/2163
-63,AMD HD 7850,19.3,-1,https://gpu.userbenchmark.com/AMD-HD-7850/Rating/2182
-64,AMD R9 380X,37.7,-1,https://gpu.userbenchmark.com/AMD-R9-380X/Rating/3532
-65,AMD Radeon-VII,101.0,-1,https://gpu.userbenchmark.com/AMD-Radeon-VII/Rating/4035
-66,Nvidia RTX 3060 (Laptop),89.8,-1,https://gpu.userbenchmark.com/SpeedTest/1452971/NVIDIA-GeForce-RTX-3060-Laptop-GPU
-67,AMD R9 280,30.0,-1,https://gpu.userbenchmark.com/AMD-R9-280/Rating/2241
-68,Nvidia RTX 2060 (Mobile),70.9,-1,https://gpu.userbenchmark.com/SpeedTest/701609/NVIDIA-GeForce-RTX-2060
-69,AMD RX Vega 11 (Ryzen iGPU),14.5,-1,https://gpu.userbenchmark.com/SpeedTest/401440/AMD-RadeonTM-RX-Vega-11-Graphics
-70,AMD RX 550,14.1,-1,https://gpu.userbenchmark.com/AMD-RX-550/Rating/3925
-71,Nvidia RTX 3050-Ti (Laptop),60.8,-1,https://gpu.userbenchmark.com/SpeedTest/1559532/NVIDIA-GeForce-RTX-3050-Ti-Laptop-GPU
-72,AMD RX 460,19.7,-1,https://gpu.userbenchmark.com/AMD-RX-460/Rating/3641
-73,AMD RX 5700-XT $429,99.0,429,https://gpu.userbenchmark.com/AMD-RX-5700-XT/Rating/4045
-74,AMD RX 5500-XT,51.0,-1,https://gpu.userbenchmark.com/AMD-RX-5500-XT/Rating/4060
-75,AMD HD 7950,28.6,-1,https://gpu.userbenchmark.com/AMD-HD-7950/Rating/2160
-76,AMD R9 270,24.1,-1,https://gpu.userbenchmark.com/AMD-R9-270/Rating/3149
-77,AMD R7 360,17.9,-1,https://gpu.userbenchmark.com/AMD-R7-360/Rating/3572
-78,AMD RX Vega-56,78.0,-1,https://gpu.userbenchmark.com/AMD-RX-Vega-56/Rating/3938
-79,AMD R7 370,21.2,-1,https://gpu.userbenchmark.com/AMD-R7-370/Rating/3571
-80,Intel Iris Xe,14.1,-1,https://gpu.userbenchmark.com/SpeedTest/1268515/IntelR-IrisR-Xe-Graphics
-81,AMD RX 6800 $779,143.0,779,https://gpu.userbenchmark.com/AMD-RX-6800/Rating/4088
-82,Nvidia Titan RTX,168.0,-1,https://gpu.userbenchmark.com/SpeedTest/664199/NVIDIA-TITAN-RTX
-83,AMD RX 6600 $220,86.1,220,https://gpu.userbenchmark.com/AMD-RX-6600/Rating/4128
-84,Nvidia GTX 770,34.1,-1,https://gpu.userbenchmark.com/Nvidia-GTX-770/Rating/2174
-85,Nvidia GTX 680,31.6,-1,https://gpu.userbenchmark.com/Nvidia-GTX-680/Rating/3148
-86,AMD R7 260X,19.9,-1,https://gpu.userbenchmark.com/AMD-R7-260X/Rating/3151
-87,Nvidia GTX 1060 (Mobile),46.7,-1,https://gpu.userbenchmark.com/SpeedTest/164336/NVIDIA-GeForce-GTX-1060
-88,Nvidia GTX 1070 (Mobile),72.5,-1,https://gpu.userbenchmark.com/SpeedTest/164129/NVIDIA-GeForce-GTX-1070
-89,Nvidia Titan Xp,128.0,-1,https://gpu.userbenchmark.com/SpeedTest/265423/NVIDIA-TITAN-Xp
-90,Nvidia Titan V,140.0,-1,https://gpu.userbenchmark.com/SpeedTest/395529/NVIDIA-TITAN-V
-91,Nvidia RTX 2070 (Mobile Max-Q),78.8,-1,https://gpu.userbenchmark.com/SpeedTest/703511/NVIDIA-GeForce-RTX-2070-with-Max-Q-Design
-92,Nvidia GTX 1660-Ti (Mobile),65.0,-1,https://gpu.userbenchmark.com/SpeedTest/776281/NVIDIA-GeForce-GTX-1660-Ti
-93,Nvidia RTX 3070 (Laptop),114.0,-1,https://gpu.userbenchmark.com/SpeedTest/1445007/NVIDIA-GeForce-RTX-3070-Laptop-GPU
-94,Nvidia GTX 550-Ti,8.61,-1,https://gpu.userbenchmark.com/Nvidia-GTX-550-Ti/Rating/3161
-95,Intel HD 520 (Mobile Skylake),4.2,-1,https://gpu.userbenchmark.com/SpeedTest/36797/IntelR-HD-Graphics-520
-96,Intel UHD Graphics 630 (Desktop Coffee Lake i5 i7),5.19,-1,https://gpu.userbenchmark.com/SpeedTest/356797/IntelR-UHD-Graphics-630
-97,Nvidia GTX 650 Ti Boost,17.1,-1,https://gpu.userbenchmark.com/Nvidia-GTX-650-Ti-Boost/Rating/2190
-98,Nvidia MX150-0,13.7,-1,https://gpu.userbenchmark.com/SpeedTest/332822/NVIDIA-GeForce-MX150
-99,AMD HD 7870,25.9,-1,https://gpu.userbenchmark.com/AMD-HD-7870/Rating/2161
-100,Nvidia GTX Titan X,75.4,-1,https://gpu.userbenchmark.com/Nvidia-GTX-Titan-X/Rating/3282
+Rank,Name,Benchmark,Price,URL
+
+1,Nvidia RTX 3060 $325,100.0,325,https://gpu.userbenchmark.com/Nvidia-RTX-3060/Rating/4105
+
+2,Nvidia RTX 3060-Ti $395,128.0,395,https://gpu.userbenchmark.com/Nvidia-RTX-3060-Ti/Rating/4090
+
+3,Nvidia RTX 4070-Ti $850,240.0,850,https://gpu.userbenchmark.com/Nvidia-RTX-4070-Ti/Rating/4146
+
+4,Nvidia GTX 1660S (Super) $270,71.4,270,https://gpu.userbenchmark.com/Nvidia-GTX-1660S-Super/Rating/4056
+
+5,Nvidia RTX 3070 $530,148.0,530,https://gpu.userbenchmark.com/Nvidia-RTX-3070/Rating/4083
+
+6,Nvidia RTX 3050 $281,74.8,281,https://gpu.userbenchmark.com/Nvidia-RTX-3050/Rating/4127
+
+7,"Nvidia RTX 4090 $1,700",370.0,1700,https://gpu.userbenchmark.com/Nvidia-RTX-4090/Rating/4136
+
+8,Nvidia RTX 3080 $635,187.0,635,https://gpu.userbenchmark.com/Nvidia-RTX-3080/Rating/4080
+
+9,Nvidia GTX 1060-6GB,56.1,-1,https://gpu.userbenchmark.com/Nvidia-GTX-1060-6GB/Rating/3639
+
+10,Nvidia RTX 2060 $320,89.8,320,https://gpu.userbenchmark.com/Nvidia-RTX-2060/Rating/4034
+
+11,"Nvidia RTX 4080 $1,161",290.0,1161,https://gpu.userbenchmark.com/Nvidia-RTX-4080/Rating/4138
+
+12,Nvidia GTX 1650S (Super) $646,58.7,646,https://gpu.userbenchmark.com/Nvidia-GTX-1650S-Super/Rating/4058
+
+13,Nvidia RTX 2060S (Super) $520,99.8,520,https://gpu.userbenchmark.com/Nvidia-RTX-2060S-Super/Rating/4049
+
+14,"Nvidia RTX 2070S (Super) $1,810",115.0,1810,https://gpu.userbenchmark.com/Nvidia-RTX-2070S-Super/Rating/4048
+
+15,Nvidia GTX 1660-Ti $370,76.0,370,https://gpu.userbenchmark.com/Nvidia-GTX-1660-Ti/Rating/4037
+
+16,Nvidia GTX 1050-Ti $191,29.3,191,https://gpu.userbenchmark.com/Nvidia-GTX-1050-Ti/Rating/3649
+
+17,"Nvidia GTX 1070 $2,500",79.7,2500,https://gpu.userbenchmark.com/Nvidia-GTX-1070/Rating/3609
+
+18,AMD RX 580 $190,51.6,190,https://gpu.userbenchmark.com/AMD-RX-580/Rating/3923
+
+19,Nvidia GTX 1650 $188,42.8,188,https://gpu.userbenchmark.com/Nvidia-GTX-1650/Rating/4039
+
+20,AMD RX 590,56.9,-1,https://gpu.userbenchmark.com/AMD-RX-590/Rating/4033
+
+21,Nvidia GTX 1080-Ti $780,124.0,780,https://gpu.userbenchmark.com/Nvidia-GTX-1080-Ti/Rating/3918
+
+22,Nvidia GTX 1660 $230,68.3,230,https://gpu.userbenchmark.com/Nvidia-GTX-1660/Rating/4038
+
+23,Nvidia RTX 2080S (Super),131.0,-1,https://gpu.userbenchmark.com/Nvidia-RTX-2080S-Super/Rating/4050
+
+24,Nvidia RTX 3090 $890,210.0,890,https://gpu.userbenchmark.com/Nvidia-RTX-3090/Rating/4081
+
+25,"Nvidia RTX 2080-Ti $2,999",156.0,2999,https://gpu.userbenchmark.com/Nvidia-RTX-2080-Ti/Rating/4027
+
+26,Nvidia GTX 1070-Ti,93.7,-1,https://gpu.userbenchmark.com/Nvidia-GTX-1070-Ti/Rating/3943
+
+27,Nvidia GTX 1080,102.0,-1,https://gpu.userbenchmark.com/Nvidia-GTX-1080/Rating/3603
+
+28,Nvidia GTX 970,49.1,-1,https://gpu.userbenchmark.com/Nvidia-GTX-970/Rating/2577
+
+29,Nvidia RTX 4070 $600,190.0,600,https://gpu.userbenchmark.com/Nvidia-RTX-4070/Rating/4148
+
+30,AMD RX 570 $486,44.7,486,https://gpu.userbenchmark.com/AMD-RX-570/Rating/3924
+
+31,AMD RX 5700,85.0,-1,https://gpu.userbenchmark.com/AMD-RX-5700/Rating/4046
+
+32,Nvidia GTX 980-Ti,79.0,-1,https://gpu.userbenchmark.com/Nvidia-GTX-980-Ti/Rating/3439
+
+33,Nvidia GTX 1060-3GB,52.0,-1,https://gpu.userbenchmark.com/Nvidia-GTX-1060-3GB/Rating/3646
+
+34,Nvidia GTX 980,59.3,-1,https://gpu.userbenchmark.com/Nvidia-GTX-980/Rating/2576
+
+35,AMD RX 480,45.7,-1,https://gpu.userbenchmark.com/AMD-RX-480/Rating/3634
+
+36,Nvidia RTX 2070 $469,104.0,1200,https://gpu.userbenchmark.com/Nvidia-RTX-2070/Rating/4029
+
+37,AMD R9 380,33.4,-1,https://gpu.userbenchmark.com/AMD-R9-380/Rating/3482
+
+38,Nvidia RTX 3070-Ti $600,158.0,600,https://gpu.userbenchmark.com/Nvidia-RTX-3070-Ti/Rating/4116
+
+39,AMD R9 290X,51.0,-1,https://gpu.userbenchmark.com/AMD-R9-290X/Rating/2166
+
+40,Nvidia GTX 960,32.9,-1,https://gpu.userbenchmark.com/Nvidia-GTX-960/Rating/3165
+
+41,"Nvidia RTX 2080 $1,000",124.0,1000,https://gpu.userbenchmark.com/Nvidia-RTX-2080/Rating/4026
+
+42,AMD R9 Fury-X,58.9,-1,https://gpu.userbenchmark.com/AMD-R9-Fury-X/Rating/3498
+
+43,Nvidia GTX 750-Ti,17.2,-1,https://gpu.userbenchmark.com/Nvidia-GTX-750-Ti/Rating/2187
+
+44,AMD R9 390,49.7,-1,https://gpu.userbenchmark.com/AMD-R9-390/Rating/3481
+
+45,AMD R9 390X,53.5,-1,https://gpu.userbenchmark.com/AMD-R9-390X/Rating/3497
+
+46,AMD RX 470,39.5,-1,https://gpu.userbenchmark.com/AMD-RX-470/Rating/3640
+
+47,AMD R9 270X,26.9,-1,https://gpu.userbenchmark.com/AMD-R9-270X/Rating/2188
+
+48,AMD R9 290,46.4,-1,https://gpu.userbenchmark.com/AMD-R9-290/Rating/2171
+
+49,AMD R9 Fury,58.4,-1,https://gpu.userbenchmark.com/AMD-R9-Fury/Rating/3509
+
+50,Nvidia RTX 3090-Ti,232.0,-1,https://gpu.userbenchmark.com/SpeedTest/1818101/NVIDIA-GeForce-RTX-3090-Ti
+
+51,AMD R9 280X,35.1,-1,https://gpu.userbenchmark.com/AMD-R9-280X/Rating/2192
+
+52,AMD RX 6700-XT,122.0,-1,https://gpu.userbenchmark.com/AMD-RX-6700-XT/Rating/4109
+
+53,AMD RX 6900-XT,195.0,-1,https://gpu.userbenchmark.com/AMD-RX-6900-XT/Rating/4091
+
+54,Nvidia GT 1030,13.6,-1,https://gpu.userbenchmark.com/SpeedTest/283726/NVIDIA-GeForce-GT-1030
+
+55,"Nvidia RTX 3080-Ti $1,090",204.0,1090,https://gpu.userbenchmark.com/Nvidia-RTX-3080-Ti/Rating/4115
+
+56,AMD RX 6600-XT $310,107.0,310,https://gpu.userbenchmark.com/AMD-RX-6600-XT/Rating/4117
+
+57,Nvidia GTX 780-Ti,52.9,-1,https://gpu.userbenchmark.com/Nvidia-GTX-780-Ti/Rating/2165
+
+58,AMD RX Vega 8 (Ryzen iGPU),9.92,-1,https://gpu.userbenchmark.com/SpeedTest/441833/AMD-RadeonTM-Vega-8-Graphics
+
+59,AMD RX 6800-XT,171.0,-1,https://gpu.userbenchmark.com/AMD-RX-6800-XT/Rating/4089
+
+60,Nvidia GTX 950,25.6,-1,https://gpu.userbenchmark.com/Nvidia-GTX-950/Rating/3510
+
+61,Nvidia GTX 1050 $210,25.7,210,https://gpu.userbenchmark.com/Nvidia-GTX-1050/Rating/3650
+
+62,AMD HD 7970,36.4,-1,https://gpu.userbenchmark.com/AMD-HD-7970/Rating/2163
+
+63,AMD HD 7850,19.3,-1,https://gpu.userbenchmark.com/AMD-HD-7850/Rating/2182
+
+64,AMD R9 380X,37.7,-1,https://gpu.userbenchmark.com/AMD-R9-380X/Rating/3532
+
+65,AMD Radeon-VII,101.0,-1,https://gpu.userbenchmark.com/AMD-Radeon-VII/Rating/4035
+
+66,Nvidia RTX 3060 (Laptop),89.8,-1,https://gpu.userbenchmark.com/SpeedTest/1452971/NVIDIA-GeForce-RTX-3060-Laptop-GPU
+
+67,AMD R9 280,30.0,-1,https://gpu.userbenchmark.com/AMD-R9-280/Rating/2241
+
+68,Nvidia RTX 2060 (Mobile),70.9,-1,https://gpu.userbenchmark.com/SpeedTest/701609/NVIDIA-GeForce-RTX-2060
+
+69,AMD RX Vega 11 (Ryzen iGPU),14.5,-1,https://gpu.userbenchmark.com/SpeedTest/401440/AMD-RadeonTM-RX-Vega-11-Graphics
+
+70,AMD RX 550,14.1,-1,https://gpu.userbenchmark.com/AMD-RX-550/Rating/3925
+
+71,Nvidia RTX 3050-Ti (Laptop),60.8,-1,https://gpu.userbenchmark.com/SpeedTest/1559532/NVIDIA-GeForce-RTX-3050-Ti-Laptop-GPU
+
+72,AMD RX 460,19.7,-1,https://gpu.userbenchmark.com/AMD-RX-460/Rating/3641
+
+73,AMD RX 5700-XT $429,99.0,429,https://gpu.userbenchmark.com/AMD-RX-5700-XT/Rating/4045
+
+74,AMD RX 5500-XT,51.0,-1,https://gpu.userbenchmark.com/AMD-RX-5500-XT/Rating/4060
+
+75,AMD HD 7950,28.6,-1,https://gpu.userbenchmark.com/AMD-HD-7950/Rating/2160
+
+76,AMD R9 270,24.1,-1,https://gpu.userbenchmark.com/AMD-R9-270/Rating/3149
+
+77,AMD R7 360,17.9,-1,https://gpu.userbenchmark.com/AMD-R7-360/Rating/3572
+
+78,AMD RX Vega-56,78.0,-1,https://gpu.userbenchmark.com/AMD-RX-Vega-56/Rating/3938
+
+79,AMD R7 370,21.2,-1,https://gpu.userbenchmark.com/AMD-R7-370/Rating/3571
+
+80,Intel Iris Xe,14.1,-1,https://gpu.userbenchmark.com/SpeedTest/1268515/IntelR-IrisR-Xe-Graphics
+
+81,AMD RX 6800 $779,143.0,779,https://gpu.userbenchmark.com/AMD-RX-6800/Rating/4088
+
+82,Nvidia Titan RTX,168.0,-1,https://gpu.userbenchmark.com/SpeedTest/664199/NVIDIA-TITAN-RTX
+
+83,AMD RX 6600 $220,86.1,220,https://gpu.userbenchmark.com/AMD-RX-6600/Rating/4128
+
+84,Nvidia GTX 770,34.1,-1,https://gpu.userbenchmark.com/Nvidia-GTX-770/Rating/2174
+
+85,Nvidia GTX 680,31.6,-1,https://gpu.userbenchmark.com/Nvidia-GTX-680/Rating/3148
+
+86,AMD R7 260X,19.9,-1,https://gpu.userbenchmark.com/AMD-R7-260X/Rating/3151
+
+87,Nvidia GTX 1060 (Mobile),46.7,-1,https://gpu.userbenchmark.com/SpeedTest/164336/NVIDIA-GeForce-GTX-1060
+
+88,Nvidia GTX 1070 (Mobile),72.5,-1,https://gpu.userbenchmark.com/SpeedTest/164129/NVIDIA-GeForce-GTX-1070
+
+89,Nvidia Titan Xp,128.0,-1,https://gpu.userbenchmark.com/SpeedTest/265423/NVIDIA-TITAN-Xp
+
+90,Nvidia Titan V,140.0,-1,https://gpu.userbenchmark.com/SpeedTest/395529/NVIDIA-TITAN-V
+
+91,Nvidia RTX 2070 (Mobile Max-Q),78.8,-1,https://gpu.userbenchmark.com/SpeedTest/703511/NVIDIA-GeForce-RTX-2070-with-Max-Q-Design
+
+92,Nvidia GTX 1660-Ti (Mobile),65.0,-1,https://gpu.userbenchmark.com/SpeedTest/776281/NVIDIA-GeForce-GTX-1660-Ti
+
+93,Nvidia RTX 3070 (Laptop),114.0,-1,https://gpu.userbenchmark.com/SpeedTest/1445007/NVIDIA-GeForce-RTX-3070-Laptop-GPU
+
+94,Nvidia GTX 550-Ti,8.61,-1,https://gpu.userbenchmark.com/Nvidia-GTX-550-Ti/Rating/3161
+
+95,Intel HD 520 (Mobile Skylake),4.2,-1,https://gpu.userbenchmark.com/SpeedTest/36797/IntelR-HD-Graphics-520
+
+96,Intel UHD Graphics 630 (Desktop Coffee Lake i5 i7),5.19,-1,https://gpu.userbenchmark.com/SpeedTest/356797/IntelR-UHD-Graphics-630
+
+97,Nvidia GTX 650 Ti Boost,17.1,-1,https://gpu.userbenchmark.com/Nvidia-GTX-650-Ti-Boost/Rating/2190
+
+98,Nvidia MX150-0,13.7,-1,https://gpu.userbenchmark.com/SpeedTest/332822/NVIDIA-GeForce-MX150
+
+99,AMD HD 7870,25.9,-1,https://gpu.userbenchmark.com/AMD-HD-7870/Rating/2161
+
+100,Nvidia GTX Titan X,75.4,-1,https://gpu.userbenchmark.com/Nvidia-GTX-Titan-X/Rating/3282

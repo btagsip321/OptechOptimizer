@@ -16,6 +16,11 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
+@app.errorhandler(500)
+def page_not_found(e):
+    # note that we set the 404 status explicitly
+    return render_template('error.html')
+
 @app.route('/build', methods=['GET'])
 def build():
 
@@ -92,4 +97,4 @@ if __name__ == '__main__':
     print("Running web server")
     port = int(os.environ.get('PORT', 5000))
     print("Port: ", port)
-    app.run(host='0.0.0.0', port=port, debug=True)
+    app.run(host='0.0.0.0', port=port)
