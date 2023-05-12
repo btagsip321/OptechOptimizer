@@ -74,9 +74,9 @@ def build():
         remainder = (budgetTotal / ((1) + (tax/100))) - float(price)
         print("reallocating", part, "remainder:", remainder) 
 
-    pc_build["Motherboard"] = "$" + str(cleanBudget(extractPrice(pc_build["Motherboard"]) + remainder*.5, 0, 300)) + " (Input budget into PC Part Picker)"
-    pc_build["PSU"] = "$" + str(cleanBudget(extractPrice(pc_build["PSU"]) + remainder*.3, 0, 300)) + " (Input budget into PC Part Picker)"
-    pc_build["CPU_Cooler"] = "$" + str(cleanBudget(extractPrice(pc_build["CPU_Cooler"]) + remainder*.2, 0, 200)) + " (Input budget into PC Part Picker)"
+    pc_build["Motherboard"] = "$" + str(cleanBudget(extractPrice(pc_build["Motherboard"]) + remainder*.5, 0, 700)) + " (Input budget into PC Part Picker)"
+    pc_build["PSU"] = "$" + str(cleanBudget(extractPrice(pc_build["PSU"]) + remainder*.3, 0, 1000)) + " (Input budget into PC Part Picker)"
+    pc_build["CPU_Cooler"] = "$" + str(cleanBudget(extractPrice(pc_build["CPU_Cooler"]) + remainder*.2, 0, 305)) + " (Input budget into PC Part Picker)"
     del pc_build["Total_Price"]
 
     #if request.args.get('allocpref') == "cpu":
