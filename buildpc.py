@@ -129,7 +129,6 @@ def extractPrice(price):
     return float(extract.group().replace("$", "").replace(",", ""))
 
 def buildPc(budget, cpu, ssdStorageSpace, hddStorageSpace, windowsPref = False):
-    print(budget)
     pc = {
         "GPU": findPartsWithinBudget("GPU", budget["GPU"], None, None, None),
         "CPU": findPartsWithinBudget("CPU", budget["CPU"], cpu, None, None),

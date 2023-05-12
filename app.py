@@ -47,34 +47,53 @@ def build():
     # Debug initial pc build print
     for part in pc.keys():
         budget[part] = extractPrice(pc[part])
-    print(pc, budget, buildPrice)
 
     # Print the initial allocated budget
     print("Before Allocation:", sum(budget.values()) )
 
     # Remainding price, taxed budget - pc build price
     remainder = (budgetTotal / ((1) + (tax/100))) - float(buildPrice)
+    origRemainder = remainder
 
-    print("Remainder: ", remainder)
-    print(budget, sum(budget.values()) )
+    for part in parts:
+        if remainder <= 25: 
+            print("stopping at", part) 
+            break
+        budget[part] = cleanBudget(budget[part] + origRemainder, 0, 50000)
+        pc_build, price = buildPc(
+            budget, 
+            Brands[request.args.get('cpu')], 
+            int(request.args.get('ssdStorage') or 256), 
+            int(request.args.get('hddStorage') or 1000),
+            request.args.get('windows')=="on",
+        )
+
+        for part in pc_build.keys():
+            budget[part] = extractPrice(pc_build[part])
+
+        remainder = (budgetTotal / ((1) + (tax/100))) - float(price)
+        print("reallocating", part, "remainder:", remainder) 
+
+    pc_build["Motherboard"] = "$" + str(round(extractPrice(pc_build["Motherboard"]) + remainder*.5)) + " (Input budget into PC Part Picker)"
+    pc_build["PSU"] = "$" + str(round(extractPrice(pc_build["PSU"]) + remainder*.3)) + " (Input budget into PC Part Picker)"
+    pc_build["CPU_Cooler"] = "$" + str(round(extractPrice(pc_build["CPU_Cooler"]) + remainder*.2)) + " (Input budget into PC Part Picker)"
+    del pc_build["Total_Price"]
+
+    #if request.args.get('allocpref') == "cpu":
+    #    budget["CPU"] = cleanBudget(budget["CPU"] + (remainder), 0, 50000)
+    #elif request.args.get('allocpref') == "gpu":
+    #    budget["GPU"] = cleanBudget(budget["GPU"] + (remainder), 0, 50000)
+
+    #print(pc_build)
+
+    price = sum(map(extractPrice, pc_build.values())) 
+    print(price)
     
-    if request.args.get('allocpref') == "cpu":
-        budget["CPU"] = cleanBudget(budget["CPU"] + (remainder), 0, 50000)
-    elif request.args.get('allocpref') == "gpu":
-        budget["GPU"] = cleanBudget(budget["GPU"] + (remainder), 0, 50000)
 
-    print(budget, sum(budget.values()) )
+    if(request.args.get('windows')=="on"):
+        price = price + 140
+    pc_build["Total_Price"] = "$" + str(round(price, 2))
 
-    print("After Allocation:", sum(budget.values()) )
-
-    pc_build, price = buildPc(
-        budget, 
-        Brands[request.args.get('cpu')], 
-        int(request.args.get('ssdStorage') or 256), 
-        int(request.args.get('hddStorage') or 1000),
-        request.args.get('windows')=="on",
-    )
-    
     for part in list(pc_build.keys()):
         if pc_build[part].find("Buy here: "):
             index = pc_build[part].find("Buy here: ")
@@ -83,9 +102,7 @@ def build():
 
     pc_build["Windows_Key"] = "$" + str(140 if (request.args.get('windows')=="on") else 0)
     pc_build["Windows_URL"] = "https://www.amazon.com/Windows-11-Home-Digital-Download/dp/B09WCHGP12/ref=sr_1_3?keywords=windows%2B11%2Bhome&qid=1683027821&sr=8-3&th=1" if (request.args.get('windows')=="on") else "https://support.microsoft.com/en-us/windows/create-installation-media-for-windows-99a58364-8c02-206f-aa6f-40c3b507420d"
-
-    print(pc_build)
-
+    
     return render_template('results.html', **pc_build)
 
 @app.route('/budget', methods=['GET'])
@@ -97,4 +114,4 @@ if __name__ == '__main__':
     print("Running web server")
     port = int(os.environ.get('PORT', 5000))
     print("Port: ", port)
-    app.run(host='0.0.0.0', port=port)
+    app.run(host='0.0.0.0', port=port, debug=True)
