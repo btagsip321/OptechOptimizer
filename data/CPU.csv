@@ -1,201 +1,101 @@
-Rank,Name,Benchmark,Price,URL
-
-1,Intel Core i5-13600K $319,122.0,319,https://cpu.userbenchmark.com/Intel-Core-i5-13600K/Rating/4134
-
-2,Intel Core i5-12600K $220,109.0,220,https://cpu.userbenchmark.com/Intel-Core-i5-12600K/Rating/4120
-
-3,Intel Core i5-12400F $161,98.3,161,https://cpu.userbenchmark.com/Intel-Core-i5-12400F/Rating/4121
-
-4,Intel Core i3-12100F $96,94.0,96,https://cpu.userbenchmark.com/Intel-Core-i3-12100F/Rating/4125
-
-5,Intel Core i9-13900K $550,129.0,550,https://cpu.userbenchmark.com/Intel-Core-i9-13900K/Rating/4129
-
-6,Intel Core i7-9700K $429,96.9,429,https://cpu.userbenchmark.com/Intel-Core-i7-9700K/Rating/4030
-
-7,Intel Core i7-13700K $400,126.0,400,https://cpu.userbenchmark.com/Intel-Core-i7-13700K/Rating/4137
-
-8,AMD Ryzen 5 3600 $94,83.1,94,https://cpu.userbenchmark.com/AMD-Ryzen-5-3600/Rating/4040
-
-9,AMD Ryzen 5 5600X $153,95.9,153,https://cpu.userbenchmark.com/AMD-Ryzen-5-5600X/Rating/4084
-
-10,Intel Core i5-13600KF $280,122.0,280,https://cpu.userbenchmark.com/SpeedTest/1950757/13th-Gen-IntelR-CoreTM-i5-13600KF
-
-11,Intel Core i7-11700K $250,101.0,250,https://cpu.userbenchmark.com/Intel-Core-i7-11700K/Rating/4107
-
-12,Intel Core i5-12400 $180,98.1,180,https://cpu.userbenchmark.com/Intel-Core-i5-12400/Rating/4122
-
-13,Intel Core i7-12700K $294,114.0,294,https://cpu.userbenchmark.com/Intel-Core-i7-12700K/Rating/4119
-
-14,Intel Core i5-11600K $188,99.2,188,https://cpu.userbenchmark.com/Intel-Core-i5-11600K/Rating/4113
-
-15,Intel Core i5-9600K $240,93.2,240,https://cpu.userbenchmark.com/Intel-Core-i5-9600K/Rating/4031
-
-16,Intel Core i5-13400F $185,106.0,185,https://cpu.userbenchmark.com/Intel-Core-i5-13400F/Rating/4144
-
-17,Intel Core i5-10600K $181,92.2,181,https://cpu.userbenchmark.com/Intel-Core-i5-10600K/Rating/4072
-
-18,Intel Core i5-11400 $133,94.2,133,https://cpu.userbenchmark.com/Intel-Core-i5-11400/Rating/4112
-
-19,Intel Core i3-12100 $132,94.0,132,https://cpu.userbenchmark.com/Intel-Core-i3-12100/Rating/4126
-
-20,AMD Ryzen 7 3700X $273,85.9,273,https://cpu.userbenchmark.com/AMD-Ryzen-7-3700X/Rating/4043
-
-21,Intel Core i5-11400F $130,94.1,130,https://cpu.userbenchmark.com/Intel-Core-i5-11400F/Rating/4111
-
-22,Intel Core i3-10100 $110,79.9,110,https://cpu.userbenchmark.com/Intel-Core-i3-10100/Rating/4075
-
-23,Intel Core i7-10700K $250,96.5,250,https://cpu.userbenchmark.com/Intel-Core-i7-10700K/Rating/4070
-
-24,Intel Core i5-10400F $103,85.2,103,https://cpu.userbenchmark.com/Intel-Core-i5-10400F/Rating/4079
-
-25,AMD Ryzen 7 5800X $239,98.2,239,https://cpu.userbenchmark.com/AMD-Ryzen-7-5800X/Rating/4085
-
-26,Intel Core i3-10100F $66,80.4,66,https://cpu.userbenchmark.com/Intel-Core-i3-10100F/Rating/4082
-
-27,Intel Core i5-10600KF $176,91.9,176,https://cpu.userbenchmark.com/SpeedTest/1225152/IntelR-CoreTM-i5-10600KF-CPU---410GHz
-
-28,Intel Core i7-4790K,78.9,-1,https://cpu.userbenchmark.com/Intel-Core-i7-4790K/Rating/2384
-
-29,Intel Core i5-9400F $135,84.8,135,https://cpu.userbenchmark.com/Intel-Core-i5-9400F/Rating/4051
-
-30,Intel Core i3-13100F $126,96.3,126,https://cpu.userbenchmark.com/Intel-Core-i3-13100F/Rating/4143
-
-31,Intel Core i5-10400 $125,84.5,125,https://cpu.userbenchmark.com/Intel-Core-i5-10400/Rating/4073
-
-32,Intel Core i3-9100F $120,80.1,120,https://cpu.userbenchmark.com/Intel-Core-i3-9100F/Rating/4054
-
-33,Intel Core i9-9900K $330,97.9,330,https://cpu.userbenchmark.com/Intel-Core-i9-9900K/Rating/4028
-
-34,AMD Ryzen 5 2600X $213,74.0,213,https://cpu.userbenchmark.com/AMD-Ryzen-5-2600X/Rating/3956
-
-35,Intel Core i7-7700K $350,84.0,350,https://cpu.userbenchmark.com/Intel-Core-i7-7700K/Rating/3647
-
-36,Intel Core i9-12900K $374,117.0,374,https://cpu.userbenchmark.com/Intel-Core-i9-12900K/Rating/4118
-
-37,Intel Core i5-13500 $248,113.0,248,https://cpu.userbenchmark.com/Intel-Core-i5-13500/Rating/4147
-
-38,Intel Core i5-9600KF $175,93.2,175,https://cpu.userbenchmark.com/SpeedTest/772658/IntelR-CoreTM-i5-9600KF-CPU---370GHz
-
-39,Intel Core i7-8700K $281,88.4,281,https://cpu.userbenchmark.com/Intel-Core-i7-8700K/Rating/3937
-
-40,AMD Ryzen 5 7600X $249,110.0,249,https://cpu.userbenchmark.com/AMD-Ryzen-5-7600X/Rating/4130
-
-41,AMD Ryzen 7 7800X3D $449,117.0,449,https://cpu.userbenchmark.com/SpeedTest/2081998/AMD-Ryzen-7-7800X3D-8-Core-Processor
-
-42,Intel Core i7-6700K $223,80.8,223,https://cpu.userbenchmark.com/Intel-Core-i7-6700K/Rating/3502
-
-43,Intel Core i5-8600K $265,90.7,265,https://cpu.userbenchmark.com/Intel-Core-i5-8600K/Rating/3941
-
-44,AMD Ryzen 5 3400G $125,68.1,125,https://cpu.userbenchmark.com/SpeedTest/825156/AMD-Ryzen-5-3400G-with-Radeon-Vega-Graphics
-
-45,AMD Ryzen 5 2600 $183,72.8,183,https://cpu.userbenchmark.com/AMD-Ryzen-5-2600/Rating/3955
-
-46,Intel Core i9-11900K $315,103.0,315,https://cpu.userbenchmark.com/Intel-Core-i9-11900K/Rating/4110
-
-47,Intel Core i7-2600K $125,70.6,125,https://cpu.userbenchmark.com/Intel-Core-i7-2600K/Rating/621
-
-48,Intel Core i5-2500K,65.9,-1,https://cpu.userbenchmark.com/Intel-Core-i5-2500K/Rating/619
-
-49,Intel Core i5-3570K $154,67.6,154,https://cpu.userbenchmark.com/Intel-Core-i5-3570K/Rating/1316
-
-50,Intel Core i5-6600K $143,72.4,143,https://cpu.userbenchmark.com/Intel-Core-i5-6600K/Rating/3503
-
-51,Intel Core i5-7600K $180,75.8,180,https://cpu.userbenchmark.com/Intel-Core-i5-7600K/Rating/3885
-
-52,AMD Ryzen 9 3900X $385,87.9,385,https://cpu.userbenchmark.com/AMD-Ryzen-9-3900X/Rating/4044
-
-53,AMD Ryzen 9 5900X $306,98.8,306,https://cpu.userbenchmark.com/AMD-Ryzen-9-5900X/Rating/4087
-
-54,Intel Core i5-4690K $95,69.6,95,https://cpu.userbenchmark.com/Intel-Core-i5-4690K/Rating/2432
-
-55,AMD Ryzen 5 1600 $288,70.2,288,https://cpu.userbenchmark.com/AMD-Ryzen-5-1600/Rating/3919
-
-56,Intel Core i7-12700F $320,109.0,320,https://cpu.userbenchmark.com/Intel-Core-i7-12700F/Rating/4124
-
-57,Intel Core i7-8700 $330,87.0,330,https://cpu.userbenchmark.com/Intel-Core-i7-8700/Rating/3940
-
-58,Intel Core i9-13900KF $540,129.0,540,https://cpu.userbenchmark.com/SpeedTest/1946957/13th-Gen-IntelR-CoreTM-i9-13900KF
-
-59,Intel Core i7-7700HQ,62.0,-1,https://cpu.userbenchmark.com/SpeedTest/211019/IntelR-CoreTM-i7-7700HQ-CPU---280GHz
-
-60,AMD Ryzen 3 3300X,79.7,-1,https://cpu.userbenchmark.com/AMD-Ryzen-3-3300X/Rating/4076
-
-61,AMD Ryzen 7 1700X $265,71.0,265,https://cpu.userbenchmark.com/AMD-Ryzen-7-1700X/Rating/3915
-
-62,AMD Ryzen 7 1700 $215,69.0,215,https://cpu.userbenchmark.com/AMD-Ryzen-7-1700/Rating/3917
-
-63,AMD Ryzen 7 2700X $230,75.7,230,https://cpu.userbenchmark.com/AMD-Ryzen-7-2700X/Rating/3958
-
-64,AMD Ryzen 5 3600X $230,84.1,230,https://cpu.userbenchmark.com/AMD-Ryzen-5-3600X/Rating/4041
-
-65,Intel Core i7-13700KF $370,126.0,370,https://cpu.userbenchmark.com/SpeedTest/1925886/13th-Gen-IntelR-CoreTM-i7-13700KF
-
-66,Intel Core i3-8100 $155,70.6,155,https://cpu.userbenchmark.com/Intel-Core-i3-8100/Rating/3942
-
-67,AMD Ryzen 5 1600X,73.7,-1,https://cpu.userbenchmark.com/AMD-Ryzen-5-1600X/Rating/3920
-
-68,AMD Ryzen 9 5950X,100.0,-1,https://cpu.userbenchmark.com/AMD-Ryzen-9-5950X/Rating/4086
-
-69,Intel Pentium G4560,57.3,-1,https://cpu.userbenchmark.com/Intel-Pentium-G4560/Rating/3892
-
-70,AMD Ryzen 7 1800X $295,71.8,295,https://cpu.userbenchmark.com/AMD-Ryzen-7-1800X/Rating/3916
-
-71,AMD Ryzen 7 7700X $310,112.0,310,https://cpu.userbenchmark.com/AMD-Ryzen-7-7700X/Rating/4131
-
-72,AMD Ryzen 7 3800X $295,87.0,295,https://cpu.userbenchmark.com/AMD-Ryzen-7-3800X/Rating/4047
-
-73,Intel Core i7-5820K $199,76.8,199,https://cpu.userbenchmark.com/Intel-Core-i7-5820K/Rating/2579
-
-74,Intel Core i5-6500 $138,63.6,138,https://cpu.userbenchmark.com/Intel-Core-i5-6500/Rating/3513
-
-75,Intel Core i7-8750H,70.1,-1,https://cpu.userbenchmark.com/SpeedTest/470418/IntelR-CoreTM-i7-8750H-CPU---220GHz
-
-76,Intel Core i7-6800K $170,80.6,170,https://cpu.userbenchmark.com/Intel-Core-i7-6800K/Rating/3607
-
-77,AMD Ryzen 3 2200G $197,60.5,197,https://cpu.userbenchmark.com/SpeedTest/441832/AMD-Ryzen-3-2200G-with-Radeon-Vega-Graphics
-
-78,AMD Ryzen 3 3200G $83,62.7,83,https://cpu.userbenchmark.com/SpeedTest/824486/AMD-Ryzen-3-3200G-with-Radeon-Vega-Graphics
-
-79,Intel Core i9-10900K $346,99.6,346,https://cpu.userbenchmark.com/Intel-Core-i9-10900K/Rating/4071
-
-80,Intel Core i7-4770K,73.6,-1,https://cpu.userbenchmark.com/Intel-Core-i7-4770K/Rating/1537
-
-81,Intel Core i5-2500,62.9,-1,https://cpu.userbenchmark.com/SpeedTest/517/IntelR-CoreTM-i5-2500-CPU---330GHz
-
-82,AMD Ryzen TR 2990WX,78.9,-1,https://cpu.userbenchmark.com/SpeedTest/560423/AMD-Ryzen-Threadripper-2990WX-32-Core-Processor
-
-83,AMD Ryzen 5 2400G $195,62.5,195,https://cpu.userbenchmark.com/SpeedTest/433194/AMD-Ryzen-5-2400G-with-Radeon-Vega-Graphics
-
-84,AMD Ryzen TR 1950X $567,76.7,567,https://cpu.userbenchmark.com/AMD-Ryzen-TR-1950X/Rating/3932
-
-85,"AMD Ryzen TR 2950X $1,075",81.1,1075,https://cpu.userbenchmark.com/SpeedTest/569025/AMD-Ryzen-Threadripper-2950X-16-Core-Processor
-
-86,Intel Core i7-3930K $350,74.4,350,https://cpu.userbenchmark.com/Intel-Core-i7-3930K/Rating/1487
-
-87,AMD Ryzen 7 2700 $213,73.8,213,https://cpu.userbenchmark.com/AMD-Ryzen-7-2700/Rating/3957
-
-88,Intel Core i3-9350KF,89.3,-1,https://cpu.userbenchmark.com/Intel-Core-i3-9350KF/Rating/4055
-
-89,AMD Ryzen TR 2920X,80.7,-1,https://cpu.userbenchmark.com/SpeedTest/625966/AMD-Ryzen-Threadripper-2920X-12-Core-Processor
-
-90,Intel Core i7-2600 $147,67.1,147,https://cpu.userbenchmark.com/Intel-Core-i7-2600/Rating/620
-
-91,Intel Core i7-7820X $350,80.1,350,https://cpu.userbenchmark.com/Intel-Core-i7-7820X/Rating/3928
-
-92,Intel Core i5-6600,67.6,-1,https://cpu.userbenchmark.com/Intel-Core-i5-6600/Rating/3514
-
-93,Intel Core i3-6100 $105,55.4,105,https://cpu.userbenchmark.com/Intel-Core-i3-6100/Rating/3511
-
-94,Intel Core i5-8400 $185,81.8,185,https://cpu.userbenchmark.com/Intel-Core-i5-8400/Rating/3939
-
-95,Intel Core i7-6700HQ,58.7,-1,https://cpu.userbenchmark.com/SpeedTest/34954/IntelR-CoreTM-i7-6700HQ-CPU---260GHz
-
-96,Intel Core i5-4670K $148,68.0,148,https://cpu.userbenchmark.com/Intel-Core-i5-4670K/Rating/1538
-
-97,Intel Core i5-4590,63.5,134,https://cpu.userbenchmark.com/Intel-Core-i5-4590/Rating/2604
-
-98,Intel Core i7-3770K,72.4,-1,https://cpu.userbenchmark.com/Intel-Core-i7-3770K/Rating/1317
-
-99,AMD Ryzen 5 1500X $225,66.4,225,https://cpu.userbenchmark.com/AMD-Ryzen-5-1500X/Rating/3921
-
-100,Intel Core i7-6950X $322,86.8,322,https://cpu.userbenchmark.com/Intel-Core-i7-6950X/Rating/3604
+Rank,Name,Benchmark,Price,URL
+1,Intel Core i5-13600K $304,122.0,304,https://cpu.userbenchmark.com/Intel-Core-i5-13600K/Rating/4134
+2,Intel Core i5-12600K $229,109.0,229,https://cpu.userbenchmark.com/Intel-Core-i5-12600K/Rating/4120
+3,Intel Core i3-12100F $96,94.1,96,https://cpu.userbenchmark.com/Intel-Core-i3-12100F/Rating/4125
+4,Intel Core i5-12400F $157,98.3,157,https://cpu.userbenchmark.com/Intel-Core-i5-12400F/Rating/4121
+5,Intel Core i7-13700K $395,126.0,395,https://cpu.userbenchmark.com/Intel-Core-i7-13700K/Rating/4137
+6,Intel Core i9-13900K $549,129.0,549,https://cpu.userbenchmark.com/Intel-Core-i9-13900K/Rating/4129
+7,Intel Core i5-13600KF $280,122.0,280,https://cpu.userbenchmark.com/SpeedTest/1950757/13th-Gen-IntelR-CoreTM-i5-13600KF
+8,AMD Ryzen 5 3600 $100,83.1,100,https://cpu.userbenchmark.com/AMD-Ryzen-5-3600/Rating/4040
+9,AMD Ryzen 5 5600X $148,96.0,148,https://cpu.userbenchmark.com/AMD-Ryzen-5-5600X/Rating/4084
+10,Intel Core i5-12400 $185,98.1,185,https://cpu.userbenchmark.com/Intel-Core-i5-12400/Rating/4122
+11,Intel Core i7-11700K $265,101.0,265,https://cpu.userbenchmark.com/Intel-Core-i7-11700K/Rating/4107
+12,Intel Core i7-9700K $350,96.9,350,https://cpu.userbenchmark.com/Intel-Core-i7-9700K/Rating/4030
+13,Intel Core i5-11600K $185,99.2,185,https://cpu.userbenchmark.com/Intel-Core-i5-11600K/Rating/4113
+14,Intel Core i7-12700K $287,114.0,287,https://cpu.userbenchmark.com/Intel-Core-i7-12700K/Rating/4119
+15,Intel Core i5-11400F $130,94.1,130,https://cpu.userbenchmark.com/Intel-Core-i5-11400F/Rating/4111
+16,Intel Core i5-9600K $230,93.2,230,https://cpu.userbenchmark.com/Intel-Core-i5-9600K/Rating/4031
+17,Intel Core i5-11400 $133,94.2,133,https://cpu.userbenchmark.com/Intel-Core-i5-11400/Rating/4112
+18,Intel Core i3-12100 $131,93.9,131,https://cpu.userbenchmark.com/Intel-Core-i3-12100/Rating/4126
+19,Intel Core i5-10600K $181,92.2,181,https://cpu.userbenchmark.com/Intel-Core-i5-10600K/Rating/4072
+20,Intel Core i7-10700K $260,96.5,260,https://cpu.userbenchmark.com/Intel-Core-i7-10700K/Rating/4070
+21,AMD Ryzen 7 3700X $273,85.9,273,https://cpu.userbenchmark.com/AMD-Ryzen-7-3700X/Rating/4043
+22,Intel Core i5-10400F $103,85.2,103,https://cpu.userbenchmark.com/Intel-Core-i5-10400F/Rating/4079
+23,Intel Core i3-10100F $66,80.4,66,https://cpu.userbenchmark.com/Intel-Core-i3-10100F/Rating/4082
+24,Intel Core i5-13400F $209,106.0,209,https://cpu.userbenchmark.com/Intel-Core-i5-13400F/Rating/4144
+25,Intel Core i3-10100 $110,79.9,110,https://cpu.userbenchmark.com/Intel-Core-i3-10100/Rating/4075
+26,AMD Ryzen 7 5800X $200,98.0,200,https://cpu.userbenchmark.com/AMD-Ryzen-7-5800X/Rating/4085
+27,Intel Core i5-10600KF $176,91.9,176,https://cpu.userbenchmark.com/SpeedTest/1225152/IntelR-CoreTM-i5-10600KF-CPU---410GHz
+28,Intel Core i7-4790K,78.9,-1,https://cpu.userbenchmark.com/Intel-Core-i7-4790K/Rating/2384
+29,Intel Core i5-9400F $128,84.8,128,https://cpu.userbenchmark.com/Intel-Core-i5-9400F/Rating/4051
+30,Intel Core i5-10400 $125,84.5,125,https://cpu.userbenchmark.com/Intel-Core-i5-10400/Rating/4073
+31,Intel Core i3-13100F $111,96.1,111,https://cpu.userbenchmark.com/Intel-Core-i3-13100F/Rating/4143
+32,Intel Core i3-9100F $120,80.1,120,https://cpu.userbenchmark.com/Intel-Core-i3-9100F/Rating/4054
+33,Intel Core i9-9900K $330,97.9,330,https://cpu.userbenchmark.com/Intel-Core-i9-9900K/Rating/4028
+34,AMD Ryzen 5 2600X $213,74.0,213,https://cpu.userbenchmark.com/AMD-Ryzen-5-2600X/Rating/3956
+35,Intel Core i5-13500 $248,113.0,248,https://cpu.userbenchmark.com/Intel-Core-i5-13500/Rating/4147
+36,Intel Core i7-7700K $301,84.0,301,https://cpu.userbenchmark.com/Intel-Core-i7-7700K/Rating/3647
+37,Intel Core i9-12900K $401,117.0,401,https://cpu.userbenchmark.com/Intel-Core-i9-12900K/Rating/4118
+38,Intel Core i5-9600KF $175,93.2,175,https://cpu.userbenchmark.com/SpeedTest/772658/IntelR-CoreTM-i5-9600KF-CPU---370GHz
+39,Intel Core i7-8700K $281,88.4,281,https://cpu.userbenchmark.com/Intel-Core-i7-8700K/Rating/3937
+40,AMD Ryzen 5 7600X $240,110.0,240,https://cpu.userbenchmark.com/AMD-Ryzen-5-7600X/Rating/4130
+41,Intel Core i5-8600K $265,90.7,265,https://cpu.userbenchmark.com/Intel-Core-i5-8600K/Rating/3941
+42,AMD Ryzen 7 7800X3D $420,117.0,420,https://cpu.userbenchmark.com/SpeedTest/2081998/AMD-Ryzen-7-7800X3D-8-Core-Processor
+43,AMD Ryzen 5 3400G $112,68.1,112,https://cpu.userbenchmark.com/SpeedTest/825156/AMD-Ryzen-5-3400G-with-Radeon-Vega-Graphics
+44,Intel Core i7-6700K $248,80.8,248,https://cpu.userbenchmark.com/Intel-Core-i7-6700K/Rating/3502
+45,AMD Ryzen 5 2600 $183,72.8,183,https://cpu.userbenchmark.com/AMD-Ryzen-5-2600/Rating/3955
+46,Intel Core i9-11900K $301,103.0,301,https://cpu.userbenchmark.com/Intel-Core-i9-11900K/Rating/4110
+47,Intel Core i7-2600K $140,70.6,140,https://cpu.userbenchmark.com/Intel-Core-i7-2600K/Rating/621
+48,Intel Core i5-2500K,65.9,-1,https://cpu.userbenchmark.com/Intel-Core-i5-2500K/Rating/619
+49,Intel Core i5-3570K $154,67.6,154,https://cpu.userbenchmark.com/Intel-Core-i5-3570K/Rating/1316
+50,Intel Core i5-7600K $148,75.8,148,https://cpu.userbenchmark.com/Intel-Core-i5-7600K/Rating/3885
+51,Intel Core i5-6600K $195,72.4,195,https://cpu.userbenchmark.com/Intel-Core-i5-6600K/Rating/3503
+52,AMD Ryzen 9 5900X $310,98.8,310,https://cpu.userbenchmark.com/AMD-Ryzen-9-5900X/Rating/4087
+53,AMD Ryzen 9 3900X $385,87.9,385,https://cpu.userbenchmark.com/AMD-Ryzen-9-3900X/Rating/4044
+54,Intel Core i7-8700 $330,87.0,330,https://cpu.userbenchmark.com/Intel-Core-i7-8700/Rating/3940
+55,AMD Ryzen 5 1600 $288,70.2,288,https://cpu.userbenchmark.com/AMD-Ryzen-5-1600/Rating/3919
+56,Intel Core i5-4690K $95,69.6,95,https://cpu.userbenchmark.com/Intel-Core-i5-4690K/Rating/2432
+57,Intel Core i9-13900KF $525,129.0,525,https://cpu.userbenchmark.com/SpeedTest/1946957/13th-Gen-IntelR-CoreTM-i9-13900KF
+58,Intel Core i7-12700F $320,109.0,320,https://cpu.userbenchmark.com/Intel-Core-i7-12700F/Rating/4124
+59,Intel Core i7-7700HQ,62.0,-1,https://cpu.userbenchmark.com/SpeedTest/211019/IntelR-CoreTM-i7-7700HQ-CPU---280GHz
+60,AMD Ryzen 7 1700X $265,71.0,265,https://cpu.userbenchmark.com/AMD-Ryzen-7-1700X/Rating/3915
+61,AMD Ryzen 5 3600X $230,84.1,230,https://cpu.userbenchmark.com/AMD-Ryzen-5-3600X/Rating/4041
+62,AMD Ryzen 3 3300X $169,79.7,169,https://cpu.userbenchmark.com/AMD-Ryzen-3-3300X/Rating/4076
+63,AMD Ryzen 7 1700 $215,69.0,215,https://cpu.userbenchmark.com/AMD-Ryzen-7-1700/Rating/3917
+64,AMD Ryzen 7 2700X $230,75.7,230,https://cpu.userbenchmark.com/AMD-Ryzen-7-2700X/Rating/3958
+65,Intel Core i7-13700KF $390,126.0,390,https://cpu.userbenchmark.com/SpeedTest/1925886/13th-Gen-IntelR-CoreTM-i7-13700KF
+66,AMD Ryzen 5 1600X,73.7,-1,https://cpu.userbenchmark.com/AMD-Ryzen-5-1600X/Rating/3920
+67,Intel Core i3-8100 $155,70.6,155,https://cpu.userbenchmark.com/Intel-Core-i3-8100/Rating/3942
+68,AMD Ryzen 9 5950X $469,100.0,469,https://cpu.userbenchmark.com/AMD-Ryzen-9-5950X/Rating/4086
+69,Intel Pentium G4560,57.3,-1,https://cpu.userbenchmark.com/Intel-Pentium-G4560/Rating/3892
+70,AMD Ryzen 7 1800X $295,71.8,295,https://cpu.userbenchmark.com/AMD-Ryzen-7-1800X/Rating/3916
+71,AMD Ryzen 7 7700X $318,112.0,318,https://cpu.userbenchmark.com/AMD-Ryzen-7-7700X/Rating/4131
+72,Intel Core i7-8750H,70.1,-1,https://cpu.userbenchmark.com/SpeedTest/470418/IntelR-CoreTM-i7-8750H-CPU---220GHz
+73,AMD Ryzen 7 3800X $285,87.0,285,https://cpu.userbenchmark.com/AMD-Ryzen-7-3800X/Rating/4047
+74,Intel Core i5-6500 $138,63.6,138,https://cpu.userbenchmark.com/Intel-Core-i5-6500/Rating/3513
+75,Intel Core i7-5820K $199,76.8,199,https://cpu.userbenchmark.com/Intel-Core-i7-5820K/Rating/2579
+76,AMD Ryzen 3 2200G $184,60.5,184,https://cpu.userbenchmark.com/SpeedTest/441832/AMD-Ryzen-3-2200G-with-Radeon-Vega-Graphics
+77,AMD Ryzen 3 3200G $92,62.7,92,https://cpu.userbenchmark.com/SpeedTest/824486/AMD-Ryzen-3-3200G-with-Radeon-Vega-Graphics
+78,Intel Core i7-6800K $170,80.6,170,https://cpu.userbenchmark.com/Intel-Core-i7-6800K/Rating/3607
+79,Intel Core i9-10900K $340,99.6,340,https://cpu.userbenchmark.com/Intel-Core-i9-10900K/Rating/4071
+80,Intel Core i7-4770K,73.6,-1,https://cpu.userbenchmark.com/Intel-Core-i7-4770K/Rating/1537
+81,Intel Core i5-2500,62.9,-1,https://cpu.userbenchmark.com/SpeedTest/517/IntelR-CoreTM-i5-2500-CPU---330GHz
+82,AMD Ryzen TR 2990WX,78.9,-1,https://cpu.userbenchmark.com/SpeedTest/560423/AMD-Ryzen-Threadripper-2990WX-32-Core-Processor
+83,Intel Core i7-2600 $132,67.1,132,https://cpu.userbenchmark.com/Intel-Core-i7-2600/Rating/620
+84,AMD Ryzen 5 2400G $195,62.5,195,https://cpu.userbenchmark.com/SpeedTest/433194/AMD-Ryzen-5-2400G-with-Radeon-Vega-Graphics
+85,AMD Ryzen 7 2700 $206,73.8,206,https://cpu.userbenchmark.com/AMD-Ryzen-7-2700/Rating/3957
+86,"AMD Ryzen TR 2950X $1,075",81.1,1075,https://cpu.userbenchmark.com/SpeedTest/569025/AMD-Ryzen-Threadripper-2950X-16-Core-Processor
+87,Intel Core i7-3930K $350,74.4,350,https://cpu.userbenchmark.com/Intel-Core-i7-3930K/Rating/1487
+88,Intel Core i3-9350KF,89.3,-1,https://cpu.userbenchmark.com/Intel-Core-i3-9350KF/Rating/4055
+89,Intel Core i7-6700HQ,58.7,-1,https://cpu.userbenchmark.com/SpeedTest/34954/IntelR-CoreTM-i7-6700HQ-CPU---260GHz
+90,AMD Ryzen TR 2920X,80.7,-1,https://cpu.userbenchmark.com/SpeedTest/625966/AMD-Ryzen-Threadripper-2920X-12-Core-Processor
+91,Intel Core i7-7820X $350,80.1,350,https://cpu.userbenchmark.com/Intel-Core-i7-7820X/Rating/3928
+92,AMD Ryzen TR 1950X,76.7,-1,https://cpu.userbenchmark.com/AMD-Ryzen-TR-1950X/Rating/3932
+93,Intel Core i3-6100 $105,55.4,105,https://cpu.userbenchmark.com/Intel-Core-i3-6100/Rating/3511
+94,Intel Core i7-4790 $185,71.4,185,https://cpu.userbenchmark.com/Intel-Core-i7-4790/Rating/2293
+95,Intel Core i5-4590,63.5,119,https://cpu.userbenchmark.com/Intel-Core-i5-4590/Rating/2604
+96,Intel Core i7-3770K $165,72.4,165,https://cpu.userbenchmark.com/Intel-Core-i7-3770K/Rating/1317
+97,AMD Ryzen 3 1200 $115,57.0,115,https://cpu.userbenchmark.com/AMD-Ryzen-3-1200/Rating/3931
+98,AMD Ryzen 5 1500X $225,66.4,225,https://cpu.userbenchmark.com/AMD-Ryzen-5-1500X/Rating/3921
+99,Intel Core i5-8400 $185,81.8,185,https://cpu.userbenchmark.com/Intel-Core-i5-8400/Rating/3939
+100,Intel Core i5-6600,67.6,-1,https://cpu.userbenchmark.com/Intel-Core-i5-6600/Rating/3514

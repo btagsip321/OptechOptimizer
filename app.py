@@ -54,14 +54,18 @@ def build():
     # Remainding price, taxed budget - pc build price
     remainder = (budgetTotal / ((1) + (tax/100))) - float(buildPrice)
 
-    print(parts)
+    # Reallocation
     for part in parts:
-        print(part)
+
+        # Leave $25 for other reallocation
         if remainder <= 25: 
-            print("stopping at", part) 
+            print("Stopping at", part) 
             break
         
+        # Add remainder to budget in part
         budget[part] = cleanBudget(budget[part] + remainder, 0, 50000)
+
+        # Calculate new PC
         pc_build, price = buildPc(
             budget, 
             Brands[request.args.get('cpu')], 
@@ -70,43 +74,35 @@ def build():
             request.args.get('windows')=="on",
         )
 
+        # Set the new prices
         for part in pc_build.keys():
             budget[part] = extractPrice(pc_build[part])
 
+        # Calculate new remainder
         remainder = (budgetTotal / ((1) + (tax/100))) - float(price)
         print("reallocating", part, "remainder:", remainder, "price:", price) 
 
-    print(pc_build)
-    print(pc_build["CPU_Cooler"])
-    print(remainder*.2)
+    # Reallocate remainder into non url components
     pc_build["Motherboard"] = "$" + str(cleanBudget(extractPrice(pc_build["Motherboard"]) + remainder*.5, 0, 700)) + " (Input budget into PC Part Picker)"
     pc_build["PSU"] = "$" + str(cleanBudget(extractPrice(pc_build["PSU"]) + remainder*.3, 0, 1000)) + " (Input budget into PC Part Picker)"
     pc_build["CPU_Cooler"] = "$" + str(cleanBudget(extractPrice(pc_build["CPU_Cooler"]) + remainder*.2, 0, 305)) + " (Input budget into PC Part Picker)"
 
-    #if request.args.get('allocpref') == "cpu":
-    #    budget["CPU"] = cleanBudget(budget["CPU"] + (remainder), 0, 50000)
-    #elif request.args.get('allocpref') == "gpu":
-    #    budget["GPU"] = cleanBudget(budget["GPU"] + (remainder), 0, 50000)
-
-    #print(pc_build)
-
-    price = sum(map(extractPrice, pc_build.values())) 
-    print(price)
-    
-
-    if(request.args.get('windows')=="on"):
-        price = price + 140
+    # Calculate new total price
+    price = sum(map(extractPrice, pc_build.values())) + (140 if (request.args.get('windows')=="on") else 0)
     pc_build["Total_Price"] = "$" + format(price, ".3f")
 
+    # Add URLs to build
     for part in list(pc_build.keys()):
         if pc_build[part].find("Buy here: "):
             index = pc_build[part].find("Buy here: ")
             pc_build[part + "_URL"] = pc_build[part][index + 10:]
             pc_build[part] = pc_build[part][:index]
 
+    # Add windows key and URL
     pc_build["Windows_Key"] = "$" + str(140 if (request.args.get('windows')=="on") else 0)
     pc_build["Windows_URL"] = "https://www.amazon.com/Windows-11-Home-Digital-Download/dp/B09WCHGP12/ref=sr_1_3?keywords=windows%2B11%2Bhome&qid=1683027821&sr=8-3&th=1" if (request.args.get('windows')=="on") else "https://support.microsoft.com/en-us/windows/create-installation-media-for-windows-99a58364-8c02-206f-aa6f-40c3b507420d"
     
+    # Render results
     return render_template('results.html', **pc_build)
 
 @app.route('/budget', methods=['GET'])

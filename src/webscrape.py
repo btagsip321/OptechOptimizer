@@ -95,7 +95,7 @@ for part in PARTS:
                 csv.loc[len(csv.index)] = newRow
 
         # Click the next button to go through next page on the table
-        SCRAPER.find_element(By.CSS_SELECTOR, "#tableDataForm\:j_idt200").click()
+        SCRAPER.find_element(By.CSS_SELECTOR, "#tableDataForm\:j_idt260").click()
         time.sleep(4)
         
     # Create new CSV file
