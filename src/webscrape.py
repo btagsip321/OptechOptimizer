@@ -1,5 +1,6 @@
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.by import By
 from selenium import webdriver
 import pandas as pd
@@ -26,7 +27,7 @@ else:
 PARTS = {
     "GPU": ["https://gpu.userbenchmark.com/", {"Rank":0, "Name":1, "Benchmark":4, "Price":7, "URL":None}],
     "CPU": ["https://cpu.userbenchmark.com/", {"Rank":0, "Name":1, "Benchmark":4, "Price":9, "URL":None}],
-    "RAM": ["https://ram.userbenchmark.com/", {"Rank":0, "Name":1, "Benchmark":4, "Price":9, "URL":None}],
+    "RAM": ["https://ram.userbenchmark.com/", {"Rank":0, "Name":1, "Capacity":2, "Benchmark":5, "Price":10, "URL":None}],
     "SSD": ["https://ssd.userbenchmark.com/", {"Rank":0, "Name":1, "Benchmark":4, "Price":9, "URL":None, "Capacity":5}],
     "HDD": ["https://hdd.userbenchmark.com/", {"Rank":0, "Name":1, "Benchmark":4, "Price":9, "URL":None, "Capacity":5}],
 }
@@ -65,6 +66,18 @@ for part in PARTS:
 
     # Send a get request to URL
     SCRAPER.get(url)
+    time.sleep(4)
+
+    # Open up capacity for ram
+    #if part == "RAM":
+        #SCRAPER.find_element(By.CSS_SELECTOR, "#tableDataForm\:mhtddyntac > table > thead > tr > th:nth-child(11) > a").click()
+        #SCRAPER.find_element(By.CSS_SELECTOR, "#columnsDialog > div > div > div.modal-body > div > a:nth-child(1)").click()
+        #SCRAPER.find_element(By.CSS_SELECTOR, "#columnsDialog > div > div > div.modal-header > button").click()
+
+    # Sort scraper by price
+    button = SCRAPER.find_element(By.CSS_SELECTOR, '[data-mhth=MC_PRICE]')
+    SCRAPER.execute_script("$(arguments[0]).click();", button)
+    SCRAPER.execute_script("$(arguments[0]).click();", button)
 
     # Loop through all iterations
     for i in range(0, ITERATIONS):
@@ -86,8 +99,8 @@ for part in PARTS:
                     elements[format["Name"]].find_element(By.CLASS_NAME, "nodec") .get_attribute("href") # URL
                 ]
 
-                # Capacity, only for SSD and HDD
-                if (part == "SSD" or part == "HDD"):
+                # Capacity, only for RAM, SSD and HDD
+                if (part == "RAM" or part == "HDD" or part == "SSD"):
                     capacity = fetch_capacity(elements[format["Capacity"]].text)
                     newRow.append(capacity)
 

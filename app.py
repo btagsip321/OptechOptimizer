@@ -53,13 +53,15 @@ def build():
 
     # Remainding price, taxed budget - pc build price
     remainder = (budgetTotal / ((1) + (tax/100))) - float(buildPrice)
-    origRemainder = remainder
 
+    print(parts)
     for part in parts:
+        print(part)
         if remainder <= 25: 
             print("stopping at", part) 
             break
-        budget[part] = cleanBudget(budget[part] + origRemainder, 0, 50000)
+        
+        budget[part] = cleanBudget(budget[part] + remainder, 0, 50000)
         pc_build, price = buildPc(
             budget, 
             Brands[request.args.get('cpu')], 
@@ -72,12 +74,14 @@ def build():
             budget[part] = extractPrice(pc_build[part])
 
         remainder = (budgetTotal / ((1) + (tax/100))) - float(price)
-        print("reallocating", part, "remainder:", remainder) 
+        print("reallocating", part, "remainder:", remainder, "price:", price) 
 
+    print(pc_build)
+    print(pc_build["CPU_Cooler"])
+    print(remainder*.2)
     pc_build["Motherboard"] = "$" + str(cleanBudget(extractPrice(pc_build["Motherboard"]) + remainder*.5, 0, 700)) + " (Input budget into PC Part Picker)"
     pc_build["PSU"] = "$" + str(cleanBudget(extractPrice(pc_build["PSU"]) + remainder*.3, 0, 1000)) + " (Input budget into PC Part Picker)"
     pc_build["CPU_Cooler"] = "$" + str(cleanBudget(extractPrice(pc_build["CPU_Cooler"]) + remainder*.2, 0, 305)) + " (Input budget into PC Part Picker)"
-    del pc_build["Total_Price"]
 
     #if request.args.get('allocpref') == "cpu":
     #    budget["CPU"] = cleanBudget(budget["CPU"] + (remainder), 0, 50000)
@@ -92,7 +96,7 @@ def build():
 
     if(request.args.get('windows')=="on"):
         price = price + 140
-    pc_build["Total_Price"] = "$" + str(round(price, 2))
+    pc_build["Total_Price"] = "$" + format(price, ".3f")
 
     for part in list(pc_build.keys()):
         if pc_build[part].find("Buy here: "):
