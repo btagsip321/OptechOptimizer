@@ -87,7 +87,7 @@ def gatherPartData(part):
     df = pd.read_csv(path).dropna()
     pc_parts[part] = df[df.Price != -1]
     
-def findPartsWithinBudget(part, budget, preferredBrand, ssdStorageSpace, hddStorageSpace):
+def findPartsWithinBudget(part, budget, preferredBrand, ssdStorageSpace, hddStorageSpace, ramStorageSpace):
     if((part != "SSD") or (part == "SSD" and ssdPref)):
         part_data = pc_parts[part]
 
@@ -96,10 +96,8 @@ def findPartsWithinBudget(part, budget, preferredBrand, ssdStorageSpace, hddStor
             part_data = part_data[part_data["Name"].str.contains(preferredBrand)]
 
         # Filter by storage space
-        if ssdStorageSpace:
-            part_data = part_data[part_data["Capacity"].astype(int) >= ssdStorageSpace]
-        if hddStorageSpace:
-            part_data = part_data[part_data["Capacity"].astype(int) >= hddStorageSpace]
+        if hddStorageSpace or ssdStorageSpace or ramStorageSpace:
+            part_data = part_data[part_data["Capacity"].astype(int) >= (hddStorageSpace or ssdStorageSpace or ramStorageSpace)]
 
         # Filter by price and highest benchmark
         part_data = part_data[part_data["Price"] <= budget]
@@ -123,21 +121,21 @@ def findPartsWithinBudget(part, budget, preferredBrand, ssdStorageSpace, hddStor
     else:
         return "No SSD"
     
-
 def extractPrice(price):
     extract = re.search("(?:[\£\$\€]{1}[,\d]+.?\d*)", price)
+    print(extract, price)
     return float(extract.group().replace("$", "").replace(",", ""))
 
-def buildPc(budget, cpu, ssdStorageSpace, hddStorageSpace, windowsPref = False):
+def buildPc(budget, cpu, ssdStorageSpace, hddStorageSpace, ramStorageSpace, windowsPref = False):
     pc = {
-        "GPU": findPartsWithinBudget("GPU", budget["GPU"], None, None, None),
-        "CPU": findPartsWithinBudget("CPU", budget["CPU"], cpu, None, None),
-        "RAM": findPartsWithinBudget("RAM", budget["RAM"], None, None, None),
-        "CASE": findPartsWithinBudget("CASE", budget["CASE"], None, None, None),
+        "GPU": findPartsWithinBudget("GPU", budget["GPU"], None, None, None, None),
+        "CPU": findPartsWithinBudget("CPU", budget["CPU"], cpu, None, None, None),
+        "RAM": findPartsWithinBudget("RAM", budget["RAM"], None, None, None, ramStorageSpace),
+        "CASE": findPartsWithinBudget("CASE", budget["CASE"], None, None, None, None),
         #"PSU": findPartsWithinBudget("power-supply", budget["PSU"]),
         "PSU": "$" + str(budget["PSU"]) + " (Input budget into PC Part Picker)",
-        "SSD": findPartsWithinBudget("SSD", budget["SSD"], None, ssdStorageSpace, None),
-        "HDD": findPartsWithinBudget("HDD", budget["HDD"], None, None, hddStorageSpace),
+        "SSD": findPartsWithinBudget("SSD", budget["SSD"], None, ssdStorageSpace, None, None),
+        "HDD": findPartsWithinBudget("HDD", budget["HDD"], None, None, hddStorageSpace, None),
         "Motherboard": "$" + str(budget["Motherboard"]) + " (Input budget into PC Part Picker)",
         "CPU_Cooler": "$" + str(budget["CPU Cooler"]) + " (Input budget into PC Part Picker)",
         #"Motherboard": findPartsWithinBudget("motherboard", budget["Motherboard"]),

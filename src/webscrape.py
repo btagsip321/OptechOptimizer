@@ -26,7 +26,7 @@ else:
 PARTS = {
     "GPU": ["https://gpu.userbenchmark.com/", {"Rank":0, "Name":1, "Benchmark":4, "Price":7, "URL":None}],
     "CPU": ["https://cpu.userbenchmark.com/", {"Rank":0, "Name":1, "Benchmark":4, "Price":9, "URL":None}],
-    "RAM": ["https://ram.userbenchmark.com/", {"Rank":0, "Name":1, "Benchmark":4, "Price":9, "URL":None}],
+    "RAM": ["https://ram.userbenchmark.com/", {"Rank":0, "Name":1, "Benchmark":5, "Price":10, "URL":None, "Capacity":2}],
     "SSD": ["https://ssd.userbenchmark.com/", {"Rank":0, "Name":1, "Benchmark":4, "Price":9, "URL":None, "Capacity":5}],
     "HDD": ["https://hdd.userbenchmark.com/", {"Rank":0, "Name":1, "Benchmark":4, "Price":9, "URL":None, "Capacity":5}],
 }
@@ -66,6 +66,12 @@ for part in PARTS:
     # Send a get request to URL
     SCRAPER.get(url)
 
+    if part == "RAM":
+        SCRAPER.find_element(By.CSS_SELECTOR, "#tableDataForm\:mhtddyntac > table > thead > tr > th:nth-child(11) > a").click()
+        SCRAPER.find_element(By.CSS_SELECTOR, "#columnsDialog > div > div > div.modal-body > div > a:nth-child(1)").click()
+        SCRAPER.refresh()
+        time.sleep(4)
+
     # Loop through all iterations
     for i in range(0, ITERATIONS):
 
@@ -73,10 +79,7 @@ for part in PARTS:
         mytable = SCRAPER.find_element(By.CSS_SELECTOR, '#tableDataForm\:mhtddyntac > table')
         for row in mytable.find_elements(By.CSS_SELECTOR, 'tr'):
             elements = row.find_elements(By.TAG_NAME, 'td')
-            if len(elements) > 0:
-
-                print(elements[format["Benchmark"]].text.split("\n")[0])
-
+            if len(elements) > 0 and fetch_price(elements[format["Price"]].text) > 0:
                 # Initiate new row variable
                 newRow = [
                     int(elements[format["Rank"]].text), #Rank
@@ -87,12 +90,25 @@ for part in PARTS:
                 ]
 
                 # Capacity, only for SSD and HDD
-                if (part == "SSD" or part == "HDD"):
+                if (part == "SSD" or part == "HDD" or part == "RAM"):
                     capacity = fetch_capacity(elements[format["Capacity"]].text)
                     newRow.append(capacity)
 
                 # Add row to the csv dataframe
                 csv.loc[len(csv.index)] = newRow
+
+                # Add duplicate ram
+                if (part =="RAM"):
+                    name = elements[format["Name"]].text.split("\n")[1]
+                    price = fetch_price(elements[format["Price"]].text)
+                    csv.loc[len(csv.index)] = [
+                        int(elements[format["Rank"]].text), #Rank
+                        name.replace("2x", "4x").replace("1x", "2x").replace(str(price), str(price*2)), #Name
+                        float(elements[format["Benchmark"]].text.split("\n")[0])*1.15, #Benchmark
+                        price*2, #Price
+                        elements[format["Name"]].find_element(By.CLASS_NAME, "nodec") .get_attribute("href"), # URL
+                        fetch_capacity(elements[format["Capacity"]].text)*2
+                    ]
 
         # Click the next button to go through next page on the table
         SCRAPER.find_element(By.CSS_SELECTOR, "#tableDataForm\:j_idt260").click()

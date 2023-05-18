@@ -39,8 +39,9 @@ def build():
     pc, buildPrice = buildPc(
         budget, 
         Brands[request.args.get('cpu')], 
-        int(request.args.get('ssdStorage') or 256), 
-        int(request.args.get('hddStorage') or 1000),
+        int(request.args.get('ssdStorage') or 0), 
+        int(request.args.get('hddStorage') or 0),
+        int(request.args.get('ramStorage') or 0),
         False
     )
 
@@ -69,8 +70,9 @@ def build():
         pc_build, price = buildPc(
             budget, 
             Brands[request.args.get('cpu')], 
-            int(request.args.get('ssdStorage') or 256), 
-            int(request.args.get('hddStorage') or 1000),
+            int(request.args.get('ssdStorage') or 0), 
+            int(request.args.get('hddStorage') or 0),
+            int(request.args.get('ramStorage') or 0),
             request.args.get('windows')=="on",
         )
 
