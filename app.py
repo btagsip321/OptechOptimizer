@@ -57,7 +57,6 @@ def build():
 
     # Reallocation
     for part in parts:
-
         # Leave $25 for other reallocation
         if remainder <= 25: 
             print("Stopping at", part) 
@@ -77,17 +76,31 @@ def build():
         )
 
         # Set the new prices
-        for part in pc_build.keys():
-            budget[part] = extractPrice(pc_build[part])
+        for x in pc_build.keys():
+            budget[x] = extractPrice(pc_build[x])
 
         # Calculate new remainder
         remainder = (budgetTotal / ((1) + (tax/100))) - float(price)
         print("reallocating", part, "remainder:", remainder, "price:", price) 
 
+    def reallocate(part, amt, max, remainder):
+        if remainder <= 0: return
+        pc_build[part] = "$" + str(cleanBudget(extractPrice(pc_build[part]) + remainder*amt, 0, max)) + " (Input budget into PC Part Picker)"
+        price = sum(map(extractPrice, pc_build.values())) + (140 if (request.args.get('windows')=="on") else 0)
+        return budgetTotal - price
+
+
     # Reallocate remainder into non url components
-    pc_build["Motherboard"] = "$" + str(cleanBudget(extractPrice(pc_build["Motherboard"]) + remainder*.5, 0, 700)) + " (Input budget into PC Part Picker)"
-    pc_build["PSU"] = "$" + str(cleanBudget(extractPrice(pc_build["PSU"]) + remainder*.3, 0, 1000)) + " (Input budget into PC Part Picker)"
-    pc_build["CPU_Cooler"] = "$" + str(cleanBudget(extractPrice(pc_build["CPU_Cooler"]) + remainder*.2, 0, 305)) + " (Input budget into PC Part Picker)"
+    remainder = reallocate("Motherboard", .5, 700, remainder)
+    remainder = reallocate("PSU", .5, 1000, remainder)
+    remainder = reallocate("CPU_Cooler", 1, 305, remainder)
+    remainder = reallocate("Motherboard", 1, 700, remainder)
+    remainder = reallocate("PSU", 1, 1000, remainder)
+    remainder = reallocate("CPU_Cooler", 1, 305, remainder)
+    print(remainder)
+
+    price = sum(map(extractPrice, pc_build.values())) + (140 if (request.args.get('windows')=="on") else 0)
+    remainder = budgetTotal - price
 
     # Calculate new total price
     price = sum(map(extractPrice, pc_build.values())) + (140 if (request.args.get('windows')=="on") else 0)

@@ -123,7 +123,6 @@ def findPartsWithinBudget(part, budget, preferredBrand, ssdStorageSpace, hddStor
     
 def extractPrice(price):
     extract = re.search("(?:[\£\$\€]{1}[,\d]+.?\d*)", price)
-    print(extract, price)
     return float(extract.group().replace("$", "").replace(",", ""))
 
 def buildPc(budget, cpu, ssdStorageSpace, hddStorageSpace, ramStorageSpace, windowsPref = False):
