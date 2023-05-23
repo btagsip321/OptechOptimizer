@@ -84,7 +84,7 @@ def build():
         print("reallocating", part, "remainder:", remainder, "price:", price) 
 
     def reallocate(part, amt, max, remainder):
-        if remainder <= 0: return
+        if remainder <= 0: return remainder
         pc_build[part] = "$" + str(cleanBudget(extractPrice(pc_build[part]) + remainder*amt, 0, max)) + " (Input budget into PC Part Picker)"
         price = sum(map(extractPrice, pc_build.values())) + (140 if (request.args.get('windows')=="on") else 0)
         return budgetTotal - price
