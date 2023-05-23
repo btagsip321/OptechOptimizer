@@ -33,8 +33,8 @@ def buildBudget(budget, windows = False, tax = 0):
 
     # if 5% of budget is less than 45, spend 45, else spend 5% of budget
     
-    if ((budget * .05) < 45):
-        caseMoney = 45
+    if ((budget * .05) < 55):
+        caseMoney = 55
     else:
         caseMoney = round((budget * .05), 2)
 
