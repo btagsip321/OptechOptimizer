@@ -3,7 +3,8 @@ import json
 import pdb
 import os
 import re
-
+#test
+ramMoney = 0
 parts = ['CPU','GPU','HDD','RAM','SSD','CASE']
 cpuMax = 1400
 gpuMax = 1800
@@ -43,12 +44,12 @@ def buildBudget(budget, windows = False, tax = 0):
     else:
         moboMoney = round((budget * 0.1054782), 2)
         
-    
+    '''test
     if ((budget * .0629773752) < 30):
         ramMoney = 30
     else:
         ramMoney = round((budget * .0629773752), 2)
-
+    '''
     # if 5.1% of budget is less than 51, spend 51, else spend 5.1% of budget
     if(ssdPref):
         if ((budget * .051 < 51)):
@@ -82,13 +83,13 @@ def buildBudget(budget, windows = False, tax = 0):
         #"Windows Key": subtr,
         "GPU": cleanBudget((gpuMoney), 0, 50000),
         "CPU": cleanBudget((cpuMoney), 0, 50000),
-        "RAM": cleanBudget((ramMoney)),
+        "RAM": cleanBudget((budget * 0.314054631)),
         "CASE": cleanBudget((caseMoney), 0, 50000),
-        "PSU": cleanBudget((budget * 0.453837597), 0, 140),
+        "PSU": cleanBudget((budget * 0.311307798), 0, 140),
         "SSD": cleanBudget((ssdMoney), 0, 50000),
-        "HDD": cleanBudget((budget * 0.333704116)),
+        "HDD": cleanBudget((budget * 0.228902793)),
         "Motherboard": cleanBudget((moboMoney), 0, 200),
-        "CPU Cooler": cleanBudget((budget * 0.212458287), 0, 300),
+        "CPU Cooler": cleanBudget((budget * 0.145734778), 0, 300),
     }
 
     return allocation
