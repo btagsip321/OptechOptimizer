@@ -27,7 +27,10 @@ def build():
     # Variables
     budgetTotal = int(request.args.get('budget') or 1000) # initial budget input
     tax = float(request.args.get('tax') or 0) # initial tax input
-
+    ssdRange = [int(request.args.get('ssdStorage') or 0),  int(request.args.get('maxSsdStorage') or 1000000)]
+    hddRange = [int(request.args.get('hddStorage') or 0),  int(request.args.get('maxHddStorage') or 1000000)]
+    ramRange = [int(request.args.get('ramStorage') or 0),  int(request.args.get('maxRamStorage') or 1000000)]
+    
     # Initial budget
     budget = buildBudget(
         budgetTotal, 
@@ -39,9 +42,10 @@ def build():
     pc, buildPrice = buildPc(
         budget, 
         Brands[request.args.get('cpu')], 
-        int(request.args.get('ssdStorage') or 0), 
-        int(request.args.get('hddStorage') or 0),
-        int(request.args.get('ramStorage') or 0),
+        ssdRange,
+        hddRange,
+        ramRange,
+        request.args.get('storageType'),
         False
     )
 
@@ -69,9 +73,10 @@ def build():
         pc_build, price = buildPc(
             budget, 
             Brands[request.args.get('cpu')], 
-            int(request.args.get('ssdStorage') or 0), 
-            int(request.args.get('hddStorage') or 0),
-            int(request.args.get('ramStorage') or 0),
+            ssdRange,
+            hddRange,
+            ramRange,
+            request.args.get('storageType'),
             request.args.get('windows')=="on",
         )
 
@@ -116,7 +121,7 @@ def build():
     # Add windows key and URL
     pc_build["Windows_Key"] = "$" + str(140 if (request.args.get('windows')=="on") else 0)
     pc_build["Windows_URL"] = "https://www.amazon.com/Windows-11-Home-Digital-Download/dp/B09WCHGP12/ref=sr_1_3?keywords=windows%2B11%2Bhome&qid=1683027821&sr=8-3&th=1" if (request.args.get('windows')=="on") else "https://support.microsoft.com/en-us/windows/create-installation-media-for-windows-99a58364-8c02-206f-aa6f-40c3b507420d"
-    
+
     # Render results
     return render_template('results.html', **pc_build)
 

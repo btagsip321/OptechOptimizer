@@ -104,44 +104,46 @@ def gatherPartData(part):
     pc_parts[part] = df[df.Price != -1]
     
 def findPartsWithinBudget(part, budget, preferredBrand, ssdStorageSpace, hddStorageSpace, ramStorageSpace):
-    if((part != "SSD") or (part == "SSD" and ssdPref)):
-        part_data = pc_parts[part]
+    part_data = pc_parts[part]
 
-        # Filter by brand
-        if preferredBrand:
-            part_data = part_data[part_data["Name"].str.contains(preferredBrand)]
+    # Filter by brand
+    if preferredBrand:
+        part_data = part_data[part_data["Name"].str.contains(preferredBrand)]
 
-        # Filter by storage space
-        if hddStorageSpace or ssdStorageSpace or ramStorageSpace:
-            part_data = part_data[part_data["Capacity"].astype(int) >= (hddStorageSpace or ssdStorageSpace or ramStorageSpace)]
+    # Filter by storage space
+    if hddStorageSpace or ssdStorageSpace or ramStorageSpace:
+        minRange = (hddStorageSpace or ssdStorageSpace or ramStorageSpace or [0, 15000])[0]
+        maxRange = (hddStorageSpace or ssdStorageSpace or ramStorageSpace or [0, 15000])[1]
+        print("range outputs")
+        print(minRange, maxRange)
+        part_data = part_data[part_data["Capacity"].astype(int) >= minRange]
+        part_data = part_data[part_data["Capacity"].astype(int) <= maxRange]
 
-        # Filter by price and highest benchmark
-        part_data = part_data[part_data["Price"] <= budget]
+    # Filter by price and highest benchmark
+    part_data = part_data[part_data["Price"] <= budget]
 
-        # Sort by benchmark
-        if part == "CASE":
-            part_data = part_data.sort_values(['Rank'], ascending = [True])
-        else:
-            part_data = part_data.sort_values(['Benchmark'], ascending = [False])
-
-        display = part_data.iloc[0]['Name']
-
-        # Add price if not already in name
-        if not ("$" in display):
-            display = display + " $" + str(part_data.iloc[0]['Price'])
-
-        # Add URL if not already in name
-        display = display + " Buy here: " + part_data.iloc[0]['URL']
-
-        return display
+    # Sort by benchmark
+    if part == "CASE":
+        part_data = part_data.sort_values(['Rank'], ascending = [True])
     else:
-        return "No SSD"
+        part_data = part_data.sort_values(['Benchmark'], ascending = [False])
+
+    display = part_data.iloc[0]['Name']
+
+    # Add price if not already in name
+    if not ("$" in display):
+        display = display + " $" + str(part_data.iloc[0]['Price'])
+
+    # Add URL if not already in name
+    display = display + " Buy here: " + part_data.iloc[0]['URL']
+
+    return display
     
 def extractPrice(price):
     extract = re.search("(?:[\£\$\€]{1}[,\d]+.?\d*)", price)
     return float(extract.group().replace("$", "").replace(",", ""))
 
-def buildPc(budget, cpu, ssdStorageSpace, hddStorageSpace, ramStorageSpace, windowsPref = False):
+def buildPc(budget, cpu, ssdStorageSpace, hddStorageSpace, ramStorageSpace, storageType, windowsPref = False):
     pc = {
         "GPU": findPartsWithinBudget("GPU", budget["GPU"], None, None, None, None),
         "CPU": findPartsWithinBudget("CPU", budget["CPU"], cpu, None, None, None),
@@ -156,6 +158,13 @@ def buildPc(budget, cpu, ssdStorageSpace, hddStorageSpace, ramStorageSpace, wind
         #"Motherboard": findPartsWithinBudget("motherboard", budget["Motherboard"]),
         #"CPU Cooler": findPartsWithinBudget("cpu-cooler", budget["CPU Cooler"]),
     }
+
+    if storageType == "ssd":
+        pc["SSD"] = findPartsWithinBudget("SSD", budget["SSD"] + extractPrice(pc["HDD"]), None, ssdStorageSpace, None, None)
+        del pc["HDD"]
+    elif storageType == "hdd":
+        pc["HDD"] = findPartsWithinBudget("HDD", budget["HDD"] + extractPrice(pc["SSD"]), None, hddStorageSpace, None, None)
+        del pc["SSD"]
 
     price = sum(map(extractPrice, pc.values())) 
     if(windowsPref):

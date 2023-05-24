@@ -30,12 +30,27 @@
             <label for="ramStorage">Minimum Ram Storage:</label>
             <input type="number" id="ramStorage" name="ramStorage" placeholder="Enter RAM Storage (GB) [Default: No Preference]" pattern = "[0-9]" max = "10000"/>
 
+            <label for="maxRamStorage">Max Ram Storage:</label>
+            <input type="number" id="maxRamStorage" name="maxRamStorage" placeholder="Enter Max RAM Storage (GB) [Default: No Preference]" pattern = "[0-9]" max = "10000"/>
+
             <label for="ssdStorage">Minimum SSD Storage:</label>
             <input type="number" id="ssdStorage" name="ssdStorage" placeholder="Enter SSD Storage (GB) [Default: No Preference]" pattern = "[0-9]" max = "10000"/>
+
+            <label for="maxSsdStorage">Max SSD Storage:</label>
+            <input type="number" id="maxSsdStorage" name="maxSsdStorage" placeholder="Enter Max SSD Storage (GB) [Default: No Preference]" pattern = "[0-9]" max = "10000"/>
 
             <label for="hddStorage">Minimum HDD Storage:</label>
             <input type="number" id="hddStorage" name="hddStorage" placeholder="Enter HDD Storage (GB) [Default: No Preference]" pattern = "[0-9]" max = "10000"/>
             
+            <label for="maxHddStorage">Max HDD Storage:</label>
+            <input type="number" id="maxHddStorage" name="maxHddStorage" placeholder="Enter Max HDD Storage (GB) [Default: No Preference]" pattern = "[0-9]" max = "10000"/>
+
+            <label for="storageType">Storage Type:</label>
+            <select id="storageType" name="storageType">
+                <option value="both">Both</option>
+                <option value="hdd">HDD</option>
+                <option value="ssd">SSD</option>
+            </select>
 
             <button type="submit">Build My PC</button>
         </form>
