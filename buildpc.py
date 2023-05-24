@@ -37,6 +37,11 @@ def buildBudget(budget, windows = False, tax = 0):
         caseMoney = 55
     else:
         caseMoney = round((budget * .05), 2)
+        
+    if ((budget * 0.1054782) < 75):
+        moboMoney = 75
+    else:
+        moboMoney = round((budget * 0.1054782), 2)
 
     # if 5.1% of budget is less than 51, spend 51, else spend 5.1% of budget
     if(ssdPref):
@@ -62,7 +67,7 @@ def buildBudget(budget, windows = False, tax = 0):
         cpuMoney = 600
     else:
         cpuMoney = budget * .262
-    budget = budget - gpuMoney - cpuMoney - ssdMoney - caseMoney
+    budget = budget - gpuMoney - cpuMoney - ssdMoney - caseMoney - moboMoney
     
     # clean budget between 800 and 50000
     #budget = cleanBudget(budget, 800, 50000)
@@ -76,7 +81,7 @@ def buildBudget(budget, windows = False, tax = 0):
         "PSU": cleanBudget((budget * 0.204), 0, 140),
         "SSD": cleanBudget((ssdMoney), 0, 50000),
         "HDD": cleanBudget((budget * 0.15)),
-        "Motherboard": cleanBudget((budget * .3447), 0, 200),
+        "Motherboard": cleanBudget((moboMoney), 0, 200),
         "CPU Cooler": cleanBudget((budget * .0955), 0, 300),
     }
 
