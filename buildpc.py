@@ -73,7 +73,7 @@ def buildBudget(budget, windows = False, tax = 0):
         cpuMoney = 600
     else:
         cpuMoney = budget * .262
-    budget = budget - gpuMoney - cpuMoney - ssdMoney - caseMoney - moboMoney
+    budget = budget - gpuMoney - cpuMoney - ssdMoney - caseMoney - moboMoney - ramMoney
     
     # clean budget between 800 and 50000
     #budget = cleanBudget(budget, 800, 50000)
@@ -82,13 +82,13 @@ def buildBudget(budget, windows = False, tax = 0):
         #"Windows Key": subtr,
         "GPU": cleanBudget((gpuMoney), 0, 50000),
         "CPU": cleanBudget((cpuMoney), 0, 50000),
-        "RAM": cleanBudget((budget * 0.314054631)),
+        "RAM": cleanBudget((ramMoney)),
         "CASE": cleanBudget((caseMoney), 0, 50000),
-        "PSU": cleanBudget((budget * 0.311307798), 0, 140),
+        "PSU": cleanBudget((budget * 0.453837597), 0, 140),
         "SSD": cleanBudget((ssdMoney), 0, 50000),
-        "HDD": cleanBudget((budget * 0.228902793)),
+        "HDD": cleanBudget((budget * 0.333704116)),
         "Motherboard": cleanBudget((moboMoney), 0, 200),
-        "CPU Cooler": cleanBudget((budget * 0.145734778), 0, 300),
+        "CPU Cooler": cleanBudget((budget * 0.212458287), 0, 300),
     }
 
     return allocation
