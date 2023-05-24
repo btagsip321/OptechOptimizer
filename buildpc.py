@@ -37,11 +37,17 @@ def buildBudget(budget, windows = False, tax = 0):
         caseMoney = 55
     else:
         caseMoney = round((budget * .05), 2)
-        
+    # if 5% of budget is less than 75, spend 75, else spend 10.5% of budget    
     if ((budget * 0.1054782) < 75):
         moboMoney = 75
     else:
         moboMoney = round((budget * 0.1054782), 2)
+        
+    
+    if ((budget * .0629773752) < 30):
+        ramMoney = 30
+    else:
+        ramMoney = round((budget * .0629773752), 2)
 
     # if 5.1% of budget is less than 51, spend 51, else spend 5.1% of budget
     if(ssdPref):
