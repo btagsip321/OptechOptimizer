@@ -42,7 +42,7 @@ def buildBudget(budget, windows = False):
     else:
         ramMoney = round((budget * .0629773752), 2)
         
-    
+    '''
     if ((budget * 0.062422246) < 30):
         psuMoney = 30
     else:
@@ -53,7 +53,8 @@ def buildBudget(budget, windows = False):
         coolerMoney = 15
     else:
         coolerMoney = round((budget * 0.029222179), 2)
-        
+    '''
+    
     if ((budget * 0.0459000001) < 20):
         hddMoney = 20
     else:
@@ -83,7 +84,8 @@ def buildBudget(budget, windows = False):
         cpuMoney = 600
     else:
         cpuMoney = budget * .262
-    budget = budget - gpuMoney - cpuMoney - ssdMoney - caseMoney - moboMoney - ramMoney - coolerMoney - psuMoney
+    budget = budget - gpuMoney - cpuMoney - ssdMoney - caseMoney - moboMoney - ramMoney 
+    #- coolerMoney - psuMoney
     
     # clean budget between 800 and 50000
     #budget = cleanBudget(budget, 800, 50000)
@@ -94,11 +96,11 @@ def buildBudget(budget, windows = False):
         "CPU": cleanBudget((cpuMoney), 0, 50000),
         "RAM": cleanBudget((ramMoney)),
         "CASE": cleanBudget((caseMoney), 0, 50000),
-        "PSU": cleanBudget((psuMoney), 0, 140),
+        "PSU": cleanBudget((budget * 0.681135225), 0, 140),
         "SSD": cleanBudget((ssdMoney), 0, 50000),
         "HDD": cleanBudget((hddMoney)),
         "Motherboard": cleanBudget((moboMoney), 0, 200),
-        "CPU Cooler": cleanBudget((coolerMoney), 0, 300),
+        "CPU Cooler": cleanBudget((budget * 0.318864775), 0, 300),
     }
 
     return allocation
