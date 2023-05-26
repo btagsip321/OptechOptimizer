@@ -18,18 +18,11 @@ def cleanBudget(budget, minBudget =0, maxBudget =50000):
     except:
         return 0
 
-def buildBudget(budget, windows = False, tax = 0):
+def buildBudget(budget, windows = False):
 
-    # add tax to budget
-    budget = (budget)/((1) + (tax/100))
-   
     # subtract 100 from budget if windows, else subtract 0
     subtr = (140 if windows else 0)
     budget -= subtr
-
-    print("Calculated Tax: ", ((1) + (tax/100)))
-    print("Tax: ", tax)
-    print("New Budget:", budget)
 
     # if 5% of budget is less than 45, spend 45, else spend 5% of budget
     

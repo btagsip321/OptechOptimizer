@@ -25,8 +25,7 @@ def page_not_found(e):
 def build():
 
     # Variables
-    budgetTotal = int(request.args.get('budget') or 1000) # initial budget input
-    tax = float(request.args.get('tax') or 0) # initial tax input
+    budgetTotal = (float(request.args.get('budget') or 1000)) / ((1) + (float(request.args.get('tax') or 0)/100))
     ssdRange = [int(request.args.get('ssdStorage') or 0),  int(request.args.get('maxSsdStorage') or 1000000)]
     hddRange = [int(request.args.get('hddStorage') or 0),  int(request.args.get('maxHddStorage') or 1000000)]
     ramRange = [int(request.args.get('ramStorage') or 0),  int(request.args.get('maxRamStorage') or 1000000)]
@@ -34,8 +33,7 @@ def build():
     # Initial budget
     budget = buildBudget(
         budgetTotal, 
-        request.args.get('windows')=="on",
-        tax
+        request.args.get('windows')=="on"
     )
 
     # Initial PC build
@@ -57,7 +55,7 @@ def build():
     print("Before Allocation:", sum(budget.values()) )
 
     # Remainding price, taxed budget - pc build price
-    remainder = (budgetTotal / ((1) + (tax/100))) - float(buildPrice)
+    remainder = budgetTotal - float(buildPrice)
 
     # Reallocation
     for part in parts:
@@ -85,7 +83,7 @@ def build():
             budget[x] = extractPrice(pc_build[x])
 
         # Calculate new remainder
-        remainder = (budgetTotal / ((1) + (tax/100))) - float(price)
+        remainder = budgetTotal - float(price)
         print("reallocating", part, "remainder:", remainder, "price:", price) 
 
     def reallocate(part, amt, max, remainder):
