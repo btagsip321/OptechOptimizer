@@ -42,19 +42,6 @@ def buildBudget(budget, windows = False):
     else:
         ramMoney = round((budget * .0629773752), 2)
         
-    '''
-    if ((budget * 0.062422246) < 30):
-        psuMoney = 30
-    else:
-        psuMoney = round((budget * 0.062422246), 2)
-        
-    
-    if ((budget * 0.029222179) < 15):
-        coolerMoney = 15
-    else:
-        coolerMoney = round((budget * 0.029222179), 2)
-    '''
-    
     if ((budget * 0.0459000001) < 20):
         hddMoney = 20
     else:
@@ -84,8 +71,7 @@ def buildBudget(budget, windows = False):
         cpuMoney = 600
     else:
         cpuMoney = budget * .262
-    budget = budget - gpuMoney - cpuMoney - ssdMoney - caseMoney - moboMoney - ramMoney 
-    #- coolerMoney - psuMoney
+    budget = budget - gpuMoney - cpuMoney - ssdMoney - caseMoney - moboMoney - ramMoney
     
     # clean budget between 800 and 50000
     #budget = cleanBudget(budget, 800, 50000)
