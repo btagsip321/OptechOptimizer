@@ -37,7 +37,7 @@ def build():
     )
 
     # Initial PC build
-    pc, buildPrice = buildPc(
+    pc_build, buildPrice = buildPc(
         budget, 
         Brands[request.args.get('cpu')], 
         ssdRange,
@@ -48,8 +48,8 @@ def build():
     )
 
     # Debug initial pc build print
-    for part in pc.keys():
-        budget[part] = extractPrice(pc[part])
+    for part in pc_build.keys():
+        budget[part] = extractPrice(pc_build[part])
 
     # Print the initial allocated budget
     print("Before Allocation:", sum(budget.values()) )
@@ -101,10 +101,7 @@ def build():
     remainder = reallocate("PSU", 1, 1000, remainder)
     remainder = reallocate("CPU_Cooler", 1, 305, remainder)
     print(remainder)
-
-    price = sum(map(extractPrice, pc_build.values())) + (140 if (request.args.get('windows')=="on") else 0)
-    remainder = budgetTotal - price
-
+    
     # Calculate new total price
     price = sum(map(extractPrice, pc_build.values())) + (140 if (request.args.get('windows')=="on") else 0)
     pc_build["Total_Price"] = "$" + format(price, ".3f")
